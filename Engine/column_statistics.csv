@@ -1,0 +1,35 @@
+column,dtype,unit,kind,status_or_caveat,description,missing_count,missing_pct,unique_count,min,max,mean,std
+scenario_id,str,identifier,,,Scenario identifier; numeric suffix encodes fault_type modulo 8.,0,0.0,240,,,,
+engine_id,str,identifier,,,Synthetic engine identifier; each ID is tied to one operating phase.,0,0.0,12,,,,
+timestamp_utc,str,ISO 8601 UTC,,,Synthetic timestamp for this sample.,0,0.0,28800,,,,
+time_s,int64,s,,,Elapsed scenario time.,0,0.0,120,0,119,59.5,34.64041471874325
+operating_phase,str,category,,,Scenario operating phase.,0,0.0,4,,,,
+altitude_m,float64,m,environment,assumption-driven mission sampling,Generic 0-5000 m synthetic sampling; not target aircraft envelope.,0,0.0,28632,2.269,4607.98,1546.6486511805556,1204.025560455222
+ambient_temp_c,float64,degC,environment,assumption-driven,Synthetic hot/cold sampling; not environmental certification envelope.,0,0.0,18534,4.397,38.582,21.918981979166666,9.653387469068097
+ambient_pressure_pa,float64,Pa,derived_environment,derived from approximate standard-atmosphere baseline and temperature adjustment,Approximate; validate against an approved atmosphere implementation before engineering use.,0,0.0,28700,50037.43,104555.72,80327.35347291667,13915.9690142789
+air_density_kg_m3,float64,kg/m^3,derived_environment,derived,Ideal gas relation using simulated ambient pressure and temperature.,0,0.0,22778,0.58449,1.31089,0.9502525684027778,0.17296346323835943
+throttle_pct,float64,%,input,assumption-driven,"Generic control input, not a specified engine control map.",0,0.0,23880,11.586,98.574,51.85255513888889,22.02453623159629
+rpm,float64,rev/min,sensor_simulation,assumption-driven surrogate,Not an engine rating or operating limit.,118,0.40972222222222227,28101,1440.593,4780.167,3010.8876317202426,832.307112963621
+manifold_pressure_pa,float64,Pa,sensor_simulation,assumption-driven surrogate,Generic intake pressure proxy; not calibrated.,0,0.0,28717,35237.51,94380.58,62935.99926423611,13024.664256473483
+cht_c,float64,degC,sensor_simulation,assumption-driven surrogate,Cylinder head temperature proxy; not a limit specification.,41,0.1423611111111111,22994,101.715,213.668,138.5023132236865,20.417780579326866
+egt_c,float64,degC,sensor_simulation,assumption-driven surrogate,Exhaust gas temperature proxy; not a limit specification.,186,0.6458333333333334,25788,371.425,650.033,479.2708112112951,51.94573896885193
+oil_temp_c,float64,degC,sensor_simulation,assumption-driven surrogate,Oil temperature proxy; not a limit specification.,103,0.3576388888888889,19365,66.296,134.606,88.53360588214795,10.443505896824604
+oil_pressure_kpa,float64,kPa,sensor_simulation,assumption-driven surrogate,Oil pressure proxy; not a limit specification.,166,0.5763888888888888,24220,0.10768,1.09508,0.567969486973528,0.24613689269606648
+fuel_flow_kg_s,float64,kg/s,sensor_simulation,assumption-driven surrogate,Synthetic flow proxy; not calibrated.,0,0.0,28556,0.00073133,0.0247499,0.009420634006944444,0.005747113779562625
+power_kw,float64,kW,derived/simulated,assumption-driven surrogate,Synthetic power output; not a rated engine power.,0,0.0,19268,1.827,43.396,20.371756527777777,9.053544694418319
+torque_nm,float64,N m,derived/simulated,assumption-driven surrogate,Parameter register claims approximate power/RPM consistency; audit found material P=tau*omega discrepancies.,0,0.0,21314,20.954,86.792,61.537993958333324,12.89193736050357
+vibration_rms_g,float64,g RMS,sensor_simulation,assumption-driven surrogate,Synthetic vibration feature; sensor location/bandwidth not specified.,0,0.0,6952,0.5872,2.4714,1.0240989375,0.3182785844229072
+rpm_residual,float64,rev/min,,,,118,0.40972222222222227,21378,-107.407,214.198,-7.98389575343421,27.93665863845326
+cht_residual_c,float64,degC,,,,41,0.1423611111111111,12026,-7.347,58.109,3.5506326367398033,8.785633850038579
+egt_residual_c,float64,degC,,,,186,0.6458333333333334,18311,-17.572,102.34,9.516322709163347,19.487491759695402
+oil_pressure_residual_kpa,float64,kPa,,,,166,0.5763888888888888,5194,-0.06667,0.08995,-0.0004179087797722987,0.011859411942923384
+fault_type,str,category,ground_truth_label,assigned by scenario generator,Scenario-level simulated fault class.,0,0.0,8,,,,
+fault_severity,str,ordinal category,ground_truth_label,assigned by scenario generator,Scenario-level simulated severity.,0,0.0,4,,,,
+fault_onset_s,float64,s,,,Injected fault onset; null for normal scenarios.,3600,12.5,40,25.0,64.0,45.371428571428574,11.866359411246115
+fault_active,int64,boolean (0/1),,,Injected-fault-active label derived from onset.,0,0.0,2,0,1,0.5441666666666667,0.4980541322765346
+sensor_fault_target,str,sensor-name category,,,Sensor channel targeted in sensor fault scenarios.,14400,50.0,5,,,,
+health_index_synthetic,float64,synthetic index (0-100),synthetic_target,illustrative label,Rule-generated synthetic health index; not validated.,0,0.0,4,62.5,100.0,92.74555208333334,13.41318746791019
+health_state_synthetic,str,synthetic category,,,Health-state bucket derived from synthetic index.,0,0.0,3,,,,
+rul_hours,float64,h,target,not populated,Remaining useful life; intentionally unpopulated.,28800,100.0,0,,,,
+data_origin,str,category,,,Data provenance marker.,0,0.0,1,,,,
+split,str,category,,,Scenario-level train/validation/test partition.,0,0.0,3,,,,

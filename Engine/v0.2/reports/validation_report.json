@@ -1,0 +1,1064 @@
+{
+  "dataset_version": "0.2.0",
+  "synthetic_only": true,
+  "row_count": 115200,
+  "scenario_count": 960,
+  "engine_count": 30,
+  "scenario_split_scenario_overlap": {
+    "scenario_train_scenario_validation": 0,
+    "scenario_train_scenario_test": 0,
+    "scenario_validation_scenario_test": 0
+  },
+  "engine_split_engine_overlap": {
+    "train_validation": 0,
+    "train_test": 0,
+    "validation_test": 0
+  },
+  "split_coverage": {
+    "scenario_train": {
+      "scenario_count": 402,
+      "engine_count": 18,
+      "fault_type_counts": {
+        "combustion_irregularity": 50,
+        "efficiency_degradation": 49,
+        "normal": 51,
+        "sensor_bias": 51,
+        "sensor_drift": 50,
+        "sensor_dropout": 51,
+        "sensor_stuck": 51,
+        "thermal_abnormality": 49
+      },
+      "severity_counts": {
+        "mild": 109,
+        "moderate": 131,
+        "none": 51,
+        "severe": 111
+      },
+      "phase_counts": {
+        "climb": 103,
+        "cruise": 98,
+        "descent": 101,
+        "ground_run": 100
+      },
+      "fault_by_phase": {
+        "climb": {
+          "combustion_irregularity": 13,
+          "efficiency_degradation": 13,
+          "normal": 13,
+          "sensor_bias": 13,
+          "sensor_drift": 13,
+          "sensor_dropout": 13,
+          "sensor_stuck": 13,
+          "thermal_abnormality": 12
+        },
+        "cruise": {
+          "combustion_irregularity": 12,
+          "efficiency_degradation": 12,
+          "normal": 13,
+          "sensor_bias": 13,
+          "sensor_drift": 12,
+          "sensor_dropout": 12,
+          "sensor_stuck": 12,
+          "thermal_abnormality": 12
+        },
+        "descent": {
+          "combustion_irregularity": 12,
+          "efficiency_degradation": 12,
+          "normal": 13,
+          "sensor_bias": 13,
+          "sensor_drift": 13,
+          "sensor_dropout": 13,
+          "sensor_stuck": 13,
+          "thermal_abnormality": 12
+        },
+        "ground_run": {
+          "combustion_irregularity": 13,
+          "efficiency_degradation": 12,
+          "normal": 12,
+          "sensor_bias": 12,
+          "sensor_drift": 12,
+          "sensor_dropout": 13,
+          "sensor_stuck": 13,
+          "thermal_abnormality": 13
+        }
+      },
+      "altitude_m_by_fault": {
+        "combustion_irregularity": {
+          "min": 87.0369275754579,
+          "max": 4881.14547053005,
+          "mean": 2525.5508125063343
+        },
+        "efficiency_degradation": {
+          "min": 18.7496313000662,
+          "max": 4896.78503634586,
+          "mean": 2188.4812792888683
+        },
+        "normal": {
+          "min": 34.0081760886174,
+          "max": 4964.49789185663,
+          "mean": 2626.7792605769296
+        },
+        "sensor_bias": {
+          "min": 41.6282840326687,
+          "max": 4795.98159080715,
+          "mean": 2694.556265888455
+        },
+        "sensor_drift": {
+          "min": 155.754637495099,
+          "max": 4952.67608513954,
+          "mean": 2457.1627930697764
+        },
+        "sensor_dropout": {
+          "min": 42.8715737041063,
+          "max": 4950.79337608439,
+          "mean": 2543.955071104284
+        },
+        "sensor_stuck": {
+          "min": 9.07197051153164,
+          "max": 4968.48328215133,
+          "mean": 2555.7704391022085
+        },
+        "thermal_abnormality": {
+          "min": 50.2236863153344,
+          "max": 4958.93687765095,
+          "mean": 2162.672458603869
+        }
+      },
+      "throttle_pct_by_fault": {
+        "combustion_irregularity": {
+          "min": 27.3671212013795,
+          "max": 94.326576660354,
+          "mean": 63.55358920087051
+        },
+        "efficiency_degradation": {
+          "min": 26.2300275311004,
+          "max": 92.1659297364661,
+          "mean": 61.93522051184952
+        },
+        "normal": {
+          "min": 26.6399876184775,
+          "max": 90.6234170992717,
+          "mean": 56.056857470822884
+        },
+        "sensor_bias": {
+          "min": 26.6122040980323,
+          "max": 94.9174217383388,
+          "mean": 61.77096753833085
+        },
+        "sensor_drift": {
+          "min": 26.7380960822021,
+          "max": 94.431389832336,
+          "mean": 61.16534798657406
+        },
+        "sensor_dropout": {
+          "min": 27.3228783044647,
+          "max": 93.9728622140289,
+          "mean": 56.81596176772409
+        },
+        "sensor_stuck": {
+          "min": 25.7816287344937,
+          "max": 94.9543682851541,
+          "mean": 63.08519030325492
+        },
+        "thermal_abnormality": {
+          "min": 25.7850788327265,
+          "max": 92.1294660730318,
+          "mean": 62.18911481628289
+        }
+      }
+    },
+    "scenario_validation": {
+      "scenario_count": 87,
+      "engine_count": 18,
+      "fault_type_counts": {
+        "combustion_irregularity": 11,
+        "efficiency_degradation": 11,
+        "normal": 10,
+        "sensor_bias": 11,
+        "sensor_drift": 11,
+        "sensor_dropout": 11,
+        "sensor_stuck": 11,
+        "thermal_abnormality": 11
+      },
+      "severity_counts": {
+        "mild": 22,
+        "moderate": 29,
+        "none": 10,
+        "severe": 26
+      },
+      "phase_counts": {
+        "climb": 21,
+        "cruise": 23,
+        "descent": 21,
+        "ground_run": 22
+      },
+      "fault_by_phase": {
+        "climb": {
+          "combustion_irregularity": 2,
+          "efficiency_degradation": 2,
+          "normal": 3,
+          "sensor_bias": 3,
+          "sensor_drift": 3,
+          "sensor_dropout": 3,
+          "sensor_stuck": 2,
+          "thermal_abnormality": 3
+        },
+        "cruise": {
+          "combustion_irregularity": 3,
+          "efficiency_degradation": 3,
+          "normal": 2,
+          "sensor_bias": 3,
+          "sensor_drift": 3,
+          "sensor_dropout": 3,
+          "sensor_stuck": 3,
+          "thermal_abnormality": 3
+        },
+        "descent": {
+          "combustion_irregularity": 3,
+          "efficiency_degradation": 3,
+          "normal": 2,
+          "sensor_bias": 2,
+          "sensor_drift": 2,
+          "sensor_dropout": 3,
+          "sensor_stuck": 3,
+          "thermal_abnormality": 3
+        },
+        "ground_run": {
+          "combustion_irregularity": 3,
+          "efficiency_degradation": 3,
+          "normal": 3,
+          "sensor_bias": 3,
+          "sensor_drift": 3,
+          "sensor_dropout": 2,
+          "sensor_stuck": 3,
+          "thermal_abnormality": 2
+        }
+      },
+      "altitude_m_by_fault": {
+        "combustion_irregularity": {
+          "min": 635.679990678317,
+          "max": 4960.68609408015,
+          "mean": 2537.6731515690976
+        },
+        "efficiency_degradation": {
+          "min": 883.107447311434,
+          "max": 4995.60552573119,
+          "mean": 2553.277929342063
+        },
+        "normal": {
+          "min": 337.704372958267,
+          "max": 3142.15169153146,
+          "mean": 1476.1315728009508
+        },
+        "sensor_bias": {
+          "min": 17.2065222593187,
+          "max": 4810.97015763555,
+          "mean": 1980.109384203433
+        },
+        "sensor_drift": {
+          "min": 337.253127310276,
+          "max": 4803.59065064862,
+          "mean": 2374.0769767053125
+        },
+        "sensor_dropout": {
+          "min": 479.910423295072,
+          "max": 4926.98576793041,
+          "mean": 2469.4478793446424
+        },
+        "sensor_stuck": {
+          "min": 359.007879228169,
+          "max": 4040.91597660232,
+          "mean": 2167.65938306568
+        },
+        "thermal_abnormality": {
+          "min": 446.370334949801,
+          "max": 4526.06642121614,
+          "mean": 2731.6170553668
+        }
+      },
+      "throttle_pct_by_fault": {
+        "combustion_irregularity": {
+          "min": 26.9888782577945,
+          "max": 88.5533192915089,
+          "mean": 56.27331303546023
+        },
+        "efficiency_degradation": {
+          "min": 25.4558399891656,
+          "max": 84.7323536206552,
+          "mean": 56.3208309307938
+        },
+        "normal": {
+          "min": 28.5508702013985,
+          "max": 77.5708040225788,
+          "mean": 58.61776124216976
+        },
+        "sensor_bias": {
+          "min": 25.591563934246,
+          "max": 85.2787801335807,
+          "mean": 60.31689182399703
+        },
+        "sensor_drift": {
+          "min": 36.1891291719523,
+          "max": 93.775222531623,
+          "mean": 63.47554207854921
+        },
+        "sensor_dropout": {
+          "min": 37.4545948592822,
+          "max": 88.4456054088504,
+          "mean": 71.01997429425133
+        },
+        "sensor_stuck": {
+          "min": 34.9170977402396,
+          "max": 93.5960158630156,
+          "mean": 52.90198545688083
+        },
+        "thermal_abnormality": {
+          "min": 26.483639283886,
+          "max": 88.1572820583138,
+          "mean": 56.81485338400423
+        }
+      }
+    },
+    "scenario_scenario_test": {
+      "scenario_count": 87,
+      "engine_count": 18,
+      "fault_type_counts": {
+        "combustion_irregularity": 11,
+        "efficiency_degradation": 12,
+        "normal": 11,
+        "sensor_bias": 10,
+        "sensor_drift": 11,
+        "sensor_dropout": 10,
+        "sensor_stuck": 10,
+        "thermal_abnormality": 12
+      },
+      "severity_counts": {
+        "mild": 27,
+        "moderate": 22,
+        "none": 11,
+        "severe": 27
+      },
+      "phase_counts": {
+        "climb": 20,
+        "cruise": 23,
+        "descent": 22,
+        "ground_run": 22
+      },
+      "fault_by_phase": {
+        "climb": {
+          "combustion_irregularity": 3,
+          "efficiency_degradation": 3,
+          "normal": 2,
+          "sensor_bias": 2,
+          "sensor_drift": 2,
+          "sensor_dropout": 2,
+          "sensor_stuck": 3,
+          "thermal_abnormality": 3
+        },
+        "cruise": {
+          "combustion_irregularity": 3,
+          "efficiency_degradation": 3,
+          "normal": 3,
+          "sensor_bias": 2,
+          "sensor_drift": 3,
+          "sensor_dropout": 3,
+          "sensor_stuck": 3,
+          "thermal_abnormality": 3
+        },
+        "descent": {
+          "combustion_irregularity": 3,
+          "efficiency_degradation": 3,
+          "normal": 3,
+          "sensor_bias": 3,
+          "sensor_drift": 3,
+          "sensor_dropout": 2,
+          "sensor_stuck": 2,
+          "thermal_abnormality": 3
+        },
+        "ground_run": {
+          "combustion_irregularity": 2,
+          "efficiency_degradation": 3,
+          "normal": 3,
+          "sensor_bias": 3,
+          "sensor_drift": 3,
+          "sensor_dropout": 3,
+          "sensor_stuck": 2,
+          "thermal_abnormality": 3
+        }
+      },
+      "altitude_m_by_fault": {
+        "combustion_irregularity": {
+          "min": 239.501613757419,
+          "max": 4883.383553437,
+          "mean": 3606.729593370685
+        },
+        "efficiency_degradation": {
+          "min": 356.214236800102,
+          "max": 4829.51457732423,
+          "mean": 3072.276825200594
+        },
+        "normal": {
+          "min": 20.8326175758128,
+          "max": 4849.79051352769,
+          "mean": 2766.68086330635
+        },
+        "sensor_bias": {
+          "min": 1743.8151543926,
+          "max": 4471.17699665981,
+          "mean": 3313.970329600298
+        },
+        "sensor_drift": {
+          "min": 100.308278931591,
+          "max": 4257.9465834104,
+          "mean": 2417.935029037039
+        },
+        "sensor_dropout": {
+          "min": 1177.64969144899,
+          "max": 4694.60326156312,
+          "mean": 2810.211393282074
+        },
+        "sensor_stuck": {
+          "min": 1055.31364487876,
+          "max": 4790.92978754578,
+          "mean": 2496.128446442541
+        },
+        "thermal_abnormality": {
+          "min": 618.056100469545,
+          "max": 4544.17628731805,
+          "mean": 2665.222121226972
+        }
+      },
+      "throttle_pct_by_fault": {
+        "combustion_irregularity": {
+          "min": 26.3891962146416,
+          "max": 91.322365798628,
+          "mean": 49.51932606497039
+        },
+        "efficiency_degradation": {
+          "min": 30.71329318299,
+          "max": 91.5857736454925,
+          "mean": 55.988119967471384
+        },
+        "normal": {
+          "min": 29.8274619096646,
+          "max": 90.6018172390279,
+          "mean": 58.41518717558699
+        },
+        "sensor_bias": {
+          "min": 43.7267711381157,
+          "max": 85.5601538357002,
+          "mean": 57.651369823056164
+        },
+        "sensor_drift": {
+          "min": 39.9193271982437,
+          "max": 94.7037510701189,
+          "mean": 68.4106071199242
+        },
+        "sensor_dropout": {
+          "min": 27.7113905405476,
+          "max": 90.7824824836783,
+          "mean": 67.34082212898866
+        },
+        "sensor_stuck": {
+          "min": 26.083568695955,
+          "max": 84.767803566189,
+          "mean": 62.082181081294586
+        },
+        "thermal_abnormality": {
+          "min": 29.5803177434116,
+          "max": 87.3129299658013,
+          "mean": 60.78026010594388
+        }
+      }
+    },
+    "engine_train": {
+      "scenario_count": 576,
+      "engine_count": 18,
+      "fault_type_counts": {
+        "combustion_irregularity": 72,
+        "efficiency_degradation": 72,
+        "normal": 72,
+        "sensor_bias": 72,
+        "sensor_drift": 72,
+        "sensor_dropout": 72,
+        "sensor_stuck": 72,
+        "thermal_abnormality": 72
+      },
+      "severity_counts": {
+        "mild": 158,
+        "moderate": 182,
+        "none": 72,
+        "severe": 164
+      },
+      "phase_counts": {
+        "climb": 144,
+        "cruise": 144,
+        "descent": 144,
+        "ground_run": 144
+      },
+      "fault_by_phase": {
+        "climb": {
+          "combustion_irregularity": 18,
+          "efficiency_degradation": 18,
+          "normal": 18,
+          "sensor_bias": 18,
+          "sensor_drift": 18,
+          "sensor_dropout": 18,
+          "sensor_stuck": 18,
+          "thermal_abnormality": 18
+        },
+        "cruise": {
+          "combustion_irregularity": 18,
+          "efficiency_degradation": 18,
+          "normal": 18,
+          "sensor_bias": 18,
+          "sensor_drift": 18,
+          "sensor_dropout": 18,
+          "sensor_stuck": 18,
+          "thermal_abnormality": 18
+        },
+        "descent": {
+          "combustion_irregularity": 18,
+          "efficiency_degradation": 18,
+          "normal": 18,
+          "sensor_bias": 18,
+          "sensor_drift": 18,
+          "sensor_dropout": 18,
+          "sensor_stuck": 18,
+          "thermal_abnormality": 18
+        },
+        "ground_run": {
+          "combustion_irregularity": 18,
+          "efficiency_degradation": 18,
+          "normal": 18,
+          "sensor_bias": 18,
+          "sensor_drift": 18,
+          "sensor_dropout": 18,
+          "sensor_stuck": 18,
+          "thermal_abnormality": 18
+        }
+      },
+      "altitude_m_by_fault": {
+        "combustion_irregularity": {
+          "min": 87.0369275754579,
+          "max": 4960.68609408015,
+          "mean": 2692.582928050755
+        },
+        "efficiency_degradation": {
+          "min": 18.7496313000662,
+          "max": 4995.60552573119,
+          "mean": 2391.5133584767273
+        },
+        "normal": {
+          "min": 20.8326175758128,
+          "max": 4964.49789185663,
+          "mean": 2488.3409376917057
+        },
+        "sensor_bias": {
+          "min": 17.2065222593187,
+          "max": 4810.97015763555,
+          "mean": 2671.434390035444
+        },
+        "sensor_drift": {
+          "min": 100.308278931591,
+          "max": 4952.67608513954,
+          "mean": 2438.4759960646484
+        },
+        "sensor_dropout": {
+          "min": 42.8715737041063,
+          "max": 4950.79337608439,
+          "mean": 2569.5520726656982
+        },
+        "sensor_stuck": {
+          "min": 9.07197051153164,
+          "max": 4968.48328215133,
+          "mean": 2488.1920843383405
+        },
+        "thermal_abnormality": {
+          "min": 50.2236863153344,
+          "max": 4958.93687765095,
+          "mean": 2333.352826879834
+        }
+      },
+      "throttle_pct_by_fault": {
+        "combustion_irregularity": {
+          "min": 26.3891962146416,
+          "max": 94.326576660354,
+          "mean": 60.2972012520592
+        },
+        "efficiency_degradation": {
+          "min": 25.4558399891656,
+          "max": 92.1659297364661,
+          "mean": 60.086283124014095
+        },
+        "normal": {
+          "min": 26.6399876184775,
+          "max": 90.6234170992717,
+          "mean": 56.7728389217378
+        },
+        "sensor_bias": {
+          "min": 25.591563934246,
+          "max": 94.9174217383388,
+          "mean": 60.97665073263059
+        },
+        "sensor_drift": {
+          "min": 26.7380960822021,
+          "max": 94.7037510701189,
+          "mean": 62.62520889599875
+        },
+        "sensor_dropout": {
+          "min": 27.3228783044647,
+          "max": 93.9728622140289,
+          "mean": 60.44780539834138
+        },
+        "sensor_stuck": {
+          "min": 25.7816287344937,
+          "max": 94.9543682851541,
+          "mean": 61.390116059786614
+        },
+        "thermal_abnormality": {
+          "min": 25.7850788327265,
+          "max": 92.1294660730318,
+          "mean": 61.133237979072696
+        }
+      }
+    },
+    "engine_validation": {
+      "scenario_count": 192,
+      "engine_count": 6,
+      "fault_type_counts": {
+        "combustion_irregularity": 24,
+        "efficiency_degradation": 24,
+        "normal": 24,
+        "sensor_bias": 24,
+        "sensor_drift": 24,
+        "sensor_dropout": 24,
+        "sensor_stuck": 24,
+        "thermal_abnormality": 24
+      },
+      "severity_counts": {
+        "mild": 52,
+        "moderate": 66,
+        "none": 24,
+        "severe": 50
+      },
+      "phase_counts": {
+        "climb": 48,
+        "cruise": 48,
+        "descent": 48,
+        "ground_run": 48
+      },
+      "fault_by_phase": {
+        "climb": {
+          "combustion_irregularity": 6,
+          "efficiency_degradation": 6,
+          "normal": 6,
+          "sensor_bias": 6,
+          "sensor_drift": 6,
+          "sensor_dropout": 6,
+          "sensor_stuck": 6,
+          "thermal_abnormality": 6
+        },
+        "cruise": {
+          "combustion_irregularity": 6,
+          "efficiency_degradation": 6,
+          "normal": 6,
+          "sensor_bias": 6,
+          "sensor_drift": 6,
+          "sensor_dropout": 6,
+          "sensor_stuck": 6,
+          "thermal_abnormality": 6
+        },
+        "descent": {
+          "combustion_irregularity": 6,
+          "efficiency_degradation": 6,
+          "normal": 6,
+          "sensor_bias": 6,
+          "sensor_drift": 6,
+          "sensor_dropout": 6,
+          "sensor_stuck": 6,
+          "thermal_abnormality": 6
+        },
+        "ground_run": {
+          "combustion_irregularity": 6,
+          "efficiency_degradation": 6,
+          "normal": 6,
+          "sensor_bias": 6,
+          "sensor_drift": 6,
+          "sensor_dropout": 6,
+          "sensor_stuck": 6,
+          "thermal_abnormality": 6
+        }
+      },
+      "altitude_m_by_fault": {
+        "combustion_irregularity": {
+          "min": 52.3511145733768,
+          "max": 4996.55875044353,
+          "mean": 2346.7434172594876
+        },
+        "efficiency_degradation": {
+          "min": 425.473990862454,
+          "max": 4715.39566551904,
+          "mean": 2716.2104904893536
+        },
+        "normal": {
+          "min": 18.1786184307448,
+          "max": 4375.75107338488,
+          "mean": 2427.143389742171
+        },
+        "sensor_bias": {
+          "min": 130.573270890399,
+          "max": 4866.12922063367,
+          "mean": 2150.9023725330367
+        },
+        "sensor_drift": {
+          "min": 119.019564759026,
+          "max": 4839.7820320471,
+          "mean": 2534.389461194058
+        },
+        "sensor_dropout": {
+          "min": 301.19318526215,
+          "max": 4692.60974267305,
+          "mean": 2345.2649476178553
+        },
+        "sensor_stuck": {
+          "min": 1015.14105234684,
+          "max": 4505.36237462544,
+          "mean": 2638.3937381096243
+        },
+        "thermal_abnormality": {
+          "min": 79.8654245703384,
+          "max": 4820.19310548875,
+          "mean": 2594.4708661018426
+        }
+      },
+      "throttle_pct_by_fault": {
+        "combustion_irregularity": {
+          "min": 26.4142668558412,
+          "max": 92.7540361212127,
+          "mean": 67.10630858510287
+        },
+        "efficiency_degradation": {
+          "min": 34.7171802692132,
+          "max": 90.9849845078218,
+          "mean": 63.82646957099737
+        },
+        "normal": {
+          "min": 25.5595246563393,
+          "max": 91.8745510533232,
+          "mean": 59.998493178737675
+        },
+        "sensor_bias": {
+          "min": 30.0376946972597,
+          "max": 92.6722754403,
+          "mean": 65.64817750062092
+        },
+        "sensor_drift": {
+          "min": 26.8840359669857,
+          "max": 90.0827697960432,
+          "mean": 63.3126241441781
+        },
+        "sensor_dropout": {
+          "min": 26.2760761214805,
+          "max": 85.667782653298,
+          "mean": 59.72811436424865
+        },
+        "sensor_stuck": {
+          "min": 25.8838694753403,
+          "max": 90.768706404393,
+          "mean": 58.527477945500515
+        },
+        "thermal_abnormality": {
+          "min": 30.2998620798629,
+          "max": 93.874763357498,
+          "mean": 64.04294777981454
+        }
+      }
+    },
+    "engine_test": {
+      "scenario_count": 192,
+      "engine_count": 6,
+      "fault_type_counts": {
+        "combustion_irregularity": 24,
+        "efficiency_degradation": 24,
+        "normal": 24,
+        "sensor_bias": 24,
+        "sensor_drift": 24,
+        "sensor_dropout": 24,
+        "sensor_stuck": 24,
+        "thermal_abnormality": 24
+      },
+      "severity_counts": {
+        "mild": 64,
+        "moderate": 53,
+        "none": 24,
+        "severe": 51
+      },
+      "phase_counts": {
+        "climb": 48,
+        "cruise": 48,
+        "descent": 48,
+        "ground_run": 48
+      },
+      "fault_by_phase": {
+        "climb": {
+          "combustion_irregularity": 6,
+          "efficiency_degradation": 6,
+          "normal": 6,
+          "sensor_bias": 6,
+          "sensor_drift": 6,
+          "sensor_dropout": 6,
+          "sensor_stuck": 6,
+          "thermal_abnormality": 6
+        },
+        "cruise": {
+          "combustion_irregularity": 6,
+          "efficiency_degradation": 6,
+          "normal": 6,
+          "sensor_bias": 6,
+          "sensor_drift": 6,
+          "sensor_dropout": 6,
+          "sensor_stuck": 6,
+          "thermal_abnormality": 6
+        },
+        "descent": {
+          "combustion_irregularity": 6,
+          "efficiency_degradation": 6,
+          "normal": 6,
+          "sensor_bias": 6,
+          "sensor_drift": 6,
+          "sensor_dropout": 6,
+          "sensor_stuck": 6,
+          "thermal_abnormality": 6
+        },
+        "ground_run": {
+          "combustion_irregularity": 6,
+          "efficiency_degradation": 6,
+          "normal": 6,
+          "sensor_bias": 6,
+          "sensor_drift": 6,
+          "sensor_dropout": 6,
+          "sensor_stuck": 6,
+          "thermal_abnormality": 6
+        }
+      },
+      "altitude_m_by_fault": {
+        "combustion_irregularity": {
+          "min": 195.018175074051,
+          "max": 4862.90707211626,
+          "mean": 2986.746456608269
+        },
+        "efficiency_degradation": {
+          "min": 7.69287493999959,
+          "max": 4900.599198165,
+          "mean": 2231.4979717645815
+        },
+        "normal": {
+          "min": 272.008480936577,
+          "max": 4746.78472438189,
+          "mean": 2832.8665370716485
+        },
+        "sensor_bias": {
+          "min": 98.9173319728615,
+          "max": 4805.25870087867,
+          "mean": 2567.4931096468304
+        },
+        "sensor_drift": {
+          "min": 43.1131722004424,
+          "max": 4901.27120939332,
+          "mean": 2035.1742284404254
+        },
+        "sensor_dropout": {
+          "min": 287.721098805508,
+          "max": 4819.62218025651,
+          "mean": 2622.209821810219
+        },
+        "sensor_stuck": {
+          "min": 9.1617461453386,
+          "max": 4939.55471574433,
+          "mean": 2249.9622301412196
+        },
+        "thermal_abnormality": {
+          "min": 114.689310715997,
+          "max": 4786.99153690394,
+          "mean": 2478.607011098312
+        }
+      },
+      "throttle_pct_by_fault": {
+        "combustion_irregularity": {
+          "min": 25.2676841595257,
+          "max": 78.3339193161931,
+          "mean": 51.01661120952738
+        },
+        "efficiency_degradation": {
+          "min": 26.5577550807256,
+          "max": 92.3839489006765,
+          "mean": 60.46370425547689
+        },
+        "normal": {
+          "min": 27.0934877739004,
+          "max": 93.0330923120829,
+          "mean": 59.20576761341629
+        },
+        "sensor_bias": {
+          "min": 29.5271701137825,
+          "max": 93.4176070303773,
+          "mean": 62.98641462296243
+        },
+        "sensor_drift": {
+          "min": 26.8966936060863,
+          "max": 92.6492488940402,
+          "mean": 58.878125381881226
+        },
+        "sensor_dropout": {
+          "min": 30.1754534320781,
+          "max": 89.2937141173031,
+          "mean": 63.18791295057219
+        },
+        "sensor_stuck": {
+          "min": 27.3152243016932,
+          "max": 90.2415931824722,
+          "mean": 58.80126514609051
+        },
+        "thermal_abnormality": {
+          "min": 28.7821771780509,
+          "max": 94.8506372231405,
+          "mean": 57.28736923299821
+        }
+      }
+    }
+  },
+  "reproducibility_file_checks": {
+    "data/raw/engine_twin_v0.2_raw.csv": "PASS",
+    "metadata/scenario_manifest.csv": "PASS",
+    "metadata/engine_manifest.csv": "PASS",
+    "metadata/dataset_card.json": "PASS",
+    "splits/engine_test_engines.csv": "PASS",
+    "splits/engine_test_scenarios.csv": "PASS",
+    "splits/engine_train_engines.csv": "PASS",
+    "splits/engine_train_scenarios.csv": "PASS",
+    "splits/engine_validation_engines.csv": "PASS",
+    "splits/engine_validation_scenarios.csv": "PASS",
+    "splits/scenario_test_scenarios.csv": "PASS",
+    "splits/scenario_train_scenarios.csv": "PASS",
+    "splits/scenario_validation_scenarios.csv": "PASS"
+  },
+  "checks": [
+    {
+      "check": "raw_manifest_dimensions",
+      "status": "PASS",
+      "severity_if_failed": "High",
+      "details": "raw_rows=115200, expected_rows=115200, scenarios=960"
+    },
+    {
+      "check": "scenario_duration_and_time",
+      "status": "PASS",
+      "severity_if_failed": "High",
+      "details": "Every scenario has a unique contiguous 0..duration-1 time index."
+    },
+    {
+      "check": "fault_onset_active_semantics",
+      "status": "PASS",
+      "severity_if_failed": "High",
+      "details": "active mismatches=0; normal_onset_null=True"
+    },
+    {
+      "check": "fault_family_and_sensor_target_semantics",
+      "status": "PASS",
+      "severity_if_failed": "High",
+      "details": "Sensor target is present for sensor-integrity faults and absent for normal/physical faults."
+    },
+    {
+      "check": "intentional_sensor_missingness",
+      "status": "PASS",
+      "severity_if_failed": "High",
+      "details": "missing sensor rows=2209; every missing row is explicitly marked and occurs on the active targeted sensor-dropout channel."
+    },
+    {
+      "check": "rul_unpopulated_and_health_target_omitted",
+      "status": "PASS",
+      "severity_if_failed": "High",
+      "details": "RUL is null for every row; no unsupported health-index target is included."
+    },
+    {
+      "check": "scenario_heldout_splits_disjoint",
+      "status": "PASS",
+      "severity_if_failed": "Critical",
+      "details": "scenario counts={'scenario_train': 402, 'scenario_validation': 87, 'scenario_test': 87}; pairwise intersections are empty."
+    },
+    {
+      "check": "engine_heldout_splits_disjoint",
+      "status": "PASS",
+      "severity_if_failed": "Critical",
+      "details": "engine counts={'train': 18, 'validation': 6, 'test': 6}; pairwise intersections are empty."
+    },
+    {
+      "check": "fault_and_phase_coverage",
+      "status": "PASS",
+      "severity_if_failed": "High",
+      "details": "All 8 fault classes and all phases are represented in every scenario- and engine-held-out split; minimum per fault/phase counts={'scenario_split_train': {'combustion_irregularity': 12, 'efficiency_degradation': 12, 'normal': 12, 'sensor_bias': 12, 'sensor_drift': 12, 'sensor_dropout': 12, 'sensor_stuck': 12, 'thermal_abnormality': 12}, 'scenario_split_validation': {'combustion_irregularity': 2, 'efficiency_degradation': 2, 'normal': 2, 'sensor_bias': 2, 'sensor_drift': 2, 'sensor_dropout': 2, 'sensor_stuck': 2, 'thermal_abnormality': 2}, 'scenario_split_scenario_test': {'combustion_irregularity': 2, 'efficiency_degradation': 3, 'normal': 2, 'sensor_bias': 2, 'sensor_drift': 2, 'sensor_dropout': 2, 'sensor_stuck': 2, 'thermal_abnormality': 3}, 'engine_split_train': {'combustion_irregularity': 18, 'efficiency_degradation': 18, 'normal': 18, 'sensor_bias': 18, 'sensor_drift': 18, 'sensor_dropout': 18, 'sensor_stuck': 18, 'thermal_abnormality': 18}, 'engine_split_validation': {'combustion_irregularity': 6, 'efficiency_degradation': 6, 'normal': 6, 'sensor_bias': 6, 'sensor_drift': 6, 'sensor_dropout': 6, 'sensor_stuck': 6, 'thermal_abnormality': 6}, 'engine_split_test': {'combustion_irregularity': 6, 'efficiency_degradation': 6, 'normal': 6, 'sensor_bias': 6, 'sensor_drift': 6, 'sensor_dropout': 6, 'sensor_stuck': 6, 'thermal_abnormality': 6}}."
+    },
+    {
+      "check": "scenario_identifier_opaque_and_feature_excluded",
+      "status": "PASS",
+      "severity_if_failed": "Critical",
+      "details": "Scenario/engine IDs use independent random opaque tokens; identifiers and labels are absent from the feature matrix."
+    },
+    {
+      "check": "ideal_gas_density_consistency",
+      "status": "PASS",
+      "severity_if_failed": "High",
+      "details": "air_density = ambient_pressure / (R_air * temperature_kelvin); max absolute error=1.11e-14 kg/m^3."
+    },
+    {
+      "check": "latent_power_torque_rpm_identity",
+      "status": "PASS",
+      "severity_if_failed": "High",
+      "details": "state_power_kw * 1000 = state_torque_nm * state_rpm * 2*pi/60; maximum absolute error=9.82e-11 W. No such identity is claimed for noisy/faulted sensor measurements."
+    },
+    {
+      "check": "oil_pressure_unit_and_equation",
+      "status": "PASS",
+      "severity_if_failed": "High",
+      "details": "Latent and observed oil-pressure channels are explicitly in kPa; state range=228.554..269.212 kPa, entirely generated by the documented generic surrogate (not a hardware range)."
+    },
+    {
+      "check": "sensor_faults_separate_from_physical_state",
+      "status": "PASS",
+      "severity_if_failed": "High",
+      "details": "For all sensor-fault rows, latent physical state equals the matched healthy reference; injected effects are confined to the targeted observed measurement."
+    },
+    {
+      "check": "feature_pipeline_excludes_ids_targets_and_aligns_lineage",
+      "status": "PASS",
+      "severity_if_failed": "Critical",
+      "details": "features=(115200, 39); labels=(115200, 9); lineage=(115200, 8); model matrix is numeric, contains channel missingness indicators, has no ID/label fields, and maps rows to raw data."
+    },
+    {
+      "check": "processed_residuals_missingness_and_raw_lineage",
+      "status": "PASS",
+      "severity_if_failed": "High",
+      "details": "Every processed residual equals observed measurement minus the same-row healthy reference; missingness flags match raw NaNs."
+    },
+    {
+      "check": "dataset_provenance_hashes",
+      "status": "PASS",
+      "severity_if_failed": "High",
+      "details": "Dataset card hashes match the configured raw data, manifests, split lists, configuration, and generator source."
+    },
+    {
+      "check": "same_seed_regeneration",
+      "status": "PASS",
+      "severity_if_failed": "Critical",
+      "details": "Byte-identical regeneration results: {'data/raw/engine_twin_v0.2_raw.csv': 'PASS', 'metadata/scenario_manifest.csv': 'PASS', 'metadata/engine_manifest.csv': 'PASS', 'metadata/dataset_card.json': 'PASS', 'splits/engine_test_engines.csv': 'PASS', 'splits/engine_test_scenarios.csv': 'PASS', 'splits/engine_train_engines.csv': 'PASS', 'splits/engine_train_scenarios.csv': 'PASS', 'splits/engine_validation_engines.csv': 'PASS', 'splits/engine_validation_scenarios.csv': 'PASS', 'splits/scenario_test_scenarios.csv': 'PASS', 'splits/scenario_train_scenarios.csv': 'PASS', 'splits/scenario_validation_scenarios.csv': 'PASS'}"
+    }
+  ],
+  "failed_checks": [],
+  "limitations": [
+    "All physical relationships are illustrative generic assumptions; no engine specification or validation data is available.",
+    "Numerical consistency tests establish code consistency with declared equations only, not real-engine physical validity.",
+    "Oil pressure is expressed in kPa by construction; no real-engine pressure range is asserted.",
+    "No health-index or RUL target is defined.",
+    "Synthetic classification performance is not evidence of real-engine accuracy."
+  ]
+}

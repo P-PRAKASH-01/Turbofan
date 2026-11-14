@@ -1,0 +1,5 @@
+# Direct dependencies verified in Python 3.11.0; supported Python series: 3.11.
+numpy==2.3.3
+pandas==3.0.1
+scikit-learn==1.7.2
+joblib==1.5.2

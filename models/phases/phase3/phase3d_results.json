@@ -1,0 +1,5111 @@
+{
+  "objective": "Measure repeatability of adding temporal predictors over the 29-feature Phase 3A baseline.",
+  "scope": "Synthetic assumption-driven simulator only; descriptive robustness, not significance or real-engine accuracy.",
+  "seeds": [
+    314159,
+    8675309,
+    20261011,
+    1357911,
+    42424243
+  ],
+  "replication_unit": "independently generated dataset seed",
+  "protocols": [
+    "scenario_heldout",
+    "engine_heldout"
+  ],
+  "experiments": [
+    "A_phase3a_29_features",
+    "B_temporal_69_features"
+  ],
+  "seed_results": {
+    "314159": {
+      "seed": 314159,
+      "source_results_file": "Engine/v0.2/reports/diagnostics_v0.2/phase_3b/temporal_ablation_results.json",
+      "input_sha256": {
+        "data/raw/engine_twin_v0.2_raw.csv": "4e16d69b1e1efb4a4d5fc0715a43201e4d4b24dc357f9e76655cb13c860ba372",
+        "data/processed/features.csv": "08e82ae41eaa007a04190639a0df03fac17dbc046bae9b835f480dc519c9201f",
+        "data/processed/labels.csv": "740dcaffc351a5480d5f0ae7bbd4dd9a4fd4f8126219855ae0bb4db6b8d6ddf7",
+        "data/processed/feature_lineage.csv": "161dd0e0c1ecf5767332ec5da796ee096c35069fe6b4bc550bcdcb5a956a7f82",
+        "reports/diagnostics_v0.2/diagnostic_results.json": "784fd7e810b76977624be7490c6db4ee0a536b04f350f55dd7014d5aba9aa421",
+        "src/train_baselines.py": "c969f2c1607512c84d5f6afe8c0e9616fc8e0596a7fe716c64e9e85453b5cd50",
+        "src/generate_dataset.py": "c30a247efcd462efa5f9e4b7efe8d470f24fe8d8ab33852b5ea7a1fc65ffde9d",
+        "config/dataset_config.json": "e5eac80862e330a9c49eda2199b6aa948eb2ddf0069ea4dc04df9d3e4475c0cb",
+        "splits/engine_test_engines.csv": "59efd61d9218b2bbd92d0902a0b50380816794ccca9aee40b846c2149931291a",
+        "splits/engine_test_scenarios.csv": "9d6932917e56723af718ed38b3f3df03c9a35dd7c5ee1fb3065d1d7a5fc0de9d",
+        "splits/engine_train_engines.csv": "968b006bd29fb7eb0150c96ad4997f213ee83ab4067485fd36a56e925c2785a2",
+        "splits/engine_train_scenarios.csv": "731c7c1354ef5c31d33e967b9b4fcca7d04a37b20572279a5769d425691d87b5",
+        "splits/engine_validation_engines.csv": "df4385015b7c29846ee2060bfca8de039ac20b577d00fb62edf5ef3808fff1ad",
+        "splits/engine_validation_scenarios.csv": "8cfe80ff8a649fa9002dd0dc4783405511af4862de63c1d70cebdfaaf0814f5e",
+        "splits/scenario_test_scenarios.csv": "e3a36a582197ac6790205269ce47dffb557afa1ff273647bff0c0366668c2d50",
+        "splits/scenario_train_scenarios.csv": "0da697d7b45405bc8f083962b6dd078faf156ec5fabd7d93373eaaa71dfcbf55",
+        "splits/scenario_validation_scenarios.csv": "972a352d4bfbb9f1db22a36e1fbee1cabfb8610d5dea366ad9c1001aa6bcad3d"
+      },
+      "experiments": {
+        "scenario_heldout__A_phase3a_29_features": {
+          "selected_model": "random_forest",
+          "test": {
+            "accuracy": 0.1846743295019157,
+            "macro_f1": 0.17612185419311333,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.3888888888888889,
+                "recall": 0.4772727272727273,
+                "f1": 0.42857142857142855,
+                "support": 1320,
+                "false_negatives": 690,
+                "largest_confusion_class": "sensor_dropout",
+                "largest_confusion_count": 194
+              },
+              "efficiency_degradation": {
+                "precision": 0.09318637274549098,
+                "recall": 0.06458333333333334,
+                "f1": 0.07629204265791632,
+                "support": 1440,
+                "false_negatives": 1347,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 285
+              },
+              "normal": {
+                "precision": 0.12651933701657458,
+                "recall": 0.1734848484848485,
+                "f1": 0.1463258785942492,
+                "support": 1320,
+                "false_negatives": 1091,
+                "largest_confusion_class": "sensor_bias",
+                "largest_confusion_count": 286
+              },
+              "sensor_bias": {
+                "precision": 0.17289313640312773,
+                "recall": 0.16583333333333333,
+                "f1": 0.16928966397277753,
+                "support": 1200,
+                "false_negatives": 1001,
+                "largest_confusion_class": "sensor_dropout",
+                "largest_confusion_count": 254
+              },
+              "sensor_drift": {
+                "precision": 0.07877664504170528,
+                "recall": 0.06439393939393939,
+                "f1": 0.07086285952480201,
+                "support": 1320,
+                "false_negatives": 1235,
+                "largest_confusion_class": "sensor_stuck",
+                "largest_confusion_count": 361
+              },
+              "sensor_dropout": {
+                "precision": 0.1596480201131364,
+                "recall": 0.21166666666666667,
+                "f1": 0.18201361519168757,
+                "support": 1200,
+                "false_negatives": 946,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 226
+              },
+              "sensor_stuck": {
+                "precision": 0.09389671361502347,
+                "recall": 0.06666666666666667,
+                "f1": 0.07797270955165692,
+                "support": 1200,
+                "false_negatives": 1120,
+                "largest_confusion_class": "sensor_drift",
+                "largest_confusion_count": 288
+              },
+              "thermal_abnormality": {
+                "precision": 0.26736370425690814,
+                "recall": 0.24861111111111112,
+                "f1": 0.25764663548038863,
+                "support": 1440,
+                "false_negatives": 1082,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 347
+              }
+            },
+            "selected_model": "random_forest",
+            "validation_macro_f1_by_candidate": {
+              "majority_dummy": 0.02577319587628866,
+              "random_forest": 0.17207918803126632
+            },
+            "test_rows": 10440,
+            "test_scenarios": 87,
+            "test_engines": 18,
+            "confusion_matrix": [
+              [
+                630,
+                48,
+                75,
+                103,
+                56,
+                194,
+                52,
+                162
+              ],
+              [
+                269,
+                93,
+                285,
+                38,
+                238,
+                178,
+                178,
+                161
+              ],
+              [
+                133,
+                165,
+                229,
+                286,
+                127,
+                149,
+                27,
+                204
+              ],
+              [
+                156,
+                119,
+                196,
+                199,
+                120,
+                254,
+                7,
+                149
+              ],
+              [
+                192,
+                51,
+                177,
+                237,
+                85,
+                216,
+                361,
+                1
+              ],
+              [
+                62,
+                224,
+                226,
+                88,
+                100,
+                254,
+                93,
+                153
+              ],
+              [
+                1,
+                141,
+                275,
+                74,
+                288,
+                190,
+                80,
+                151
+              ],
+              [
+                177,
+                157,
+                347,
+                126,
+                65,
+                156,
+                54,
+                358
+              ]
+            ],
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "tp": 2646,
+              "fp": 2027,
+              "fn": 2274,
+              "tn": 3493,
+              "precision": 0.566231542906056,
+              "recall": 0.5378048780487805,
+              "f1": 0.5516522464296884
+            }
+          }
+        },
+        "scenario_heldout__B_temporal_69_features": {
+          "selected_model": "random_forest",
+          "test": {
+            "accuracy": 0.31992337164750956,
+            "macro_f1": 0.32793995717882307,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.3954022988505747,
+                "recall": 0.5212121212121212,
+                "f1": 0.4496732026143791,
+                "support": 1320,
+                "false_negatives": 632,
+                "largest_confusion_class": "thermal_abnormality",
+                "largest_confusion_count": 185
+              },
+              "efficiency_degradation": {
+                "precision": 0.14762301918265222,
+                "recall": 0.12291666666666666,
+                "f1": 0.1341417203486169,
+                "support": 1440,
+                "false_negatives": 1263,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 438
+              },
+              "normal": {
+                "precision": 0.11642335766423358,
+                "recall": 0.24166666666666667,
+                "f1": 0.15714285714285714,
+                "support": 1320,
+                "false_negatives": 1001,
+                "largest_confusion_class": "sensor_bias",
+                "largest_confusion_count": 346
+              },
+              "sensor_bias": {
+                "precision": 0.16733466933867736,
+                "recall": 0.13916666666666666,
+                "f1": 0.15195632393084624,
+                "support": 1200,
+                "false_negatives": 1033,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 537
+              },
+              "sensor_drift": {
+                "precision": 0.16149068322981366,
+                "recall": 0.05909090909090909,
+                "f1": 0.08652246256239601,
+                "support": 1320,
+                "false_negatives": 1242,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 642
+              },
+              "sensor_dropout": {
+                "precision": 0.5197908887229276,
+                "recall": 0.58,
+                "f1": 0.5482473414730209,
+                "support": 1200,
+                "false_negatives": 504,
+                "largest_confusion_class": "efficiency_degradation",
+                "largest_confusion_count": 208
+              },
+              "sensor_stuck": {
+                "precision": 0.8608490566037735,
+                "recall": 0.6083333333333333,
+                "f1": 0.712890625,
+                "support": 1200,
+                "false_negatives": 470,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 179
+              },
+              "thermal_abnormality": {
+                "precision": 0.44373284537968893,
+                "recall": 0.3368055555555556,
+                "f1": 0.3829451243584682,
+                "support": 1440,
+                "false_negatives": 955,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 355
+              }
+            },
+            "selected_model": "random_forest",
+            "validation_macro_f1_by_candidate": {
+              "majority_dummy": 0.02577319587628866,
+              "random_forest": 0.2589064277728319
+            },
+            "test_rows": 10440,
+            "test_scenarios": 87,
+            "test_engines": 18,
+            "confusion_matrix": [
+              [
+                688,
+                92,
+                116,
+                68,
+                3,
+                157,
+                11,
+                185
+              ],
+              [
+                368,
+                177,
+                438,
+                84,
+                61,
+                143,
+                92,
+                77
+              ],
+              [
+                133,
+                116,
+                319,
+                346,
+                135,
+                103,
+                1,
+                167
+              ],
+              [
+                171,
+                104,
+                537,
+                167,
+                38,
+                116,
+                0,
+                67
+              ],
+              [
+                240,
+                141,
+                642,
+                189,
+                78,
+                16,
+                8,
+                6
+              ],
+              [
+                58,
+                208,
+                154,
+                20,
+                8,
+                696,
+                4,
+                52
+              ],
+              [
+                5,
+                68,
+                179,
+                27,
+                79,
+                58,
+                730,
+                54
+              ],
+              [
+                77,
+                293,
+                355,
+                97,
+                81,
+                50,
+                2,
+                485
+              ]
+            ],
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "tp": 2234,
+              "fp": 1434,
+              "fn": 2686,
+              "tn": 4086,
+              "precision": 0.6090512540894221,
+              "recall": 0.4540650406504065,
+              "f1": 0.52026082906381
+            }
+          }
+        },
+        "engine_heldout__A_phase3a_29_features": {
+          "selected_model": "random_forest",
+          "test": {
+            "accuracy": 0.23880208333333333,
+            "macro_f1": 0.23902982263325617,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.47557529269277354,
+                "recall": 0.40902777777777777,
+                "f1": 0.4397983946238566,
+                "support": 2880,
+                "false_negatives": 1702,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 580
+              },
+              "efficiency_degradation": {
+                "precision": 0.21789997075168177,
+                "recall": 0.2586805555555556,
+                "f1": 0.2365454834100651,
+                "support": 2880,
+                "false_negatives": 2135,
+                "largest_confusion_class": "sensor_stuck",
+                "largest_confusion_count": 654
+              },
+              "normal": {
+                "precision": 0.20454545454545456,
+                "recall": 0.284375,
+                "f1": 0.2379430563625799,
+                "support": 2880,
+                "false_negatives": 2061,
+                "largest_confusion_class": "sensor_stuck",
+                "largest_confusion_count": 504
+              },
+              "sensor_bias": {
+                "precision": 0.1466346153846154,
+                "recall": 0.12708333333333333,
+                "f1": 0.13616071428571427,
+                "support": 2880,
+                "false_negatives": 2514,
+                "largest_confusion_class": "sensor_dropout",
+                "largest_confusion_count": 580
+              },
+              "sensor_drift": {
+                "precision": 0.18624497991967873,
+                "recall": 0.12881944444444443,
+                "f1": 0.15229885057471265,
+                "support": 2880,
+                "false_negatives": 2509,
+                "largest_confusion_class": "sensor_bias",
+                "largest_confusion_count": 600
+              },
+              "sensor_dropout": {
+                "precision": 0.16666666666666666,
+                "recall": 0.1892361111111111,
+                "f1": 0.1772357723577236,
+                "support": 2880,
+                "false_negatives": 2335,
+                "largest_confusion_class": "efficiency_degradation",
+                "largest_confusion_count": 741
+              },
+              "sensor_stuck": {
+                "precision": 0.24198427102238354,
+                "recall": 0.2777777777777778,
+                "f1": 0.25864856126737795,
+                "support": 2880,
+                "false_negatives": 2080,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 514
+              },
+              "thermal_abnormality": {
+                "precision": 0.3265895953757225,
+                "recall": 0.23541666666666666,
+                "f1": 0.2736077481840194,
+                "support": 2880,
+                "false_negatives": 2202,
+                "largest_confusion_class": "sensor_bias",
+                "largest_confusion_count": 419
+              }
+            },
+            "selected_model": "random_forest",
+            "validation_macro_f1_by_candidate": {
+              "majority_dummy": 0.027777777777777776,
+              "random_forest": 0.19999614100267732
+            },
+            "test_rows": 23040,
+            "test_scenarios": 192,
+            "test_engines": 6,
+            "confusion_matrix": [
+              [
+                1178,
+                92,
+                580,
+                320,
+                72,
+                209,
+                111,
+                318
+              ],
+              [
+                135,
+                745,
+                573,
+                249,
+                167,
+                169,
+                654,
+                188
+              ],
+              [
+                327,
+                431,
+                819,
+                231,
+                25,
+                414,
+                504,
+                129
+              ],
+              [
+                380,
+                269,
+                374,
+                366,
+                302,
+                580,
+                356,
+                253
+              ],
+              [
+                246,
+                421,
+                259,
+                600,
+                371,
+                572,
+                190,
+                221
+              ],
+              [
+                25,
+                741,
+                471,
+                151,
+                380,
+                545,
+                451,
+                116
+              ],
+              [
+                99,
+                323,
+                514,
+                160,
+                375,
+                436,
+                800,
+                173
+              ],
+              [
+                87,
+                397,
+                414,
+                419,
+                300,
+                345,
+                240,
+                678
+              ]
+            ],
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "tp": 6635,
+              "fp": 4429,
+              "fn": 4885,
+              "tn": 7091,
+              "precision": 0.5996926970354303,
+              "recall": 0.5759548611111112,
+              "f1": 0.5875841303577755
+            }
+          }
+        },
+        "engine_heldout__B_temporal_69_features": {
+          "selected_model": "random_forest",
+          "test": {
+            "accuracy": 0.31197916666666664,
+            "macro_f1": 0.32537798306075427,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.613431151241535,
+                "recall": 0.37743055555555555,
+                "f1": 0.46732588134135855,
+                "support": 2880,
+                "false_negatives": 1793,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 1252
+              },
+              "efficiency_degradation": {
+                "precision": 0.1415574963609898,
+                "recall": 0.13506944444444444,
+                "f1": 0.13823738450604123,
+                "support": 2880,
+                "false_negatives": 2491,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 1837
+              },
+              "normal": {
+                "precision": 0.15114802149487055,
+                "recall": 0.5371527777777778,
+                "f1": 0.2359130766298132,
+                "support": 2880,
+                "false_negatives": 1333,
+                "largest_confusion_class": "efficiency_degradation",
+                "largest_confusion_count": 573
+              },
+              "sensor_bias": {
+                "precision": 0.11609907120743033,
+                "recall": 0.052083333333333336,
+                "f1": 0.07190795781399809,
+                "support": 2880,
+                "false_negatives": 2730,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 1525
+              },
+              "sensor_drift": {
+                "precision": 0.24193548387096775,
+                "recall": 0.11458333333333333,
+                "f1": 0.15551366635249764,
+                "support": 2880,
+                "false_negatives": 2550,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 1133
+              },
+              "sensor_dropout": {
+                "precision": 0.6550618415025194,
+                "recall": 0.4965277777777778,
+                "f1": 0.5648824807426427,
+                "support": 2880,
+                "false_negatives": 1450,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 774
+              },
+              "sensor_stuck": {
+                "precision": 0.9527212754260582,
+                "recall": 0.6017361111111111,
+                "f1": 0.7376037454777612,
+                "support": 2880,
+                "false_negatives": 1147,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 689
+              },
+              "thermal_abnormality": {
+                "precision": 0.3208358942839582,
+                "recall": 0.18125,
+                "f1": 0.23163967162192145,
+                "support": 2880,
+                "false_negatives": 2358,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 1478
+              }
+            },
+            "selected_model": "random_forest",
+            "validation_macro_f1_by_candidate": {
+              "majority_dummy": 0.027777777777777776,
+              "random_forest": 0.35413205103508416
+            },
+            "test_rows": 23040,
+            "test_scenarios": 192,
+            "test_engines": 6,
+            "confusion_matrix": [
+              [
+                1087,
+                212,
+                1252,
+                92,
+                24,
+                6,
+                34,
+                173
+              ],
+              [
+                147,
+                389,
+                1837,
+                271,
+                19,
+                11,
+                24,
+                182
+              ],
+              [
+                126,
+                573,
+                1547,
+                314,
+                137,
+                88,
+                3,
+                92
+              ],
+              [
+                147,
+                324,
+                1525,
+                150,
+                261,
+                209,
+                3,
+                261
+              ],
+              [
+                91,
+                490,
+                1133,
+                318,
+                330,
+                253,
+                1,
+                264
+              ],
+              [
+                28,
+                366,
+                774,
+                10,
+                224,
+                1430,
+                19,
+                29
+              ],
+              [
+                66,
+                84,
+                689,
+                84,
+                64,
+                56,
+                1733,
+                104
+              ],
+              [
+                80,
+                310,
+                1478,
+                53,
+                305,
+                130,
+                2,
+                522
+              ]
+            ],
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "tp": 5145,
+              "fp": 1513,
+              "fn": 6375,
+              "tn": 10007,
+              "precision": 0.7727545809552419,
+              "recall": 0.4466145833333333,
+              "f1": 0.5660688744636374
+            }
+          }
+        }
+      }
+    },
+    "8675309": {
+      "seed": 8675309,
+      "source_results_file": "Engine/v0.2/reports/diagnostics_v0.2/phase_3c_seed_8675309/phase3c_seed_results.json",
+      "input_sha256": {
+        "config/dataset_config.json": "b0cc39b5e587b8f0d75b0c1d68c5483dc962a5d23ef86fe1b91e15fdf888e4c4",
+        "src/generate_dataset.py": "c30a247efcd462efa5f9e4b7efe8d470f24fe8d8ab33852b5ea7a1fc65ffde9d",
+        "src/build_features.py": "b92e8f3930f26c2563c8b6172cf9791bc21112cc92b799889a6e8c1e8f813d83",
+        "src/train_baselines.py": "c969f2c1607512c84d5f6afe8c0e9616fc8e0596a7fe716c64e9e85453b5cd50",
+        "src/validate_dataset.py": "6adb9a6cf6ddf432cd1289baa4ba2b5767928cb36930c0b448c154c724d8a002",
+        "metadata/dataset_card.json": "001f37a506be4ee2bde66691c482a60f1248b61bab91cdd6913c1796ff3c5bc8",
+        "metadata/scenario_manifest.csv": "2f4d17895fb1050b2e97059ffcfc9832e9d1f087a74089e2225436ce2741f6f1",
+        "metadata/engine_manifest.csv": "51dd1663747316b5e77706f2ba05448736be2eca2bcab5c8ae86de52101c02bd",
+        "data/raw/engine_twin_v0.2_raw.csv": "d936fe53115862eb5e7a9c5896d48ad76b43695085916855e69b6b4674803497",
+        "data/processed/features.csv": "c3b59287864f60e221e49bf43114af4288b6895811295ce7b4def8f4426ee13f",
+        "data/processed/labels.csv": "76938ee7a62ae95a62f8089525f18d7de61d3d0af1a3e2d2c86a6e258651a6c5",
+        "data/processed/feature_lineage.csv": "2c427dced66a0b67b673898db957652b6d65128bc0f918716d2516a23229df09",
+        "reports/diagnostics_v0.2/phase_3b/feature_definitions.json": "af15a894316c380c38702b20c48eff7b7168c747e2362dddb157c0141dd30e5f",
+        "reports/diagnostics_v0.2/phase_3b/temporal_ablation_results.json": "d5ff89ffbe0bcc1b665703b4202b8d3d6903a0b64007e43679bf2c17a4b037b8",
+        "splits/engine_test_engines.csv": "543c1314634adf72bbdde79a51cfabf6991a1fe2fa0b8b5d7343074f56d5f835",
+        "splits/engine_test_scenarios.csv": "e12b0d15421944cec9578bb88be573828d81d2adbf138a5d9850cd910ae40e3f",
+        "splits/engine_train_engines.csv": "0ff042de8dd4bd71534c422f2c1e9f0e0bac900613484010ae30603a4e1a68ca",
+        "splits/engine_train_scenarios.csv": "49ba9c308be4abea8d1ab10e1a2f9239cd8c56abf791f42d29e45c2e5dce7fdf",
+        "splits/engine_validation_engines.csv": "7f4703513fd1ef41e9caac2b2a3bbf67184215a787b7817b69556e47ecb4fcec",
+        "splits/engine_validation_scenarios.csv": "f7a696cbf33549f715c3aa61cc5dd5dcb294a43551c60ca4c11f8b58321660c3",
+        "splits/scenario_test_scenarios.csv": "9b3fb113f14fa0fc3069e9a034180a0d1206eca7391903526114f29738799791",
+        "splits/scenario_train_scenarios.csv": "328b7d434177b0638b7ae4ab34d8e93e0b6773582e580e693a3fd9510eb06749",
+        "splits/scenario_validation_scenarios.csv": "491ebab2a52dd3334f7218596db6aec97b8ac390efbf4493c3afdc4f9c1a0d12"
+      },
+      "experiments": {
+        "scenario_heldout__A_phase3a_29_features": {
+          "selected_model": "random_forest",
+          "test": {
+            "accuracy": 0.2231800766283525,
+            "macro_f1": 0.22793698447441219,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.691333982473223,
+                "recall": 0.5378787878787878,
+                "f1": 0.6050276949296974,
+                "support": 1320,
+                "largest_confusion_class": "efficiency_degradation",
+                "largest_confusion_count": 223
+              },
+              "efficiency_degradation": {
+                "precision": 0.093111279333838,
+                "recall": 0.09318181818181819,
+                "f1": 0.09314653540325635,
+                "support": 1320,
+                "largest_confusion_class": "thermal_abnormality",
+                "largest_confusion_count": 253
+              },
+              "normal": {
+                "precision": 0.22872827081427263,
+                "recall": 0.1893939393939394,
+                "f1": 0.20721094073767096,
+                "support": 1320,
+                "largest_confusion_class": "sensor_drift",
+                "largest_confusion_count": 342
+              },
+              "sensor_bias": {
+                "precision": 0.12573344509639564,
+                "recall": 0.10416666666666667,
+                "f1": 0.1139384732244588,
+                "support": 1440,
+                "largest_confusion_class": "thermal_abnormality",
+                "largest_confusion_count": 348
+              },
+              "sensor_drift": {
+                "precision": 0.1561771561771562,
+                "recall": 0.13958333333333334,
+                "f1": 0.1474147414741474,
+                "support": 1440,
+                "largest_confusion_class": "sensor_stuck",
+                "largest_confusion_count": 448
+              },
+              "sensor_dropout": {
+                "precision": 0.25914315569487983,
+                "recall": 0.18787878787878787,
+                "f1": 0.2178304787000439,
+                "support": 1320,
+                "largest_confusion_class": "sensor_bias",
+                "largest_confusion_count": 358
+              },
+              "sensor_stuck": {
+                "precision": 0.09375,
+                "recall": 0.184375,
+                "f1": 0.12429775280898876,
+                "support": 960,
+                "largest_confusion_class": "efficiency_degradation",
+                "largest_confusion_count": 241
+              },
+              "thermal_abnormality": {
+                "precision": 0.28136200716845877,
+                "recall": 0.3568181818181818,
+                "f1": 0.31462925851703405,
+                "support": 1320,
+                "largest_confusion_class": "sensor_stuck",
+                "largest_confusion_count": 265
+              }
+            },
+            "confusion_matrix": [
+              [
+                710,
+                223,
+                79,
+                54,
+                122,
+                42,
+                21,
+                69
+              ],
+              [
+                65,
+                123,
+                169,
+                163,
+                113,
+                193,
+                241,
+                253
+              ],
+              [
+                59,
+                97,
+                250,
+                221,
+                342,
+                2,
+                334,
+                15
+              ],
+              [
+                145,
+                114,
+                61,
+                150,
+                217,
+                60,
+                345,
+                348
+              ],
+              [
+                37,
+                203,
+                182,
+                90,
+                201,
+                21,
+                448,
+                258
+              ],
+              [
+                7,
+                204,
+                234,
+                358,
+                72,
+                248,
+                57,
+                140
+              ],
+              [
+                0,
+                241,
+                118,
+                67,
+                97,
+                140,
+                177,
+                120
+              ],
+              [
+                4,
+                116,
+                0,
+                90,
+                123,
+                251,
+                265,
+                471
+              ]
+            ],
+            "selected_model": "random_forest",
+            "validation_macro_f1_by_candidate": {
+              "majority_dummy": 0.030303030303030304,
+              "random_forest": 0.14349775990048838
+            },
+            "test_rows": 10440,
+            "test_scenarios": 87,
+            "test_engines": 18,
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "tp": 2748,
+              "fp": 2577,
+              "fn": 2412,
+              "tn": 2703,
+              "precision": 0.516056338028169,
+              "recall": 0.5325581395348837,
+              "f1": 0.5241773962804006
+            }
+          }
+        },
+        "scenario_heldout__B_temporal_69_features": {
+          "selected_model": "random_forest",
+          "test": {
+            "accuracy": 0.3306513409961686,
+            "macro_f1": 0.3685508510976585,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.8213058419243986,
+                "recall": 0.5431818181818182,
+                "f1": 0.6538987688098495,
+                "support": 1320,
+                "largest_confusion_class": "efficiency_degradation",
+                "largest_confusion_count": 141
+              },
+              "efficiency_degradation": {
+                "precision": 0.20291310899045706,
+                "recall": 0.30606060606060603,
+                "f1": 0.24403503473270916,
+                "support": 1320,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 327
+              },
+              "normal": {
+                "precision": 0.11058700209643606,
+                "recall": 0.15984848484848485,
+                "f1": 0.13073110285006195,
+                "support": 1320,
+                "largest_confusion_class": "sensor_drift",
+                "largest_confusion_count": 675
+              },
+              "sensor_bias": {
+                "precision": 0.1939655172413793,
+                "recall": 0.09375,
+                "f1": 0.12640449438202248,
+                "support": 1440,
+                "largest_confusion_class": "sensor_drift",
+                "largest_confusion_count": 426
+              },
+              "sensor_drift": {
+                "precision": 0.13539074166251866,
+                "recall": 0.18888888888888888,
+                "f1": 0.1577268773557553,
+                "support": 1440,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 544
+              },
+              "sensor_dropout": {
+                "precision": 0.6177130044843049,
+                "recall": 0.4174242424242424,
+                "f1": 0.49819168173598555,
+                "support": 1320,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 229
+              },
+              "sensor_stuck": {
+                "precision": 0.8627450980392157,
+                "recall": 0.5958333333333333,
+                "f1": 0.7048675292667899,
+                "support": 960,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 134
+              },
+              "thermal_abnormality": {
+                "precision": 0.4190340909090909,
+                "recall": 0.44696969696969696,
+                "f1": 0.43255131964809385,
+                "support": 1320,
+                "largest_confusion_class": "sensor_drift",
+                "largest_confusion_count": 239
+              }
+            },
+            "confusion_matrix": [
+              [
+                717,
+                141,
+                115,
+                76,
+                128,
+                37,
+                0,
+                106
+              ],
+              [
+                17,
+                404,
+                327,
+                13,
+                152,
+                106,
+                80,
+                221
+              ],
+              [
+                25,
+                235,
+                211,
+                70,
+                675,
+                3,
+                1,
+                100
+              ],
+              [
+                98,
+                268,
+                253,
+                135,
+                426,
+                7,
+                2,
+                251
+              ],
+              [
+                6,
+                488,
+                544,
+                61,
+                272,
+                35,
+                7,
+                27
+              ],
+              [
+                3,
+                178,
+                229,
+                204,
+                88,
+                551,
+                0,
+                67
+              ],
+              [
+                0,
+                101,
+                134,
+                77,
+                29,
+                1,
+                572,
+                46
+              ],
+              [
+                7,
+                176,
+                95,
+                60,
+                239,
+                152,
+                1,
+                590
+              ]
+            ],
+            "selected_model": "random_forest",
+            "validation_macro_f1_by_candidate": {
+              "majority_dummy": 0.030303030303030304,
+              "random_forest": 0.23898164432456456
+            },
+            "test_rows": 10440,
+            "test_scenarios": 87,
+            "test_engines": 18,
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "tp": 2467,
+              "fp": 1793,
+              "fn": 2693,
+              "tn": 3487,
+              "precision": 0.5791079812206573,
+              "recall": 0.47810077519379846,
+              "f1": 0.5237791932059448
+            }
+          }
+        },
+        "engine_heldout__A_phase3a_29_features": {
+          "selected_model": "random_forest",
+          "test": {
+            "accuracy": 0.19466145833333334,
+            "macro_f1": 0.19449563704863831,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.3588530889742832,
+                "recall": 0.4215277777777778,
+                "f1": 0.387673638831231,
+                "support": 2880,
+                "largest_confusion_class": "normal",
+                "largest_confusion_count": 626
+              },
+              "efficiency_degradation": {
+                "precision": 0.10520694259012016,
+                "recall": 0.13680555555555557,
+                "f1": 0.11894339622641509,
+                "support": 2880,
+                "largest_confusion_class": "combustion_irregularity",
+                "largest_confusion_count": 688
+              },
+              "normal": {
+                "precision": 0.09988156336360048,
+                "recall": 0.08784722222222222,
+                "f1": 0.0934786624792167,
+                "support": 2880,
+                "largest_confusion_class": "sensor_stuck",
+                "largest_confusion_count": 509
+              },
+              "sensor_bias": {
+                "precision": 0.17496635262449528,
+                "recall": 0.13541666666666666,
+                "f1": 0.15267175572519084,
+                "support": 2880,
+                "largest_confusion_class": "efficiency_degradation",
+                "largest_confusion_count": 747
+              },
+              "sensor_drift": {
+                "precision": 0.06282335550628233,
+                "recall": 0.059027777777777776,
+                "f1": 0.060866451843895455,
+                "support": 2880,
+                "largest_confusion_class": "sensor_dropout",
+                "largest_confusion_count": 594
+              },
+              "sensor_dropout": {
+                "precision": 0.15092647937836223,
+                "recall": 0.1753472222222222,
+                "f1": 0.16222293607452618,
+                "support": 2880,
+                "largest_confusion_class": "sensor_drift",
+                "largest_confusion_count": 586
+              },
+              "sensor_stuck": {
+                "precision": 0.24110258199581297,
+                "recall": 0.23993055555555556,
+                "f1": 0.24051514096762966,
+                "support": 2880,
+                "largest_confusion_class": "sensor_dropout",
+                "largest_confusion_count": 681
+              },
+              "thermal_abnormality": {
+                "precision": 0.3888888888888889,
+                "recall": 0.3013888888888889,
+                "f1": 0.3395931142410016,
+                "support": 2880,
+                "largest_confusion_class": "efficiency_degradation",
+                "largest_confusion_count": 480
+              }
+            },
+            "confusion_matrix": [
+              [
+                1214,
+                355,
+                626,
+                134,
+                238,
+                124,
+                134,
+                55
+              ],
+              [
+                688,
+                394,
+                411,
+                213,
+                348,
+                294,
+                353,
+                179
+              ],
+              [
+                130,
+                470,
+                253,
+                481,
+                219,
+                507,
+                509,
+                311
+              ],
+              [
+                288,
+                747,
+                115,
+                390,
+                562,
+                225,
+                215,
+                338
+              ],
+              [
+                374,
+                506,
+                332,
+                488,
+                170,
+                594,
+                258,
+                158
+              ],
+              [
+                270,
+                351,
+                306,
+                107,
+                586,
+                505,
+                496,
+                259
+              ],
+              [
+                296,
+                442,
+                354,
+                68,
+                284,
+                681,
+                691,
+                64
+              ],
+              [
+                123,
+                480,
+                136,
+                348,
+                299,
+                416,
+                210,
+                868
+              ]
+            ],
+            "selected_model": "random_forest",
+            "validation_macro_f1_by_candidate": {
+              "majority_dummy": 0.027777777777777776,
+              "random_forest": 0.20321640686142595
+            },
+            "test_rows": 23040,
+            "test_scenarios": 192,
+            "test_engines": 6,
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "tp": 6320,
+              "fp": 4827,
+              "fn": 5200,
+              "tn": 6693,
+              "precision": 0.5669686911276577,
+              "recall": 0.5486111111111112,
+              "f1": 0.5576388582520845
+            }
+          }
+        },
+        "engine_heldout__B_temporal_69_features": {
+          "selected_model": "random_forest",
+          "test": {
+            "accuracy": 0.3021701388888889,
+            "macro_f1": 0.3204551397236247,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.5021627998427055,
+                "recall": 0.44340277777777776,
+                "f1": 0.47095703485155815,
+                "support": 2880,
+                "largest_confusion_class": "efficiency_degradation",
+                "largest_confusion_count": 518
+              },
+              "efficiency_degradation": {
+                "precision": 0.13422666363842833,
+                "recall": 0.20520833333333333,
+                "f1": 0.1622957572428944,
+                "support": 2880,
+                "largest_confusion_class": "sensor_drift",
+                "largest_confusion_count": 706
+              },
+              "normal": {
+                "precision": 0.17722878625134264,
+                "recall": 0.171875,
+                "f1": 0.17451084082496035,
+                "support": 2880,
+                "largest_confusion_class": "efficiency_degradation",
+                "largest_confusion_count": 769
+              },
+              "sensor_bias": {
+                "precision": 0.22964239551917276,
+                "recall": 0.18506944444444445,
+                "f1": 0.2049605845029802,
+                "support": 2880,
+                "largest_confusion_class": "sensor_drift",
+                "largest_confusion_count": 775
+              },
+              "sensor_drift": {
+                "precision": 0.04568399798081777,
+                "recall": 0.06284722222222222,
+                "f1": 0.052908506284712074,
+                "support": 2880,
+                "largest_confusion_class": "efficiency_degradation",
+                "largest_confusion_count": 748
+              },
+              "sensor_dropout": {
+                "precision": 0.4794459338695264,
+                "recall": 0.37256944444444445,
+                "f1": 0.41930441578741695,
+                "support": 2880,
+                "largest_confusion_class": "sensor_drift",
+                "largest_confusion_count": 613
+              },
+              "sensor_stuck": {
+                "precision": 0.8036446469248292,
+                "recall": 0.6125,
+                "f1": 0.6951724137931035,
+                "support": 2880,
+                "largest_confusion_class": "sensor_drift",
+                "largest_confusion_count": 309
+              },
+              "thermal_abnormality": {
+                "precision": 0.4054158607350097,
+                "recall": 0.3638888888888889,
+                "f1": 0.3835315645013724,
+                "support": 2880,
+                "largest_confusion_class": "sensor_drift",
+                "largest_confusion_count": 550
+              }
+            },
+            "confusion_matrix": [
+              [
+                1277,
+                518,
+                454,
+                186,
+                258,
+                68,
+                6,
+                113
+              ],
+              [
+                341,
+                591,
+                432,
+                302,
+                706,
+                138,
+                83,
+                287
+              ],
+              [
+                57,
+                769,
+                495,
+                443,
+                570,
+                172,
+                115,
+                259
+              ],
+              [
+                230,
+                710,
+                107,
+                533,
+                775,
+                111,
+                15,
+                399
+              ],
+              [
+                418,
+                748,
+                632,
+                333,
+                181,
+                331,
+                92,
+                145
+              ],
+              [
+                125,
+                314,
+                285,
+                136,
+                613,
+                1073,
+                54,
+                280
+              ],
+              [
+                65,
+                264,
+                232,
+                70,
+                309,
+                122,
+                1764,
+                54
+              ],
+              [
+                30,
+                489,
+                156,
+                318,
+                550,
+                223,
+                66,
+                1048
+              ]
+            ],
+            "selected_model": "random_forest",
+            "validation_macro_f1_by_candidate": {
+              "majority_dummy": 0.027777777777777776,
+              "random_forest": 0.3211222827055389
+            },
+            "test_rows": 23040,
+            "test_scenarios": 192,
+            "test_engines": 6,
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "tp": 6512,
+              "fp": 4204,
+              "fn": 5008,
+              "tn": 7316,
+              "precision": 0.6076894363568496,
+              "recall": 0.5652777777777778,
+              "f1": 0.5857168555495593
+            }
+          }
+        }
+      }
+    },
+    "20261011": {
+      "seed": 20261011,
+      "dataset": "synthetic assumption-driven simulator; no real-engine accuracy claim",
+      "evaluator_sha256": "bcd06e49c6737fb20f5b6511c7317876e7217c20ab7dbd224fc30df54bf878b2",
+      "feature_controls": {
+        "A_features": [
+          "altitude_m",
+          "ambient_temp_c",
+          "ambient_pressure_pa",
+          "air_density_kg_m3",
+          "throttle_pct",
+          "phase_ground_run",
+          "phase_climb",
+          "phase_cruise",
+          "phase_descent",
+          "rpm_meas",
+          "rpm_missing",
+          "manifold_pressure_pa_meas",
+          "manifold_pressure_missing",
+          "cht_c_meas",
+          "cht_missing",
+          "egt_c_meas",
+          "egt_missing",
+          "oil_temp_c_meas",
+          "oil_temp_missing",
+          "oil_pressure_kpa_meas",
+          "oil_pressure_missing",
+          "fuel_flow_kg_s_meas",
+          "fuel_flow_missing",
+          "power_kw_meas",
+          "power_missing",
+          "torque_nm_meas",
+          "torque_missing",
+          "vibration_rms_g_meas",
+          "vibration_missing"
+        ],
+        "A_count": 29,
+        "B_count": 69,
+        "B_temporal_columns": [
+          "rpm_diff",
+          "rpm_rolling_std",
+          "rpm_diff_valid",
+          "rpm_rolling_std_valid",
+          "manifold_pressure_diff",
+          "manifold_pressure_rolling_std",
+          "manifold_pressure_diff_valid",
+          "manifold_pressure_rolling_std_valid",
+          "cht_diff",
+          "cht_rolling_std",
+          "cht_diff_valid",
+          "cht_rolling_std_valid",
+          "egt_diff",
+          "egt_rolling_std",
+          "egt_diff_valid",
+          "egt_rolling_std_valid",
+          "oil_temp_diff",
+          "oil_temp_rolling_std",
+          "oil_temp_diff_valid",
+          "oil_temp_rolling_std_valid",
+          "oil_pressure_diff",
+          "oil_pressure_rolling_std",
+          "oil_pressure_diff_valid",
+          "oil_pressure_rolling_std_valid",
+          "fuel_flow_diff",
+          "fuel_flow_rolling_std",
+          "fuel_flow_diff_valid",
+          "fuel_flow_rolling_std_valid",
+          "power_diff",
+          "power_rolling_std",
+          "power_diff_valid",
+          "power_rolling_std_valid",
+          "torque_diff",
+          "torque_rolling_std",
+          "torque_diff_valid",
+          "torque_rolling_std_valid",
+          "vibration_diff",
+          "vibration_rolling_std",
+          "vibration_diff_valid",
+          "vibration_rolling_std_valid"
+        ],
+        "ids_targets_latent_healthy_residuals_future_observations_used": false,
+        "temporal_scope": "scenario-local stable time_s sort; difference x[t]-x[t-1]; population std of t-5..t-1; no future values",
+        "warmup_missing": "invalid values NaN with 0 validity flags; no interpolation or cross-scenario fill"
+      },
+      "classifier": {
+        "candidates": "DummyClassifier(strategy=prior) and fixed RandomForestClassifier",
+        "random_forest": {
+          "n_estimators": 80,
+          "max_depth": 18,
+          "max_features": "sqrt",
+          "min_samples_leaf": 4,
+          "class_weight": "balanced_subsample",
+          "random_state": 271828,
+          "n_jobs": -1
+        },
+        "imputer": "median with add_indicator; fit on train for validation, then refit on train+validation",
+        "selection": "validation macro-F1; test evaluated once after refit"
+      },
+      "split_audit": {
+        "scenario_heldout": {
+          "train_rows": 48240,
+          "validation_rows": 10440,
+          "test_rows": 10440,
+          "same_masks_for_A_and_B": true
+        },
+        "engine_heldout": {
+          "train_rows": 69120,
+          "validation_rows": 23040,
+          "test_rows": 23040,
+          "same_masks_for_A_and_B": true
+        }
+      },
+      "experiments": {
+        "scenario_heldout__A_phase3a_29_features": {
+          "selected_model": "random_forest",
+          "validation": {
+            "majority_dummy": {
+              "accuracy": 0.11494252873563218,
+              "macro_f1": 0.02577319587628866
+            },
+            "random_forest": {
+              "accuracy": 0.16973180076628352,
+              "macro_f1": 0.16661672875660943
+            }
+          },
+          "test": {
+            "accuracy": 0.20555555555555555,
+            "macro_f1": 0.2041380741625695,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.44387755102040816,
+                "recall": 0.46136363636363636,
+                "f1": 0.4524517087667162,
+                "support": 1320
+              },
+              "efficiency_degradation": {
+                "precision": 0.11272475795297372,
+                "recall": 0.12348484848484849,
+                "f1": 0.11785972523499638,
+                "support": 1320
+              },
+              "normal": {
+                "precision": 0.1588235294117647,
+                "recall": 0.1125,
+                "f1": 0.13170731707317074,
+                "support": 1440
+              },
+              "sensor_bias": {
+                "precision": 0.27347310847766637,
+                "recall": 0.22727272727272727,
+                "f1": 0.24824162184526272,
+                "support": 1320
+              },
+              "sensor_drift": {
+                "precision": 0.1592920353982301,
+                "recall": 0.21,
+                "f1": 0.1811646297627606,
+                "support": 1200
+              },
+              "sensor_dropout": {
+                "precision": 0.08274534958306606,
+                "recall": 0.1075,
+                "f1": 0.09351214208046393,
+                "support": 1200
+              },
+              "sensor_stuck": {
+                "precision": 0.15824175824175823,
+                "recall": 0.10909090909090909,
+                "f1": 0.12914798206278028,
+                "support": 1320
+              },
+              "thermal_abnormality": {
+                "precision": 0.266162310866575,
+                "recall": 0.29318181818181815,
+                "f1": 0.2790194664744052,
+                "support": 1320
+              }
+            },
+            "confusion_matrix": [
+              [
+                609,
+                35,
+                174,
+                64,
+                152,
+                2,
+                40,
+                244
+              ],
+              [
+                59,
+                163,
+                168,
+                42,
+                151,
+                316,
+                76,
+                345
+              ],
+              [
+                281,
+                34,
+                162,
+                326,
+                41,
+                443,
+                51,
+                102
+              ],
+              [
+                52,
+                138,
+                46,
+                300,
+                523,
+                109,
+                67,
+                85
+              ],
+              [
+                89,
+                121,
+                94,
+                99,
+                252,
+                272,
+                232,
+                41
+              ],
+              [
+                59,
+                399,
+                20,
+                112,
+                120,
+                129,
+                232,
+                129
+              ],
+              [
+                104,
+                423,
+                252,
+                10,
+                0,
+                266,
+                144,
+                121
+              ],
+              [
+                119,
+                133,
+                104,
+                144,
+                343,
+                22,
+                68,
+                387
+              ]
+            ],
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "precision": 0.5569153069153069,
+              "recall": 0.5688492063492063,
+              "f1": 0.5628190027483314
+            }
+          },
+          "feature_count": 29,
+          "features": [
+            "altitude_m",
+            "ambient_temp_c",
+            "ambient_pressure_pa",
+            "air_density_kg_m3",
+            "throttle_pct",
+            "phase_ground_run",
+            "phase_climb",
+            "phase_cruise",
+            "phase_descent",
+            "rpm_meas",
+            "rpm_missing",
+            "manifold_pressure_pa_meas",
+            "manifold_pressure_missing",
+            "cht_c_meas",
+            "cht_missing",
+            "egt_c_meas",
+            "egt_missing",
+            "oil_temp_c_meas",
+            "oil_temp_missing",
+            "oil_pressure_kpa_meas",
+            "oil_pressure_missing",
+            "fuel_flow_kg_s_meas",
+            "fuel_flow_missing",
+            "power_kw_meas",
+            "power_missing",
+            "torque_nm_meas",
+            "torque_missing",
+            "vibration_rms_g_meas",
+            "vibration_missing"
+          ],
+          "per_class_file": "scenario_heldout__A_phase3a_29_features__per_class.csv",
+          "confusion_matrix_file": "scenario_heldout__A_phase3a_29_features__confusion_matrix.csv"
+        },
+        "scenario_heldout__B_temporal_69_features": {
+          "selected_model": "random_forest",
+          "validation": {
+            "majority_dummy": {
+              "accuracy": 0.11494252873563218,
+              "macro_f1": 0.02577319587628866
+            },
+            "random_forest": {
+              "accuracy": 0.257088122605364,
+              "macro_f1": 0.2559000640198804
+            }
+          },
+          "test": {
+            "accuracy": 0.30699233716475094,
+            "macro_f1": 0.3232130518758029,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.555045871559633,
+                "recall": 0.4583333333333333,
+                "f1": 0.5020746887966805,
+                "support": 1320
+              },
+              "efficiency_degradation": {
+                "precision": 0.07490909090909091,
+                "recall": 0.07803030303030303,
+                "f1": 0.0764378478664193,
+                "support": 1320
+              },
+              "normal": {
+                "precision": 0.13793103448275862,
+                "recall": 0.15833333333333333,
+                "f1": 0.14742967992240544,
+                "support": 1440
+              },
+              "sensor_bias": {
+                "precision": 0.26476190476190475,
+                "recall": 0.2106060606060606,
+                "f1": 0.23459915611814347,
+                "support": 1320
+              },
+              "sensor_drift": {
+                "precision": 0.23557312252964427,
+                "recall": 0.24833333333333332,
+                "f1": 0.24178498985801217,
+                "support": 1200
+              },
+              "sensor_dropout": {
+                "precision": 0.3500717360114778,
+                "recall": 0.4066666666666667,
+                "f1": 0.37625289128758677,
+                "support": 1200
+              },
+              "sensor_stuck": {
+                "precision": 0.97712833545108,
+                "recall": 0.5825757575757575,
+                "f1": 0.7299477930707167,
+                "support": 1320
+              },
+              "thermal_abnormality": {
+                "precision": 0.23877327491785322,
+                "recall": 0.3303030303030303,
+                "f1": 0.277177368086459,
+                "support": 1320
+              }
+            },
+            "confusion_matrix": [
+              [
+                605,
+                115,
+                173,
+                14,
+                89,
+                41,
+                0,
+                283
+              ],
+              [
+                33,
+                103,
+                364,
+                96,
+                152,
+                263,
+                1,
+                308
+              ],
+              [
+                185,
+                143,
+                228,
+                273,
+                38,
+                291,
+                2,
+                280
+              ],
+              [
+                42,
+                142,
+                99,
+                278,
+                500,
+                36,
+                0,
+                223
+              ],
+              [
+                69,
+                251,
+                206,
+                129,
+                298,
+                160,
+                11,
+                76
+              ],
+              [
+                8,
+                277,
+                83,
+                93,
+                50,
+                488,
+                4,
+                197
+              ],
+              [
+                75,
+                174,
+                169,
+                31,
+                13,
+                66,
+                769,
+                23
+              ],
+              [
+                73,
+                170,
+                331,
+                136,
+                125,
+                49,
+                0,
+                436
+              ]
+            ],
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "precision": 0.6508007117437722,
+              "recall": 0.5805555555555556,
+              "f1": 0.6136744966442953
+            }
+          },
+          "feature_count": 69,
+          "features": [
+            "altitude_m",
+            "ambient_temp_c",
+            "ambient_pressure_pa",
+            "air_density_kg_m3",
+            "throttle_pct",
+            "phase_ground_run",
+            "phase_climb",
+            "phase_cruise",
+            "phase_descent",
+            "rpm_meas",
+            "rpm_missing",
+            "manifold_pressure_pa_meas",
+            "manifold_pressure_missing",
+            "cht_c_meas",
+            "cht_missing",
+            "egt_c_meas",
+            "egt_missing",
+            "oil_temp_c_meas",
+            "oil_temp_missing",
+            "oil_pressure_kpa_meas",
+            "oil_pressure_missing",
+            "fuel_flow_kg_s_meas",
+            "fuel_flow_missing",
+            "power_kw_meas",
+            "power_missing",
+            "torque_nm_meas",
+            "torque_missing",
+            "vibration_rms_g_meas",
+            "vibration_missing",
+            "rpm_diff",
+            "rpm_rolling_std",
+            "rpm_diff_valid",
+            "rpm_rolling_std_valid",
+            "manifold_pressure_diff",
+            "manifold_pressure_rolling_std",
+            "manifold_pressure_diff_valid",
+            "manifold_pressure_rolling_std_valid",
+            "cht_diff",
+            "cht_rolling_std",
+            "cht_diff_valid",
+            "cht_rolling_std_valid",
+            "egt_diff",
+            "egt_rolling_std",
+            "egt_diff_valid",
+            "egt_rolling_std_valid",
+            "oil_temp_diff",
+            "oil_temp_rolling_std",
+            "oil_temp_diff_valid",
+            "oil_temp_rolling_std_valid",
+            "oil_pressure_diff",
+            "oil_pressure_rolling_std",
+            "oil_pressure_diff_valid",
+            "oil_pressure_rolling_std_valid",
+            "fuel_flow_diff",
+            "fuel_flow_rolling_std",
+            "fuel_flow_diff_valid",
+            "fuel_flow_rolling_std_valid",
+            "power_diff",
+            "power_rolling_std",
+            "power_diff_valid",
+            "power_rolling_std_valid",
+            "torque_diff",
+            "torque_rolling_std",
+            "torque_diff_valid",
+            "torque_rolling_std_valid",
+            "vibration_diff",
+            "vibration_rolling_std",
+            "vibration_diff_valid",
+            "vibration_rolling_std_valid"
+          ],
+          "per_class_file": "scenario_heldout__B_temporal_69_features__per_class.csv",
+          "confusion_matrix_file": "scenario_heldout__B_temporal_69_features__confusion_matrix.csv"
+        },
+        "engine_heldout__A_phase3a_29_features": {
+          "selected_model": "random_forest",
+          "validation": {
+            "majority_dummy": {
+              "accuracy": 0.125,
+              "macro_f1": 0.027777777777777776
+            },
+            "random_forest": {
+              "accuracy": 0.2518229166666667,
+              "macro_f1": 0.2505000886357991
+            }
+          },
+          "test": {
+            "accuracy": 0.2523871527777778,
+            "macro_f1": 0.24879358249006578,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.603740907516453,
+                "recall": 0.6052083333333333,
+                "f1": 0.6044737298422056,
+                "support": 2880
+              },
+              "efficiency_degradation": {
+                "precision": 0.17857142857142858,
+                "recall": 0.1753472222222222,
+                "f1": 0.1769446391030133,
+                "support": 2880
+              },
+              "normal": {
+                "precision": 0.18067415730337077,
+                "recall": 0.13958333333333334,
+                "f1": 0.15749265426052889,
+                "support": 2880
+              },
+              "sensor_bias": {
+                "precision": 0.21828236824983735,
+                "recall": 0.23298611111111112,
+                "f1": 0.22539469264360093,
+                "support": 2880
+              },
+              "sensor_drift": {
+                "precision": 0.21904761904761905,
+                "recall": 0.2635416666666667,
+                "f1": 0.23924349881796692,
+                "support": 2880
+              },
+              "sensor_dropout": {
+                "precision": 0.2064013130898646,
+                "recall": 0.17465277777777777,
+                "f1": 0.18920443859319164,
+                "support": 2880
+              },
+              "sensor_stuck": {
+                "precision": 0.14531384350816853,
+                "recall": 0.11736111111111111,
+                "f1": 0.1298501728774491,
+                "support": 2880
+              },
+              "thermal_abnormality": {
+                "precision": 0.2353870458135861,
+                "recall": 0.3104166666666667,
+                "f1": 0.26774483378256964,
+                "support": 2880
+              }
+            },
+            "confusion_matrix": [
+              [
+                1743,
+                174,
+                183,
+                196,
+                206,
+                135,
+                177,
+                66
+              ],
+              [
+                132,
+                505,
+                421,
+                223,
+                289,
+                354,
+                310,
+                646
+              ],
+              [
+                276,
+                130,
+                402,
+                638,
+                442,
+                202,
+                150,
+                640
+              ],
+              [
+                78,
+                456,
+                328,
+                671,
+                496,
+                256,
+                362,
+                233
+              ],
+              [
+                126,
+                387,
+                123,
+                513,
+                759,
+                286,
+                254,
+                432
+              ],
+              [
+                144,
+                483,
+                293,
+                410,
+                110,
+                503,
+                416,
+                521
+              ],
+              [
+                243,
+                366,
+                373,
+                259,
+                334,
+                601,
+                338,
+                366
+              ],
+              [
+                145,
+                327,
+                102,
+                164,
+                829,
+                100,
+                319,
+                894
+              ]
+            ],
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "precision": 0.5811360821093612,
+              "recall": 0.5701388888888889,
+              "f1": 0.5755849618788887
+            }
+          },
+          "feature_count": 29,
+          "features": [
+            "altitude_m",
+            "ambient_temp_c",
+            "ambient_pressure_pa",
+            "air_density_kg_m3",
+            "throttle_pct",
+            "phase_ground_run",
+            "phase_climb",
+            "phase_cruise",
+            "phase_descent",
+            "rpm_meas",
+            "rpm_missing",
+            "manifold_pressure_pa_meas",
+            "manifold_pressure_missing",
+            "cht_c_meas",
+            "cht_missing",
+            "egt_c_meas",
+            "egt_missing",
+            "oil_temp_c_meas",
+            "oil_temp_missing",
+            "oil_pressure_kpa_meas",
+            "oil_pressure_missing",
+            "fuel_flow_kg_s_meas",
+            "fuel_flow_missing",
+            "power_kw_meas",
+            "power_missing",
+            "torque_nm_meas",
+            "torque_missing",
+            "vibration_rms_g_meas",
+            "vibration_missing"
+          ],
+          "per_class_file": "engine_heldout__A_phase3a_29_features__per_class.csv",
+          "confusion_matrix_file": "engine_heldout__A_phase3a_29_features__confusion_matrix.csv"
+        },
+        "engine_heldout__B_temporal_69_features": {
+          "selected_model": "random_forest",
+          "validation": {
+            "majority_dummy": {
+              "accuracy": 0.125,
+              "macro_f1": 0.027777777777777776
+            },
+            "random_forest": {
+              "accuracy": 0.34370659722222224,
+              "macro_f1": 0.3665901767595648
+            }
+          },
+          "test": {
+            "accuracy": 0.39505208333333336,
+            "macro_f1": 0.4204667722660728,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.7527209403569873,
+                "recall": 0.6003472222222223,
+                "f1": 0.6679544137531389,
+                "support": 2880
+              },
+              "efficiency_degradation": {
+                "precision": 0.2669404517453799,
+                "recall": 0.22569444444444445,
+                "f1": 0.24459078080903104,
+                "support": 2880
+              },
+              "normal": {
+                "precision": 0.21247507832526347,
+                "recall": 0.2590277777777778,
+                "f1": 0.23345329369425755,
+                "support": 2880
+              },
+              "sensor_bias": {
+                "precision": 0.25866495507060333,
+                "recall": 0.2798611111111111,
+                "f1": 0.2688458972648432,
+                "support": 2880
+              },
+              "sensor_drift": {
+                "precision": 0.19812243301388618,
+                "recall": 0.35173611111111114,
+                "f1": 0.25347178781433755,
+                "support": 2880
+              },
+              "sensor_dropout": {
+                "precision": 0.7976570820021299,
+                "recall": 0.5201388888888889,
+                "f1": 0.6296763345943673,
+                "support": 2880
+              },
+              "sensor_stuck": {
+                "precision": 0.9777777777777777,
+                "recall": 0.5805555555555556,
+                "f1": 0.7285403050108933,
+                "support": 2880
+              },
+              "thermal_abnormality": {
+                "precision": 0.3315436241610738,
+                "recall": 0.34305555555555556,
+                "f1": 0.3372013651877133,
+                "support": 2880
+              }
+            },
+            "confusion_matrix": [
+              [
+                1729,
+                203,
+                319,
+                180,
+                334,
+                85,
+                2,
+                28
+              ],
+              [
+                83,
+                650,
+                792,
+                247,
+                397,
+                6,
+                7,
+                698
+              ],
+              [
+                173,
+                278,
+                746,
+                681,
+                596,
+                52,
+                3,
+                351
+              ],
+              [
+                75,
+                404,
+                577,
+                806,
+                708,
+                52,
+                9,
+                249
+              ],
+              [
+                109,
+                280,
+                392,
+                651,
+                1013,
+                110,
+                0,
+                325
+              ],
+              [
+                98,
+                302,
+                185,
+                220,
+                354,
+                1498,
+                7,
+                216
+              ],
+              [
+                10,
+                173,
+                230,
+                144,
+                466,
+                60,
+                1672,
+                125
+              ],
+              [
+                20,
+                145,
+                270,
+                187,
+                1245,
+                15,
+                10,
+                988
+              ]
+            ],
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "precision": 0.6575272911906576,
+              "recall": 0.6744791666666666,
+              "f1": 0.6658953593006813
+            }
+          },
+          "feature_count": 69,
+          "features": [
+            "altitude_m",
+            "ambient_temp_c",
+            "ambient_pressure_pa",
+            "air_density_kg_m3",
+            "throttle_pct",
+            "phase_ground_run",
+            "phase_climb",
+            "phase_cruise",
+            "phase_descent",
+            "rpm_meas",
+            "rpm_missing",
+            "manifold_pressure_pa_meas",
+            "manifold_pressure_missing",
+            "cht_c_meas",
+            "cht_missing",
+            "egt_c_meas",
+            "egt_missing",
+            "oil_temp_c_meas",
+            "oil_temp_missing",
+            "oil_pressure_kpa_meas",
+            "oil_pressure_missing",
+            "fuel_flow_kg_s_meas",
+            "fuel_flow_missing",
+            "power_kw_meas",
+            "power_missing",
+            "torque_nm_meas",
+            "torque_missing",
+            "vibration_rms_g_meas",
+            "vibration_missing",
+            "rpm_diff",
+            "rpm_rolling_std",
+            "rpm_diff_valid",
+            "rpm_rolling_std_valid",
+            "manifold_pressure_diff",
+            "manifold_pressure_rolling_std",
+            "manifold_pressure_diff_valid",
+            "manifold_pressure_rolling_std_valid",
+            "cht_diff",
+            "cht_rolling_std",
+            "cht_diff_valid",
+            "cht_rolling_std_valid",
+            "egt_diff",
+            "egt_rolling_std",
+            "egt_diff_valid",
+            "egt_rolling_std_valid",
+            "oil_temp_diff",
+            "oil_temp_rolling_std",
+            "oil_temp_diff_valid",
+            "oil_temp_rolling_std_valid",
+            "oil_pressure_diff",
+            "oil_pressure_rolling_std",
+            "oil_pressure_diff_valid",
+            "oil_pressure_rolling_std_valid",
+            "fuel_flow_diff",
+            "fuel_flow_rolling_std",
+            "fuel_flow_diff_valid",
+            "fuel_flow_rolling_std_valid",
+            "power_diff",
+            "power_rolling_std",
+            "power_diff_valid",
+            "power_rolling_std_valid",
+            "torque_diff",
+            "torque_rolling_std",
+            "torque_diff_valid",
+            "torque_rolling_std_valid",
+            "vibration_diff",
+            "vibration_rolling_std",
+            "vibration_diff_valid",
+            "vibration_rolling_std_valid"
+          ],
+          "per_class_file": "engine_heldout__B_temporal_69_features__per_class.csv",
+          "confusion_matrix_file": "engine_heldout__B_temporal_69_features__confusion_matrix.csv"
+        }
+      },
+      "input_sha256": {
+        "config/dataset_config.json": "2c3caf7927df6db0f3f9db488565a7799ac2baf107061c5e4364b82ddfa42996",
+        "src/generate_dataset.py": "c30a247efcd462efa5f9e4b7efe8d470f24fe8d8ab33852b5ea7a1fc65ffde9d",
+        "src/build_features.py": "b92e8f3930f26c2563c8b6172cf9791bc21112cc92b799889a6e8c1e8f813d83",
+        "src/validate_dataset.py": "6adb9a6cf6ddf432cd1289baa4ba2b5767928cb36930c0b448c154c724d8a002",
+        "src/train_baselines.py": "c969f2c1607512c84d5f6afe8c0e9616fc8e0596a7fe716c64e9e85453b5cd50",
+        "data/raw/engine_twin_v0.2_raw.csv": "7c2f62d20415021210d9878e4e43cc4141163d60a26db58d2ad1eff8341e69b8",
+        "data/processed/features.csv": "e008517a9d23330892c8a485c538bb08fbee27c99b137bbf33f4c6a995397c71",
+        "data/processed/labels.csv": "716b10d0065b7f37e56546f56ade1a8757f4577b68bdceb11d811ba16fb1686d",
+        "data/processed/feature_lineage.csv": "7e108f1a3c96a3b05e896be73a542a0a91c9837236590fe24f789f6d9bf59397",
+        "metadata/scenario_manifest.csv": "2d7b400ab52d287a936cb95d1382e544f85fe2e3f73ae2779060c879542985b8",
+        "metadata/engine_manifest.csv": "71935ab8382845d39b267c38f712a962751acdeac7bb6d48d5cacc7f750e02b6",
+        "splits/engine_test_engines.csv": "8b5071ee4d69e3121615a5d9c732ad33756ebfedd4a1492684aae16b640cc2b6",
+        "splits/engine_test_scenarios.csv": "29a6e80b8762ad0839ad08df9f64fcfcc72acb9a16084c0728243302512d6ab7",
+        "splits/engine_train_engines.csv": "45e64cd107be0f9623e831601fb12f2b9b42ac72a0d6331b4af89c5203dbc34b",
+        "splits/engine_train_scenarios.csv": "601560a5fe040594f78e9623c901b28816fbdd84317636faaa910d486bc1844a",
+        "splits/engine_validation_engines.csv": "29a56042a5616c9447aa2428839d6e9b6a4c999bdf0d9efbaf5faf0d0aec23d9",
+        "splits/engine_validation_scenarios.csv": "40281fd06ec3d21753d7265237e38befb5fe39f460abd189a48a1302c0355d35",
+        "splits/scenario_test_scenarios.csv": "85b58047953ba6894e8ca19bf22b929b9936224aa09b6924423a733ee845ac65",
+        "splits/scenario_train_scenarios.csv": "2fe763ca4b81fda92fc989062d5b9a6146e63f5e6ed58bf59e13f29a50fa76c2",
+        "splits/scenario_validation_scenarios.csv": "e8d3b30b13524c793435dc67ee88dd019c9f94550f1d17204c4a636119d2d251"
+      }
+    },
+    "1357911": {
+      "seed": 1357911,
+      "dataset": "synthetic assumption-driven simulator; no real-engine accuracy claim",
+      "evaluator_sha256": "bcd06e49c6737fb20f5b6511c7317876e7217c20ab7dbd224fc30df54bf878b2",
+      "feature_controls": {
+        "A_features": [
+          "altitude_m",
+          "ambient_temp_c",
+          "ambient_pressure_pa",
+          "air_density_kg_m3",
+          "throttle_pct",
+          "phase_ground_run",
+          "phase_climb",
+          "phase_cruise",
+          "phase_descent",
+          "rpm_meas",
+          "rpm_missing",
+          "manifold_pressure_pa_meas",
+          "manifold_pressure_missing",
+          "cht_c_meas",
+          "cht_missing",
+          "egt_c_meas",
+          "egt_missing",
+          "oil_temp_c_meas",
+          "oil_temp_missing",
+          "oil_pressure_kpa_meas",
+          "oil_pressure_missing",
+          "fuel_flow_kg_s_meas",
+          "fuel_flow_missing",
+          "power_kw_meas",
+          "power_missing",
+          "torque_nm_meas",
+          "torque_missing",
+          "vibration_rms_g_meas",
+          "vibration_missing"
+        ],
+        "A_count": 29,
+        "B_count": 69,
+        "B_temporal_columns": [
+          "rpm_diff",
+          "rpm_rolling_std",
+          "rpm_diff_valid",
+          "rpm_rolling_std_valid",
+          "manifold_pressure_diff",
+          "manifold_pressure_rolling_std",
+          "manifold_pressure_diff_valid",
+          "manifold_pressure_rolling_std_valid",
+          "cht_diff",
+          "cht_rolling_std",
+          "cht_diff_valid",
+          "cht_rolling_std_valid",
+          "egt_diff",
+          "egt_rolling_std",
+          "egt_diff_valid",
+          "egt_rolling_std_valid",
+          "oil_temp_diff",
+          "oil_temp_rolling_std",
+          "oil_temp_diff_valid",
+          "oil_temp_rolling_std_valid",
+          "oil_pressure_diff",
+          "oil_pressure_rolling_std",
+          "oil_pressure_diff_valid",
+          "oil_pressure_rolling_std_valid",
+          "fuel_flow_diff",
+          "fuel_flow_rolling_std",
+          "fuel_flow_diff_valid",
+          "fuel_flow_rolling_std_valid",
+          "power_diff",
+          "power_rolling_std",
+          "power_diff_valid",
+          "power_rolling_std_valid",
+          "torque_diff",
+          "torque_rolling_std",
+          "torque_diff_valid",
+          "torque_rolling_std_valid",
+          "vibration_diff",
+          "vibration_rolling_std",
+          "vibration_diff_valid",
+          "vibration_rolling_std_valid"
+        ],
+        "ids_targets_latent_healthy_residuals_future_observations_used": false,
+        "temporal_scope": "scenario-local stable time_s sort; difference x[t]-x[t-1]; population std of t-5..t-1; no future values",
+        "warmup_missing": "invalid values NaN with 0 validity flags; no interpolation or cross-scenario fill"
+      },
+      "classifier": {
+        "candidates": "DummyClassifier(strategy=prior) and fixed RandomForestClassifier",
+        "random_forest": {
+          "n_estimators": 80,
+          "max_depth": 18,
+          "max_features": "sqrt",
+          "min_samples_leaf": 4,
+          "class_weight": "balanced_subsample",
+          "random_state": 271828,
+          "n_jobs": -1
+        },
+        "imputer": "median with add_indicator; fit on train for validation, then refit on train+validation",
+        "selection": "validation macro-F1; test evaluated once after refit"
+      },
+      "split_audit": {
+        "scenario_heldout": {
+          "train_rows": 48240,
+          "validation_rows": 10440,
+          "test_rows": 10440,
+          "same_masks_for_A_and_B": true
+        },
+        "engine_heldout": {
+          "train_rows": 69120,
+          "validation_rows": 23040,
+          "test_rows": 23040,
+          "same_masks_for_A_and_B": true
+        }
+      },
+      "experiments": {
+        "scenario_heldout__A_phase3a_29_features": {
+          "selected_model": "random_forest",
+          "validation": {
+            "majority_dummy": {
+              "accuracy": 0.11494252873563218,
+              "macro_f1": 0.02577319587628866
+            },
+            "random_forest": {
+              "accuracy": 0.14473180076628353,
+              "macro_f1": 0.14156558535039537
+            }
+          },
+          "test": {
+            "accuracy": 0.2852490421455939,
+            "macro_f1": 0.2785169898048531,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.5341506129597198,
+                "recall": 0.5083333333333333,
+                "f1": 0.5209222886421861,
+                "support": 1200
+              },
+              "efficiency_degradation": {
+                "precision": 0.2784445511281805,
+                "recall": 0.4393939393939394,
+                "f1": 0.34087569791360567,
+                "support": 1320
+              },
+              "normal": {
+                "precision": 0.13126843657817108,
+                "recall": 0.06180555555555556,
+                "f1": 0.08404154863078375,
+                "support": 1440
+              },
+              "sensor_bias": {
+                "precision": 0.2559652928416486,
+                "recall": 0.3277777777777778,
+                "f1": 0.2874543239951279,
+                "support": 1080
+              },
+              "sensor_drift": {
+                "precision": 0.14360902255639096,
+                "recall": 0.1326388888888889,
+                "f1": 0.1379061371841155,
+                "support": 1440
+              },
+              "sensor_dropout": {
+                "precision": 0.42301829268292684,
+                "recall": 0.42045454545454547,
+                "f1": 0.4217325227963526,
+                "support": 1320
+              },
+              "sensor_stuck": {
+                "precision": 0.18904823989569752,
+                "recall": 0.10984848484848485,
+                "f1": 0.13895543842836608,
+                "support": 1320
+              },
+              "thermal_abnormality": {
+                "precision": 0.26017191977077364,
+                "recall": 0.34393939393939393,
+                "f1": 0.29624796084828714,
+                "support": 1320
+              }
+            },
+            "confusion_matrix": [
+              [
+                610,
+                224,
+                94,
+                3,
+                83,
+                34,
+                22,
+                130
+              ],
+              [
+                8,
+                580,
+                1,
+                122,
+                121,
+                109,
+                120,
+                259
+              ],
+              [
+                143,
+                478,
+                89,
+                105,
+                92,
+                100,
+                118,
+                315
+              ],
+              [
+                11,
+                199,
+                63,
+                354,
+                217,
+                132,
+                26,
+                78
+              ],
+              [
+                131,
+                176,
+                165,
+                307,
+                191,
+                199,
+                180,
+                91
+              ],
+              [
+                172,
+                178,
+                40,
+                120,
+                151,
+                555,
+                37,
+                67
+              ],
+              [
+                1,
+                30,
+                118,
+                236,
+                338,
+                101,
+                145,
+                351
+              ],
+              [
+                66,
+                218,
+                108,
+                136,
+                137,
+                82,
+                119,
+                454
+              ]
+            ],
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "precision": 0.6863522537562604,
+              "recall": 0.6374031007751938,
+              "f1": 0.6609726688102894
+            }
+          },
+          "feature_count": 29,
+          "features": [
+            "altitude_m",
+            "ambient_temp_c",
+            "ambient_pressure_pa",
+            "air_density_kg_m3",
+            "throttle_pct",
+            "phase_ground_run",
+            "phase_climb",
+            "phase_cruise",
+            "phase_descent",
+            "rpm_meas",
+            "rpm_missing",
+            "manifold_pressure_pa_meas",
+            "manifold_pressure_missing",
+            "cht_c_meas",
+            "cht_missing",
+            "egt_c_meas",
+            "egt_missing",
+            "oil_temp_c_meas",
+            "oil_temp_missing",
+            "oil_pressure_kpa_meas",
+            "oil_pressure_missing",
+            "fuel_flow_kg_s_meas",
+            "fuel_flow_missing",
+            "power_kw_meas",
+            "power_missing",
+            "torque_nm_meas",
+            "torque_missing",
+            "vibration_rms_g_meas",
+            "vibration_missing"
+          ],
+          "per_class_file": "scenario_heldout__A_phase3a_29_features__per_class.csv",
+          "confusion_matrix_file": "scenario_heldout__A_phase3a_29_features__confusion_matrix.csv"
+        },
+        "scenario_heldout__B_temporal_69_features": {
+          "selected_model": "random_forest",
+          "validation": {
+            "majority_dummy": {
+              "accuracy": 0.11494252873563218,
+              "macro_f1": 0.02577319587628866
+            },
+            "random_forest": {
+              "accuracy": 0.27155172413793105,
+              "macro_f1": 0.2713940170305243
+            }
+          },
+          "test": {
+            "accuracy": 0.3671455938697318,
+            "macro_f1": 0.36932291189494837,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.6378698224852071,
+                "recall": 0.44916666666666666,
+                "f1": 0.5271393643031785,
+                "support": 1200
+              },
+              "efficiency_degradation": {
+                "precision": 0.30065666041275796,
+                "recall": 0.4856060606060606,
+                "f1": 0.37137891077636154,
+                "support": 1320
+              },
+              "normal": {
+                "precision": 0.17647058823529413,
+                "recall": 0.07708333333333334,
+                "f1": 0.10729821169647173,
+                "support": 1440
+              },
+              "sensor_bias": {
+                "precision": 0.3071253071253071,
+                "recall": 0.46296296296296297,
+                "f1": 0.36927621861152143,
+                "support": 1080
+              },
+              "sensor_drift": {
+                "precision": 0.1404707668944571,
+                "recall": 0.1284722222222222,
+                "f1": 0.1342038447587958,
+                "support": 1440
+              },
+              "sensor_dropout": {
+                "precision": 0.4390728476821192,
+                "recall": 0.5022727272727273,
+                "f1": 0.4685512367491166,
+                "support": 1320
+              },
+              "sensor_stuck": {
+                "precision": 0.7368995633187773,
+                "recall": 0.5113636363636364,
+                "f1": 0.6037567084078712,
+                "support": 1320
+              },
+              "thermal_abnormality": {
+                "precision": 0.3547505126452495,
+                "recall": 0.3931818181818182,
+                "f1": 0.3729787998562702,
+                "support": 1320
+              }
+            },
+            "confusion_matrix": [
+              [
+                539,
+                164,
+                177,
+                5,
+                126,
+                95,
+                0,
+                94
+              ],
+              [
+                13,
+                641,
+                20,
+                306,
+                134,
+                73,
+                14,
+                119
+              ],
+              [
+                18,
+                477,
+                111,
+                46,
+                180,
+                210,
+                12,
+                386
+              ],
+              [
+                14,
+                124,
+                40,
+                500,
+                249,
+                89,
+                1,
+                63
+              ],
+              [
+                98,
+                305,
+                98,
+                296,
+                185,
+                227,
+                102,
+                129
+              ],
+              [
+                60,
+                129,
+                86,
+                139,
+                187,
+                663,
+                40,
+                16
+              ],
+              [
+                3,
+                51,
+                62,
+                104,
+                233,
+                55,
+                675,
+                137
+              ],
+              [
+                100,
+                241,
+                35,
+                232,
+                23,
+                98,
+                72,
+                519
+              ]
+            ],
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "precision": 0.6972630795010241,
+              "recall": 0.7257751937984496,
+              "f1": 0.7112335010920141
+            }
+          },
+          "feature_count": 69,
+          "features": [
+            "altitude_m",
+            "ambient_temp_c",
+            "ambient_pressure_pa",
+            "air_density_kg_m3",
+            "throttle_pct",
+            "phase_ground_run",
+            "phase_climb",
+            "phase_cruise",
+            "phase_descent",
+            "rpm_meas",
+            "rpm_missing",
+            "manifold_pressure_pa_meas",
+            "manifold_pressure_missing",
+            "cht_c_meas",
+            "cht_missing",
+            "egt_c_meas",
+            "egt_missing",
+            "oil_temp_c_meas",
+            "oil_temp_missing",
+            "oil_pressure_kpa_meas",
+            "oil_pressure_missing",
+            "fuel_flow_kg_s_meas",
+            "fuel_flow_missing",
+            "power_kw_meas",
+            "power_missing",
+            "torque_nm_meas",
+            "torque_missing",
+            "vibration_rms_g_meas",
+            "vibration_missing",
+            "rpm_diff",
+            "rpm_rolling_std",
+            "rpm_diff_valid",
+            "rpm_rolling_std_valid",
+            "manifold_pressure_diff",
+            "manifold_pressure_rolling_std",
+            "manifold_pressure_diff_valid",
+            "manifold_pressure_rolling_std_valid",
+            "cht_diff",
+            "cht_rolling_std",
+            "cht_diff_valid",
+            "cht_rolling_std_valid",
+            "egt_diff",
+            "egt_rolling_std",
+            "egt_diff_valid",
+            "egt_rolling_std_valid",
+            "oil_temp_diff",
+            "oil_temp_rolling_std",
+            "oil_temp_diff_valid",
+            "oil_temp_rolling_std_valid",
+            "oil_pressure_diff",
+            "oil_pressure_rolling_std",
+            "oil_pressure_diff_valid",
+            "oil_pressure_rolling_std_valid",
+            "fuel_flow_diff",
+            "fuel_flow_rolling_std",
+            "fuel_flow_diff_valid",
+            "fuel_flow_rolling_std_valid",
+            "power_diff",
+            "power_rolling_std",
+            "power_diff_valid",
+            "power_rolling_std_valid",
+            "torque_diff",
+            "torque_rolling_std",
+            "torque_diff_valid",
+            "torque_rolling_std_valid",
+            "vibration_diff",
+            "vibration_rolling_std",
+            "vibration_diff_valid",
+            "vibration_rolling_std_valid"
+          ],
+          "per_class_file": "scenario_heldout__B_temporal_69_features__per_class.csv",
+          "confusion_matrix_file": "scenario_heldout__B_temporal_69_features__confusion_matrix.csv"
+        },
+        "engine_heldout__A_phase3a_29_features": {
+          "selected_model": "random_forest",
+          "validation": {
+            "majority_dummy": {
+              "accuracy": 0.125,
+              "macro_f1": 0.027777777777777776
+            },
+            "random_forest": {
+              "accuracy": 0.18111979166666667,
+              "macro_f1": 0.18161163413208825
+            }
+          },
+          "test": {
+            "accuracy": 0.21970486111111112,
+            "macro_f1": 0.22100322700471028,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.4413109756097561,
+                "recall": 0.40208333333333335,
+                "f1": 0.42078488372093026,
+                "support": 2880
+              },
+              "efficiency_degradation": {
+                "precision": 0.19015725101921957,
+                "recall": 0.2267361111111111,
+                "f1": 0.20684193854925562,
+                "support": 2880
+              },
+              "normal": {
+                "precision": 0.14527027027027026,
+                "recall": 0.17916666666666667,
+                "f1": 0.16044776119402984,
+                "support": 2880
+              },
+              "sensor_bias": {
+                "precision": 0.17940837495197848,
+                "recall": 0.16215277777777778,
+                "f1": 0.1703447018055809,
+                "support": 2880
+              },
+              "sensor_drift": {
+                "precision": 0.12861610633307272,
+                "recall": 0.11423611111111111,
+                "f1": 0.1210003677822729,
+                "support": 2880
+              },
+              "sensor_dropout": {
+                "precision": 0.2819512195121951,
+                "recall": 0.20069444444444445,
+                "f1": 0.23448275862068965,
+                "support": 2880
+              },
+              "sensor_stuck": {
+                "precision": 0.16332470892626133,
+                "recall": 0.1753472222222222,
+                "f1": 0.16912257200267916,
+                "support": 2880
+              },
+              "thermal_abnormality": {
+                "precision": 0.2737448033258714,
+                "recall": 0.2972222222222222,
+                "f1": 0.28500083236224405,
+                "support": 2880
+              }
+            },
+            "confusion_matrix": [
+              [
+                1158,
+                332,
+                152,
+                163,
+                136,
+                188,
+                601,
+                150
+              ],
+              [
+                239,
+                653,
+                643,
+                187,
+                351,
+                39,
+                382,
+                386
+              ],
+              [
+                253,
+                449,
+                516,
+                352,
+                406,
+                558,
+                172,
+                174
+              ],
+              [
+                278,
+                673,
+                526,
+                467,
+                304,
+                238,
+                44,
+                350
+              ],
+              [
+                352,
+                374,
+                235,
+                379,
+                329,
+                258,
+                433,
+                520
+              ],
+              [
+                75,
+                508,
+                232,
+                251,
+                281,
+                578,
+                730,
+                225
+              ],
+              [
+                133,
+                230,
+                723,
+                248,
+                498,
+                77,
+                505,
+                466
+              ],
+              [
+                136,
+                215,
+                525,
+                556,
+                253,
+                114,
+                225,
+                856
+              ]
+            ],
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "precision": 0.5454721925652722,
+              "recall": 0.4878472222222222,
+              "f1": 0.5150529258122165
+            }
+          },
+          "feature_count": 29,
+          "features": [
+            "altitude_m",
+            "ambient_temp_c",
+            "ambient_pressure_pa",
+            "air_density_kg_m3",
+            "throttle_pct",
+            "phase_ground_run",
+            "phase_climb",
+            "phase_cruise",
+            "phase_descent",
+            "rpm_meas",
+            "rpm_missing",
+            "manifold_pressure_pa_meas",
+            "manifold_pressure_missing",
+            "cht_c_meas",
+            "cht_missing",
+            "egt_c_meas",
+            "egt_missing",
+            "oil_temp_c_meas",
+            "oil_temp_missing",
+            "oil_pressure_kpa_meas",
+            "oil_pressure_missing",
+            "fuel_flow_kg_s_meas",
+            "fuel_flow_missing",
+            "power_kw_meas",
+            "power_missing",
+            "torque_nm_meas",
+            "torque_missing",
+            "vibration_rms_g_meas",
+            "vibration_missing"
+          ],
+          "per_class_file": "engine_heldout__A_phase3a_29_features__per_class.csv",
+          "confusion_matrix_file": "engine_heldout__A_phase3a_29_features__confusion_matrix.csv"
+        },
+        "engine_heldout__B_temporal_69_features": {
+          "selected_model": "random_forest",
+          "validation": {
+            "majority_dummy": {
+              "accuracy": 0.125,
+              "macro_f1": 0.027777777777777776
+            },
+            "random_forest": {
+              "accuracy": 0.2892795138888889,
+              "macro_f1": 0.29838586816809354
+            }
+          },
+          "test": {
+            "accuracy": 0.3388454861111111,
+            "macro_f1": 0.36374065117870547,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.6662989520132377,
+                "recall": 0.41944444444444445,
+                "f1": 0.5148092904325592,
+                "support": 2880
+              },
+              "efficiency_degradation": {
+                "precision": 0.19901499888068055,
+                "recall": 0.30868055555555557,
+                "f1": 0.2420035388593984,
+                "support": 2880
+              },
+              "normal": {
+                "precision": 0.15878220140515223,
+                "recall": 0.23541666666666666,
+                "f1": 0.18965034965034966,
+                "support": 2880
+              },
+              "sensor_bias": {
+                "precision": 0.14220532319391635,
+                "recall": 0.12986111111111112,
+                "f1": 0.13575317604355716,
+                "support": 2880
+              },
+              "sensor_drift": {
+                "precision": 0.20192887281494876,
+                "recall": 0.2326388888888889,
+                "f1": 0.21619877379799934,
+                "support": 2880
+              },
+              "sensor_dropout": {
+                "precision": 0.7368421052631579,
+                "recall": 0.5201388888888889,
+                "f1": 0.6098107062894362,
+                "support": 2880
+              },
+              "sensor_stuck": {
+                "precision": 0.888215859030837,
+                "recall": 0.5600694444444444,
+                "f1": 0.6869676320272572,
+                "support": 2880
+              },
+              "thermal_abnormality": {
+                "precision": 0.32565911622725585,
+                "recall": 0.30451388888888886,
+                "f1": 0.3147317423290867,
+                "support": 2880
+              }
+            },
+            "confusion_matrix": [
+              [
+                1208,
+                400,
+                267,
+                318,
+                253,
+                150,
+                116,
+                168
+              ],
+              [
+                97,
+                889,
+                751,
+                220,
+                631,
+                57,
+                4,
+                231
+              ],
+              [
+                109,
+                790,
+                678,
+                374,
+                422,
+                233,
+                0,
+                274
+              ],
+              [
+                23,
+                851,
+                664,
+                374,
+                536,
+                16,
+                7,
+                409
+              ],
+              [
+                172,
+                524,
+                521,
+                458,
+                670,
+                46,
+                60,
+                429
+              ],
+              [
+                53,
+                430,
+                209,
+                225,
+                320,
+                1498,
+                14,
+                131
+              ],
+              [
+                44,
+                93,
+                496,
+                144,
+                302,
+                14,
+                1613,
+                174
+              ],
+              [
+                107,
+                490,
+                684,
+                517,
+                184,
+                19,
+                2,
+                877
+              ]
+            ],
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "precision": 0.6427477799326324,
+              "recall": 0.5466145833333333,
+              "f1": 0.5907960782474082
+            }
+          },
+          "feature_count": 69,
+          "features": [
+            "altitude_m",
+            "ambient_temp_c",
+            "ambient_pressure_pa",
+            "air_density_kg_m3",
+            "throttle_pct",
+            "phase_ground_run",
+            "phase_climb",
+            "phase_cruise",
+            "phase_descent",
+            "rpm_meas",
+            "rpm_missing",
+            "manifold_pressure_pa_meas",
+            "manifold_pressure_missing",
+            "cht_c_meas",
+            "cht_missing",
+            "egt_c_meas",
+            "egt_missing",
+            "oil_temp_c_meas",
+            "oil_temp_missing",
+            "oil_pressure_kpa_meas",
+            "oil_pressure_missing",
+            "fuel_flow_kg_s_meas",
+            "fuel_flow_missing",
+            "power_kw_meas",
+            "power_missing",
+            "torque_nm_meas",
+            "torque_missing",
+            "vibration_rms_g_meas",
+            "vibration_missing",
+            "rpm_diff",
+            "rpm_rolling_std",
+            "rpm_diff_valid",
+            "rpm_rolling_std_valid",
+            "manifold_pressure_diff",
+            "manifold_pressure_rolling_std",
+            "manifold_pressure_diff_valid",
+            "manifold_pressure_rolling_std_valid",
+            "cht_diff",
+            "cht_rolling_std",
+            "cht_diff_valid",
+            "cht_rolling_std_valid",
+            "egt_diff",
+            "egt_rolling_std",
+            "egt_diff_valid",
+            "egt_rolling_std_valid",
+            "oil_temp_diff",
+            "oil_temp_rolling_std",
+            "oil_temp_diff_valid",
+            "oil_temp_rolling_std_valid",
+            "oil_pressure_diff",
+            "oil_pressure_rolling_std",
+            "oil_pressure_diff_valid",
+            "oil_pressure_rolling_std_valid",
+            "fuel_flow_diff",
+            "fuel_flow_rolling_std",
+            "fuel_flow_diff_valid",
+            "fuel_flow_rolling_std_valid",
+            "power_diff",
+            "power_rolling_std",
+            "power_diff_valid",
+            "power_rolling_std_valid",
+            "torque_diff",
+            "torque_rolling_std",
+            "torque_diff_valid",
+            "torque_rolling_std_valid",
+            "vibration_diff",
+            "vibration_rolling_std",
+            "vibration_diff_valid",
+            "vibration_rolling_std_valid"
+          ],
+          "per_class_file": "engine_heldout__B_temporal_69_features__per_class.csv",
+          "confusion_matrix_file": "engine_heldout__B_temporal_69_features__confusion_matrix.csv"
+        }
+      },
+      "input_sha256": {
+        "config/dataset_config.json": "f22ec222fe29290d958f4fe03259f678bd855def3274c9bd95f8a54c0312d1f2",
+        "src/generate_dataset.py": "c30a247efcd462efa5f9e4b7efe8d470f24fe8d8ab33852b5ea7a1fc65ffde9d",
+        "src/build_features.py": "b92e8f3930f26c2563c8b6172cf9791bc21112cc92b799889a6e8c1e8f813d83",
+        "src/validate_dataset.py": "6adb9a6cf6ddf432cd1289baa4ba2b5767928cb36930c0b448c154c724d8a002",
+        "src/train_baselines.py": "c969f2c1607512c84d5f6afe8c0e9616fc8e0596a7fe716c64e9e85453b5cd50",
+        "data/raw/engine_twin_v0.2_raw.csv": "4d9647a3645c52d930b57e480cf62cf4f24455a99d09a8ce31542def604eddc0",
+        "data/processed/features.csv": "339f2ef0b5aa73a2f518ef7e847950baeeedc5439f34530159117831775dfe6f",
+        "data/processed/labels.csv": "179b8914354e4133b4882733080034b3a08496c7896b7e66f2476d0be8815836",
+        "data/processed/feature_lineage.csv": "433c236306ff36dbbfbe863dbc17c46239ca78380a806da6bb8e682954716599",
+        "metadata/scenario_manifest.csv": "a686636f3c8cdde73f73368391acf357d22b3f5554e05a8035341aac432dcaa5",
+        "metadata/engine_manifest.csv": "9e73cd3a15aac7b6e1e003dae63e86277118001dc474d7bd77bac8cc42518374",
+        "splits/engine_test_engines.csv": "8a4f2527047b0b02fe5410c0ca5a3b9c6142faa7220a3f231680ae363720d13a",
+        "splits/engine_test_scenarios.csv": "8c3e009bf841ffa3843b9fcd6421d9d4c1b151509ccf0b3ea0d7917bde44c244",
+        "splits/engine_train_engines.csv": "bcbdfdff7d6823bf4c8728f0fb6aaf9a46a27c615e08867daee7c69ec06ac118",
+        "splits/engine_train_scenarios.csv": "7bd1cb5f8c2970aeb96a01f312c02605666e787a54ebaa71a6ff3cba0b7f8a79",
+        "splits/engine_validation_engines.csv": "56f515caaba45f2a6b3f29b23c632a298f10e9e4442fd76232a19287768a396a",
+        "splits/engine_validation_scenarios.csv": "ed3cdd527921a2598c34507b8d57cdf66973dc05bf40b8412c289557e2a0c0d9",
+        "splits/scenario_test_scenarios.csv": "5b4d1552074899ac3b72df26dbfadb9dae58f961cd5129e4d56a208dfa25b4dd",
+        "splits/scenario_train_scenarios.csv": "21618707b1fb26604eaf4b97b7a6015b2b2ca1593652ba0e943bf366109decca",
+        "splits/scenario_validation_scenarios.csv": "f0b5113eb51c99de4448b488e26f07f08fa908ea4ee734ea649f5766c5696858"
+      }
+    },
+    "42424243": {
+      "seed": 42424243,
+      "dataset": "synthetic assumption-driven simulator; no real-engine accuracy claim",
+      "evaluator_sha256": "bcd06e49c6737fb20f5b6511c7317876e7217c20ab7dbd224fc30df54bf878b2",
+      "feature_controls": {
+        "A_features": [
+          "altitude_m",
+          "ambient_temp_c",
+          "ambient_pressure_pa",
+          "air_density_kg_m3",
+          "throttle_pct",
+          "phase_ground_run",
+          "phase_climb",
+          "phase_cruise",
+          "phase_descent",
+          "rpm_meas",
+          "rpm_missing",
+          "manifold_pressure_pa_meas",
+          "manifold_pressure_missing",
+          "cht_c_meas",
+          "cht_missing",
+          "egt_c_meas",
+          "egt_missing",
+          "oil_temp_c_meas",
+          "oil_temp_missing",
+          "oil_pressure_kpa_meas",
+          "oil_pressure_missing",
+          "fuel_flow_kg_s_meas",
+          "fuel_flow_missing",
+          "power_kw_meas",
+          "power_missing",
+          "torque_nm_meas",
+          "torque_missing",
+          "vibration_rms_g_meas",
+          "vibration_missing"
+        ],
+        "A_count": 29,
+        "B_count": 69,
+        "B_temporal_columns": [
+          "rpm_diff",
+          "rpm_rolling_std",
+          "rpm_diff_valid",
+          "rpm_rolling_std_valid",
+          "manifold_pressure_diff",
+          "manifold_pressure_rolling_std",
+          "manifold_pressure_diff_valid",
+          "manifold_pressure_rolling_std_valid",
+          "cht_diff",
+          "cht_rolling_std",
+          "cht_diff_valid",
+          "cht_rolling_std_valid",
+          "egt_diff",
+          "egt_rolling_std",
+          "egt_diff_valid",
+          "egt_rolling_std_valid",
+          "oil_temp_diff",
+          "oil_temp_rolling_std",
+          "oil_temp_diff_valid",
+          "oil_temp_rolling_std_valid",
+          "oil_pressure_diff",
+          "oil_pressure_rolling_std",
+          "oil_pressure_diff_valid",
+          "oil_pressure_rolling_std_valid",
+          "fuel_flow_diff",
+          "fuel_flow_rolling_std",
+          "fuel_flow_diff_valid",
+          "fuel_flow_rolling_std_valid",
+          "power_diff",
+          "power_rolling_std",
+          "power_diff_valid",
+          "power_rolling_std_valid",
+          "torque_diff",
+          "torque_rolling_std",
+          "torque_diff_valid",
+          "torque_rolling_std_valid",
+          "vibration_diff",
+          "vibration_rolling_std",
+          "vibration_diff_valid",
+          "vibration_rolling_std_valid"
+        ],
+        "ids_targets_latent_healthy_residuals_future_observations_used": false,
+        "temporal_scope": "scenario-local stable time_s sort; difference x[t]-x[t-1]; population std of t-5..t-1; no future values",
+        "warmup_missing": "invalid values NaN with 0 validity flags; no interpolation or cross-scenario fill"
+      },
+      "classifier": {
+        "candidates": "DummyClassifier(strategy=prior) and fixed RandomForestClassifier",
+        "random_forest": {
+          "n_estimators": 80,
+          "max_depth": 18,
+          "max_features": "sqrt",
+          "min_samples_leaf": 4,
+          "class_weight": "balanced_subsample",
+          "random_state": 271828,
+          "n_jobs": -1
+        },
+        "imputer": "median with add_indicator; fit on train for validation, then refit on train+validation",
+        "selection": "validation macro-F1; test evaluated once after refit"
+      },
+      "split_audit": {
+        "scenario_heldout": {
+          "train_rows": 48240,
+          "validation_rows": 10440,
+          "test_rows": 10440,
+          "same_masks_for_A_and_B": true
+        },
+        "engine_heldout": {
+          "train_rows": 69120,
+          "validation_rows": 23040,
+          "test_rows": 23040,
+          "same_masks_for_A_and_B": true
+        }
+      },
+      "experiments": {
+        "scenario_heldout__A_phase3a_29_features": {
+          "selected_model": "random_forest",
+          "validation": {
+            "majority_dummy": {
+              "accuracy": 0.11494252873563218,
+              "macro_f1": 0.02577319587628866
+            },
+            "random_forest": {
+              "accuracy": 0.2407088122605364,
+              "macro_f1": 0.22152269293605648
+            }
+          },
+          "test": {
+            "accuracy": 0.15555555555555556,
+            "macro_f1": 0.15630777655604278,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.3872491145218418,
+                "recall": 0.24848484848484848,
+                "f1": 0.3027226580526073,
+                "support": 1320
+              },
+              "efficiency_degradation": {
+                "precision": 0.10245901639344263,
+                "recall": 0.17045454545454544,
+                "f1": 0.12798634812286688,
+                "support": 1320
+              },
+              "normal": {
+                "precision": 0.02996742671009772,
+                "recall": 0.04259259259259259,
+                "f1": 0.03518164435946463,
+                "support": 1080
+              },
+              "sensor_bias": {
+                "precision": 0.1512455516014235,
+                "recall": 0.059027777777777776,
+                "f1": 0.08491508491508491,
+                "support": 1440
+              },
+              "sensor_drift": {
+                "precision": 0.25428027901078,
+                "recall": 0.3037878787878788,
+                "f1": 0.27683810838798756,
+                "support": 1320
+              },
+              "sensor_dropout": {
+                "precision": 0.21802002224694106,
+                "recall": 0.1361111111111111,
+                "f1": 0.1675929884566054,
+                "support": 1440
+              },
+              "sensor_stuck": {
+                "precision": 0.06258692628650904,
+                "recall": 0.075,
+                "f1": 0.06823351023502654,
+                "support": 1200
+              },
+              "thermal_abnormality": {
+                "precision": 0.18253968253968253,
+                "recall": 0.19166666666666668,
+                "f1": 0.18699186991869918,
+                "support": 1320
+              }
+            },
+            "confusion_matrix": [
+              [
+                328,
+                213,
+                324,
+                29,
+                0,
+                252,
+                81,
+                93
+              ],
+              [
+                9,
+                225,
+                110,
+                240,
+                249,
+                118,
+                313,
+                56
+              ],
+              [
+                18,
+                575,
+                46,
+                0,
+                123,
+                126,
+                94,
+                98
+              ],
+              [
+                121,
+                353,
+                33,
+                85,
+                158,
+                115,
+                294,
+                281
+              ],
+              [
+                98,
+                99,
+                177,
+                61,
+                401,
+                49,
+                242,
+                193
+              ],
+              [
+                227,
+                201,
+                240,
+                4,
+                257,
+                196,
+                47,
+                268
+              ],
+              [
+                33,
+                402,
+                170,
+                143,
+                175,
+                43,
+                90,
+                144
+              ],
+              [
+                13,
+                128,
+                435,
+                0,
+                214,
+                0,
+                277,
+                253
+              ]
+            ],
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "precision": 0.5272564789991063,
+              "recall": 0.43703703703703706,
+              "f1": 0.477926285945727
+            }
+          },
+          "feature_count": 29,
+          "features": [
+            "altitude_m",
+            "ambient_temp_c",
+            "ambient_pressure_pa",
+            "air_density_kg_m3",
+            "throttle_pct",
+            "phase_ground_run",
+            "phase_climb",
+            "phase_cruise",
+            "phase_descent",
+            "rpm_meas",
+            "rpm_missing",
+            "manifold_pressure_pa_meas",
+            "manifold_pressure_missing",
+            "cht_c_meas",
+            "cht_missing",
+            "egt_c_meas",
+            "egt_missing",
+            "oil_temp_c_meas",
+            "oil_temp_missing",
+            "oil_pressure_kpa_meas",
+            "oil_pressure_missing",
+            "fuel_flow_kg_s_meas",
+            "fuel_flow_missing",
+            "power_kw_meas",
+            "power_missing",
+            "torque_nm_meas",
+            "torque_missing",
+            "vibration_rms_g_meas",
+            "vibration_missing"
+          ],
+          "per_class_file": "scenario_heldout__A_phase3a_29_features__per_class.csv",
+          "confusion_matrix_file": "scenario_heldout__A_phase3a_29_features__confusion_matrix.csv"
+        },
+        "scenario_heldout__B_temporal_69_features": {
+          "selected_model": "random_forest",
+          "validation": {
+            "majority_dummy": {
+              "accuracy": 0.11494252873563218,
+              "macro_f1": 0.02577319587628866
+            },
+            "random_forest": {
+              "accuracy": 0.29703065134099615,
+              "macro_f1": 0.2935803291357407
+            }
+          },
+          "test": {
+            "accuracy": 0.2949233716475096,
+            "macro_f1": 0.3077578980021556,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.5131375579598145,
+                "recall": 0.2515151515151515,
+                "f1": 0.33756990340620235,
+                "support": 1320
+              },
+              "efficiency_degradation": {
+                "precision": 0.11295034079844206,
+                "recall": 0.17575757575757575,
+                "f1": 0.13752222880853587,
+                "support": 1320
+              },
+              "normal": {
+                "precision": 0.140625,
+                "recall": 0.23333333333333334,
+                "f1": 0.17548746518105848,
+                "support": 1080
+              },
+              "sensor_bias": {
+                "precision": 0.3118594436310395,
+                "recall": 0.14791666666666667,
+                "f1": 0.20065944418276024,
+                "support": 1440
+              },
+              "sensor_drift": {
+                "precision": 0.27673325499412454,
+                "recall": 0.3568181818181818,
+                "f1": 0.3117140966247518,
+                "support": 1320
+              },
+              "sensor_dropout": {
+                "precision": 0.3555389221556886,
+                "recall": 0.3298611111111111,
+                "f1": 0.34221902017291067,
+                "support": 1440
+              },
+              "sensor_stuck": {
+                "precision": 0.7857142857142857,
+                "recall": 0.6875,
+                "f1": 0.7333333333333333,
+                "support": 1200
+              },
+              "thermal_abnormality": {
+                "precision": 0.2372448979591837,
+                "recall": 0.21136363636363636,
+                "f1": 0.22355769230769232,
+                "support": 1320
+              }
+            },
+            "confusion_matrix": [
+              [
+                332,
+                265,
+                276,
+                34,
+                79,
+                257,
+                4,
+                73
+              ],
+              [
+                17,
+                232,
+                230,
+                130,
+                324,
+                118,
+                51,
+                218
+              ],
+              [
+                11,
+                459,
+                252,
+                2,
+                215,
+                97,
+                0,
+                44
+              ],
+              [
+                68,
+                307,
+                324,
+                213,
+                161,
+                134,
+                94,
+                139
+              ],
+              [
+                61,
+                220,
+                198,
+                86,
+                471,
+                211,
+                0,
+                73
+              ],
+              [
+                137,
+                92,
+                105,
+                90,
+                214,
+                475,
+                2,
+                325
+              ],
+              [
+                7,
+                164,
+                45,
+                20,
+                101,
+                13,
+                825,
+                25
+              ],
+              [
+                14,
+                315,
+                362,
+                108,
+                137,
+                31,
+                74,
+                279
+              ]
+            ],
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "precision": 0.6518549570320687,
+              "recall": 0.575925925925926,
+              "f1": 0.6115426211778586
+            }
+          },
+          "feature_count": 69,
+          "features": [
+            "altitude_m",
+            "ambient_temp_c",
+            "ambient_pressure_pa",
+            "air_density_kg_m3",
+            "throttle_pct",
+            "phase_ground_run",
+            "phase_climb",
+            "phase_cruise",
+            "phase_descent",
+            "rpm_meas",
+            "rpm_missing",
+            "manifold_pressure_pa_meas",
+            "manifold_pressure_missing",
+            "cht_c_meas",
+            "cht_missing",
+            "egt_c_meas",
+            "egt_missing",
+            "oil_temp_c_meas",
+            "oil_temp_missing",
+            "oil_pressure_kpa_meas",
+            "oil_pressure_missing",
+            "fuel_flow_kg_s_meas",
+            "fuel_flow_missing",
+            "power_kw_meas",
+            "power_missing",
+            "torque_nm_meas",
+            "torque_missing",
+            "vibration_rms_g_meas",
+            "vibration_missing",
+            "rpm_diff",
+            "rpm_rolling_std",
+            "rpm_diff_valid",
+            "rpm_rolling_std_valid",
+            "manifold_pressure_diff",
+            "manifold_pressure_rolling_std",
+            "manifold_pressure_diff_valid",
+            "manifold_pressure_rolling_std_valid",
+            "cht_diff",
+            "cht_rolling_std",
+            "cht_diff_valid",
+            "cht_rolling_std_valid",
+            "egt_diff",
+            "egt_rolling_std",
+            "egt_diff_valid",
+            "egt_rolling_std_valid",
+            "oil_temp_diff",
+            "oil_temp_rolling_std",
+            "oil_temp_diff_valid",
+            "oil_temp_rolling_std_valid",
+            "oil_pressure_diff",
+            "oil_pressure_rolling_std",
+            "oil_pressure_diff_valid",
+            "oil_pressure_rolling_std_valid",
+            "fuel_flow_diff",
+            "fuel_flow_rolling_std",
+            "fuel_flow_diff_valid",
+            "fuel_flow_rolling_std_valid",
+            "power_diff",
+            "power_rolling_std",
+            "power_diff_valid",
+            "power_rolling_std_valid",
+            "torque_diff",
+            "torque_rolling_std",
+            "torque_diff_valid",
+            "torque_rolling_std_valid",
+            "vibration_diff",
+            "vibration_rolling_std",
+            "vibration_diff_valid",
+            "vibration_rolling_std_valid"
+          ],
+          "per_class_file": "scenario_heldout__B_temporal_69_features__per_class.csv",
+          "confusion_matrix_file": "scenario_heldout__B_temporal_69_features__confusion_matrix.csv"
+        },
+        "engine_heldout__A_phase3a_29_features": {
+          "selected_model": "random_forest",
+          "validation": {
+            "majority_dummy": {
+              "accuracy": 0.125,
+              "macro_f1": 0.027777777777777776
+            },
+            "random_forest": {
+              "accuracy": 0.2111545138888889,
+              "macro_f1": 0.2148446469503748
+            }
+          },
+          "test": {
+            "accuracy": 0.19618055555555555,
+            "macro_f1": 0.1998181676060295,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.4613220815752461,
+                "recall": 0.3416666666666667,
+                "f1": 0.39257929383602636,
+                "support": 2880
+              },
+              "efficiency_degradation": {
+                "precision": 0.05008787346221441,
+                "recall": 0.059375,
+                "f1": 0.05433746425166826,
+                "support": 2880
+              },
+              "normal": {
+                "precision": 0.09590009425070688,
+                "recall": 0.14131944444444444,
+                "f1": 0.11426165075800113,
+                "support": 2880
+              },
+              "sensor_bias": {
+                "precision": 0.22610635924135367,
+                "recall": 0.2111111111111111,
+                "f1": 0.2183515891542467,
+                "support": 2880
+              },
+              "sensor_drift": {
+                "precision": 0.18383838383838383,
+                "recall": 0.18958333333333333,
+                "f1": 0.18666666666666668,
+                "support": 2880
+              },
+              "sensor_dropout": {
+                "precision": 0.259822090437361,
+                "recall": 0.24340277777777777,
+                "f1": 0.2513445679455002,
+                "support": 2880
+              },
+              "sensor_stuck": {
+                "precision": 0.010198878123406425,
+                "recall": 0.006944444444444444,
+                "f1": 0.008262755629002272,
+                "support": 2880
+              },
+              "thermal_abnormality": {
+                "precision": 0.3694984646878199,
+                "recall": 0.37604166666666666,
+                "f1": 0.37274135260712443,
+                "support": 2880
+              }
+            },
+            "confusion_matrix": [
+              [
+                984,
+                569,
+                171,
+                282,
+                214,
+                147,
+                316,
+                197
+              ],
+              [
+                289,
+                171,
+                986,
+                167,
+                287,
+                252,
+                260,
+                468
+              ],
+              [
+                174,
+                471,
+                407,
+                373,
+                680,
+                186,
+                482,
+                107
+              ],
+              [
+                189,
+                428,
+                610,
+                608,
+                287,
+                316,
+                263,
+                179
+              ],
+              [
+                111,
+                458,
+                737,
+                367,
+                546,
+                191,
+                313,
+                157
+              ],
+              [
+                130,
+                617,
+                428,
+                269,
+                248,
+                701,
+                161,
+                326
+              ],
+              [
+                77,
+                268,
+                707,
+                375,
+                463,
+                556,
+                20,
+                414
+              ],
+              [
+                179,
+                432,
+                198,
+                248,
+                245,
+                349,
+                146,
+                1083
+              ]
+            ],
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "precision": 0.5508819538670285,
+              "recall": 0.4934027777777778,
+              "f1": 0.5205604908874439
+            }
+          },
+          "feature_count": 29,
+          "features": [
+            "altitude_m",
+            "ambient_temp_c",
+            "ambient_pressure_pa",
+            "air_density_kg_m3",
+            "throttle_pct",
+            "phase_ground_run",
+            "phase_climb",
+            "phase_cruise",
+            "phase_descent",
+            "rpm_meas",
+            "rpm_missing",
+            "manifold_pressure_pa_meas",
+            "manifold_pressure_missing",
+            "cht_c_meas",
+            "cht_missing",
+            "egt_c_meas",
+            "egt_missing",
+            "oil_temp_c_meas",
+            "oil_temp_missing",
+            "oil_pressure_kpa_meas",
+            "oil_pressure_missing",
+            "fuel_flow_kg_s_meas",
+            "fuel_flow_missing",
+            "power_kw_meas",
+            "power_missing",
+            "torque_nm_meas",
+            "torque_missing",
+            "vibration_rms_g_meas",
+            "vibration_missing"
+          ],
+          "per_class_file": "engine_heldout__A_phase3a_29_features__per_class.csv",
+          "confusion_matrix_file": "engine_heldout__A_phase3a_29_features__confusion_matrix.csv"
+        },
+        "engine_heldout__B_temporal_69_features": {
+          "selected_model": "random_forest",
+          "validation": {
+            "majority_dummy": {
+              "accuracy": 0.125,
+              "macro_f1": 0.027777777777777776
+            },
+            "random_forest": {
+              "accuracy": 0.2931857638888889,
+              "macro_f1": 0.30776280176304865
+            }
+          },
+          "test": {
+            "accuracy": 0.3021267361111111,
+            "macro_f1": 0.3244779204600341,
+            "per_class": {
+              "combustion_irregularity": {
+                "precision": 0.5529531568228105,
+                "recall": 0.3770833333333333,
+                "f1": 0.44838976052848883,
+                "support": 2880
+              },
+              "efficiency_degradation": {
+                "precision": 0.07080610021786492,
+                "recall": 0.06770833333333333,
+                "f1": 0.06922257720979766,
+                "support": 2880
+              },
+              "normal": {
+                "precision": 0.09681565043552763,
+                "recall": 0.23541666666666666,
+                "f1": 0.1372053020337954,
+                "support": 2880
+              },
+              "sensor_bias": {
+                "precision": 0.24694636218799787,
+                "recall": 0.16145833333333334,
+                "f1": 0.19525509132899432,
+                "support": 2880
+              },
+              "sensor_drift": {
+                "precision": 0.2768192048012003,
+                "recall": 0.25625,
+                "f1": 0.26613775694194014,
+                "support": 2880
+              },
+              "sensor_dropout": {
+                "precision": 0.42431972789115646,
+                "recall": 0.34652777777777777,
+                "f1": 0.38149847094801226,
+                "support": 2880
+              },
+              "sensor_stuck": {
+                "precision": 0.7680070702607159,
+                "recall": 0.6034722222222222,
+                "f1": 0.6758701147190356,
+                "support": 2880
+              },
+              "thermal_abnormality": {
+                "precision": 0.49327146171693736,
+                "recall": 0.36909722222222224,
+                "f1": 0.4222442899702085,
+                "support": 2880
+              }
+            },
+            "confusion_matrix": [
+              [
+                1086,
+                496,
+                668,
+                107,
+                82,
+                133,
+                112,
+                196
+              ],
+              [
+                174,
+                195,
+                1555,
+                90,
+                314,
+                276,
+                118,
+                158
+              ],
+              [
+                217,
+                584,
+                678,
+                383,
+                639,
+                97,
+                165,
+                117
+              ],
+              [
+                172,
+                284,
+                1259,
+                465,
+                235,
+                332,
+                6,
+                127
+              ],
+              [
+                68,
+                343,
+                1074,
+                366,
+                738,
+                115,
+                77,
+                99
+              ],
+              [
+                68,
+                475,
+                695,
+                184,
+                247,
+                998,
+                39,
+                174
+              ],
+              [
+                26,
+                177,
+                425,
+                91,
+                138,
+                64,
+                1738,
+                221
+              ],
+              [
+                153,
+                200,
+                649,
+                197,
+                273,
+                337,
+                8,
+                1063
+              ]
+            ],
+            "confusion_matrix_labels": [
+              "combustion_irregularity",
+              "efficiency_degradation",
+              "normal",
+              "sensor_bias",
+              "sensor_drift",
+              "sensor_dropout",
+              "sensor_stuck",
+              "thermal_abnormality"
+            ],
+            "sensor_fault_group_detection": {
+              "precision": 0.6365124399825404,
+              "recall": 0.5063368055555556,
+              "f1": 0.5640108296267646
+            }
+          },
+          "feature_count": 69,
+          "features": [
+            "altitude_m",
+            "ambient_temp_c",
+            "ambient_pressure_pa",
+            "air_density_kg_m3",
+            "throttle_pct",
+            "phase_ground_run",
+            "phase_climb",
+            "phase_cruise",
+            "phase_descent",
+            "rpm_meas",
+            "rpm_missing",
+            "manifold_pressure_pa_meas",
+            "manifold_pressure_missing",
+            "cht_c_meas",
+            "cht_missing",
+            "egt_c_meas",
+            "egt_missing",
+            "oil_temp_c_meas",
+            "oil_temp_missing",
+            "oil_pressure_kpa_meas",
+            "oil_pressure_missing",
+            "fuel_flow_kg_s_meas",
+            "fuel_flow_missing",
+            "power_kw_meas",
+            "power_missing",
+            "torque_nm_meas",
+            "torque_missing",
+            "vibration_rms_g_meas",
+            "vibration_missing",
+            "rpm_diff",
+            "rpm_rolling_std",
+            "rpm_diff_valid",
+            "rpm_rolling_std_valid",
+            "manifold_pressure_diff",
+            "manifold_pressure_rolling_std",
+            "manifold_pressure_diff_valid",
+            "manifold_pressure_rolling_std_valid",
+            "cht_diff",
+            "cht_rolling_std",
+            "cht_diff_valid",
+            "cht_rolling_std_valid",
+            "egt_diff",
+            "egt_rolling_std",
+            "egt_diff_valid",
+            "egt_rolling_std_valid",
+            "oil_temp_diff",
+            "oil_temp_rolling_std",
+            "oil_temp_diff_valid",
+            "oil_temp_rolling_std_valid",
+            "oil_pressure_diff",
+            "oil_pressure_rolling_std",
+            "oil_pressure_diff_valid",
+            "oil_pressure_rolling_std_valid",
+            "fuel_flow_diff",
+            "fuel_flow_rolling_std",
+            "fuel_flow_diff_valid",
+            "fuel_flow_rolling_std_valid",
+            "power_diff",
+            "power_rolling_std",
+            "power_diff_valid",
+            "power_rolling_std_valid",
+            "torque_diff",
+            "torque_rolling_std",
+            "torque_diff_valid",
+            "torque_rolling_std_valid",
+            "vibration_diff",
+            "vibration_rolling_std",
+            "vibration_diff_valid",
+            "vibration_rolling_std_valid"
+          ],
+          "per_class_file": "engine_heldout__B_temporal_69_features__per_class.csv",
+          "confusion_matrix_file": "engine_heldout__B_temporal_69_features__confusion_matrix.csv"
+        }
+      },
+      "input_sha256": {
+        "config/dataset_config.json": "425c97d8a2ec6aa4f5b1b32f240e5d4a5345d9ac62a8c49856891baa9da89d19",
+        "src/generate_dataset.py": "c30a247efcd462efa5f9e4b7efe8d470f24fe8d8ab33852b5ea7a1fc65ffde9d",
+        "src/build_features.py": "b92e8f3930f26c2563c8b6172cf9791bc21112cc92b799889a6e8c1e8f813d83",
+        "src/validate_dataset.py": "6adb9a6cf6ddf432cd1289baa4ba2b5767928cb36930c0b448c154c724d8a002",
+        "src/train_baselines.py": "c969f2c1607512c84d5f6afe8c0e9616fc8e0596a7fe716c64e9e85453b5cd50",
+        "data/raw/engine_twin_v0.2_raw.csv": "ba9d664b284312ab46f2e34d2fd284ff798cb940c8106c2577403b399b168a3f",
+        "data/processed/features.csv": "c497797188e574b44e27d77c31639f65b725917dfffe47783ad6f69dff939f9e",
+        "data/processed/labels.csv": "2e8d5dc84d7f3bf3f12a3420dde14e1a7540c01258b419ff415113dd3751b652",
+        "data/processed/feature_lineage.csv": "974b77ad2512e7e693a82b1e28c0a656a9d314536ec3d4d8d7ef504d47a628de",
+        "metadata/scenario_manifest.csv": "644befa05d720f58e29599d0100bf3352a71ae3f3eb4069dafa3db3900e4028a",
+        "metadata/engine_manifest.csv": "eafd8e731d9fa01d8c7433697eedeb0d147a3ab7e156621698ec35823ae016a1",
+        "splits/engine_test_engines.csv": "6560d4266a0e2be8e9ccfe3341afc3d0f233050b7ef5a0408944527ead110595",
+        "splits/engine_test_scenarios.csv": "b0259a864402eb5688edf63baf692d87637c32d574a0cb5823462c77063ed2cf",
+        "splits/engine_train_engines.csv": "919a34f4a2b396370a71aea37ae2572b5b3a753ce8833494a7c22a4a979f7e9d",
+        "splits/engine_train_scenarios.csv": "9ce5a9a614fd244939cadc65ee0a59bab4bca7251806f4cfa1b9376c18528cb1",
+        "splits/engine_validation_engines.csv": "3336e595741644b005b4039a153fa133e304350e283a6f30a05f78f6c08822ee",
+        "splits/engine_validation_scenarios.csv": "0c771b1fe1cbdbd4faced9d5f1f0947129b07e5b24dee484ea90d004bc6a4cef",
+        "splits/scenario_test_scenarios.csv": "af864c7812d91cab7c3722139d25cf7a698416953837e268e494090bbaa0a3c4",
+        "splits/scenario_train_scenarios.csv": "c6f325fc70908d36ef61cce00f72ef4ffc6a32bb03dbe7dee414e0190da9289a",
+        "splits/scenario_validation_scenarios.csv": "310a7fff9cbeaaeb8fa2017627597e82af0855d087d9cb5cc6b19a438c3021e2"
+      }
+    }
+  },
+  "aggregate_metrics": [
+    {
+      "protocol": "scenario_heldout",
+      "experiment": "A_phase3a_29_features",
+      "metric": "accuracy",
+      "seed_count": 5,
+      "mean": 0.21084291187739462,
+      "sample_std_ddof1": 0.048625920209942636,
+      "minimum": 0.15555555555555556,
+      "maximum": 0.2852490421455939
+    },
+    {
+      "protocol": "scenario_heldout",
+      "experiment": "A_phase3a_29_features",
+      "metric": "macro_f1",
+      "seed_count": 5,
+      "mean": 0.20860433583819818,
+      "sample_std_ddof1": 0.04762226293416504,
+      "minimum": 0.15630777655604278,
+      "maximum": 0.2785169898048531
+    },
+    {
+      "protocol": "scenario_heldout",
+      "experiment": "A_phase3a_29_features",
+      "metric": "sensor_group_precision",
+      "seed_count": 5,
+      "mean": 0.5705623841209797,
+      "sample_std_ddof1": 0.06793122126669386,
+      "minimum": 0.516056338028169,
+      "maximum": 0.6863522537562604
+    },
+    {
+      "protocol": "scenario_heldout",
+      "experiment": "A_phase3a_29_features",
+      "metric": "sensor_group_recall",
+      "seed_count": 5,
+      "mean": 0.5427304723490203,
+      "sample_std_ddof1": 0.07236009767308445,
+      "minimum": 0.43703703703703706,
+      "maximum": 0.6374031007751938
+    },
+    {
+      "protocol": "scenario_heldout",
+      "experiment": "A_phase3a_29_features",
+      "metric": "sensor_group_f1",
+      "seed_count": 5,
+      "mean": 0.5555095200428873,
+      "sample_std_ddof1": 0.0674381995561974,
+      "minimum": 0.477926285945727,
+      "maximum": 0.6609726688102894
+    },
+    {
+      "protocol": "scenario_heldout",
+      "experiment": "B_temporal_69_features",
+      "metric": "accuracy",
+      "seed_count": 5,
+      "mean": 0.3239272030651341,
+      "sample_std_ddof1": 0.027645460389733114,
+      "minimum": 0.2949233716475096,
+      "maximum": 0.3671455938697318
+    },
+    {
+      "protocol": "scenario_heldout",
+      "experiment": "B_temporal_69_features",
+      "metric": "macro_f1",
+      "seed_count": 5,
+      "mean": 0.3393569340098777,
+      "sample_std_ddof1": 0.028016584340680346,
+      "minimum": 0.3077578980021556,
+      "maximum": 0.36932291189494837
+    },
+    {
+      "protocol": "scenario_heldout",
+      "experiment": "B_temporal_69_features",
+      "metric": "sensor_group_precision",
+      "seed_count": 5,
+      "mean": 0.6376155967173889,
+      "sample_std_ddof1": 0.04520368232714996,
+      "minimum": 0.5791079812206573,
+      "maximum": 0.6972630795010241
+    },
+    {
+      "protocol": "scenario_heldout",
+      "experiment": "B_temporal_69_features",
+      "metric": "sensor_group_recall",
+      "seed_count": 5,
+      "mean": 0.5628844982248272,
+      "sample_std_ddof1": 0.1072912832502258,
+      "minimum": 0.4540650406504065,
+      "maximum": 0.7257751937984496
+    },
+    {
+      "protocol": "scenario_heldout",
+      "experiment": "B_temporal_69_features",
+      "metric": "sensor_group_f1",
+      "seed_count": 5,
+      "mean": 0.5960981282367845,
+      "sample_std_ddof1": 0.07871616651133716,
+      "minimum": 0.52026082906381,
+      "maximum": 0.7112335010920141
+    },
+    {
+      "protocol": "engine_heldout",
+      "experiment": "A_phase3a_29_features",
+      "metric": "accuracy",
+      "seed_count": 5,
+      "mean": 0.22034722222222222,
+      "sample_std_ddof1": 0.025550625827784623,
+      "minimum": 0.19466145833333334,
+      "maximum": 0.2523871527777778
+    },
+    {
+      "protocol": "engine_heldout",
+      "experiment": "A_phase3a_29_features",
+      "metric": "macro_f1",
+      "seed_count": 5,
+      "mean": 0.22062808735654002,
+      "sample_std_ddof1": 0.02370663106698352,
+      "minimum": 0.19449563704863831,
+      "maximum": 0.24879358249006578
+    },
+    {
+      "protocol": "engine_heldout",
+      "experiment": "A_phase3a_29_features",
+      "metric": "sensor_group_precision",
+      "seed_count": 5,
+      "mean": 0.56883032334095,
+      "sample_std_ddof1": 0.022221215783163755,
+      "minimum": 0.5454721925652722,
+      "maximum": 0.5996926970354303
+    },
+    {
+      "protocol": "engine_heldout",
+      "experiment": "A_phase3a_29_features",
+      "metric": "sensor_group_recall",
+      "seed_count": 5,
+      "mean": 0.5351909722222222,
+      "sample_std_ddof1": 0.04198462666105364,
+      "minimum": 0.4878472222222222,
+      "maximum": 0.5759548611111112
+    },
+    {
+      "protocol": "engine_heldout",
+      "experiment": "A_phase3a_29_features",
+      "metric": "sensor_group_f1",
+      "seed_count": 5,
+      "mean": 0.5512842734376818,
+      "sample_std_ddof1": 0.0324239309162651,
+      "minimum": 0.5150529258122165,
+      "maximum": 0.5875841303577755
+    },
+    {
+      "protocol": "engine_heldout",
+      "experiment": "B_temporal_69_features",
+      "metric": "accuracy",
+      "seed_count": 5,
+      "mean": 0.33003472222222224,
+      "sample_std_ddof1": 0.03932613820888207,
+      "minimum": 0.3021267361111111,
+      "maximum": 0.39505208333333336
+    },
+    {
+      "protocol": "engine_heldout",
+      "experiment": "B_temporal_69_features",
+      "metric": "macro_f1",
+      "seed_count": 5,
+      "mean": 0.3509036933378383,
+      "sample_std_ddof1": 0.04266382311490776,
+      "minimum": 0.3204551397236247,
+      "maximum": 0.4204667722660728
+    },
+    {
+      "protocol": "engine_heldout",
+      "experiment": "B_temporal_69_features",
+      "metric": "sensor_group_precision",
+      "seed_count": 5,
+      "mean": 0.6634463056835843,
+      "sample_std_ddof1": 0.06372994653696015,
+      "minimum": 0.6076894363568496,
+      "maximum": 0.7727545809552419
+    },
+    {
+      "protocol": "engine_heldout",
+      "experiment": "B_temporal_69_features",
+      "metric": "sensor_group_recall",
+      "seed_count": 5,
+      "mean": 0.5478645833333333,
+      "sample_std_ddof1": 0.0841310783548418,
+      "minimum": 0.4466145833333333,
+      "maximum": 0.6744791666666666
+    },
+    {
+      "protocol": "engine_heldout",
+      "experiment": "B_temporal_69_features",
+      "metric": "sensor_group_f1",
+      "seed_count": 5,
+      "mean": 0.5944975994376102,
+      "sample_std_ddof1": 0.04161153197419886,
+      "minimum": 0.5640108296267646,
+      "maximum": 0.6658953593006813
+    }
+  ],
+  "aggregate_classwise_f1_changes": [
+    {
+      "protocol": "scenario_heldout",
+      "fault_class": "combustion_irregularity",
+      "seed_count": 5,
+      "mean_f1_delta": 0.03213202979353088,
+      "sample_std_ddof1": 0.018619564456906868,
+      "minimum_f1_delta": 0.006217075660992388,
+      "maximum_f1_delta": 0.04962298002996429,
+      "seeds_positive": 5,
+      "seeds_negative": 0,
+      "seeds_unchanged": 0
+    },
+    {
+      "protocol": "scenario_heldout",
+      "fault_class": "efficiency_degradation",
+      "seed_count": 5,
+      "mean_f1_delta": 0.041471078640000235,
+      "sample_std_ddof1": 0.07115445095200677,
+      "minimum_f1_delta": -0.04142187736857708,
+      "maximum_f1_delta": 0.1508884993294528,
+      "seeds_positive": 4,
+      "seeds_negative": 1,
+      "seeds_unchanged": 0
+    },
+    {
+      "protocol": "scenario_heldout",
+      "fault_class": "normal",
+      "seed_count": 5,
+      "mean_f1_delta": 0.02272439747950309,
+      "sample_std_ddof1": 0.07723012665265236,
+      "minimum_f1_delta": -0.07647983788760901,
+      "maximum_f1_delta": 0.14030582082159385,
+      "seeds_positive": 4,
+      "seeds_negative": 1,
+      "seeds_unchanged": 0
+    },
+    {
+      "protocol": "scenario_heldout",
+      "fault_class": "sensor_bias",
+      "seed_count": 5,
+      "mean_f1_delta": 0.0358112938545164,
+      "sample_std_ddof1": 0.05983581397218132,
+      "minimum_f1_delta": -0.017333340041931294,
+      "maximum_f1_delta": 0.11574435926767533,
+      "seeds_positive": 3,
+      "seeds_negative": 2,
+      "seeds_unchanged": 0
+    },
+    {
+      "protocol": "scenario_heldout",
+      "fault_class": "sensor_drift",
+      "seed_count": 5,
+      "mean_f1_delta": 0.0235531589651796,
+      "sample_std_ddof1": 0.02491323147602562,
+      "minimum_f1_delta": -0.00370229242531972,
+      "maximum_f1_delta": 0.06062036009525157,
+      "seeds_positive": 4,
+      "seeds_negative": 1,
+      "seeds_unchanged": 0
+    },
+    {
+      "protocol": "scenario_heldout",
+      "fault_class": "sensor_dropout",
+      "seed_count": 5,
+      "mean_f1_delta": 0.2301560848386934,
+      "sample_std_ddof1": 0.12298272610784797,
+      "minimum_f1_delta": 0.04681871395276399,
+      "maximum_f1_delta": 0.3662337262813333,
+      "seeds_positive": 5,
+      "seeds_negative": 0,
+      "seeds_unchanged": 0
+    },
+    {
+      "protocol": "scenario_heldout",
+      "fault_class": "sensor_stuck",
+      "seed_count": 5,
+      "mean_f1_delta": 0.5892377191983785,
+      "sample_std_ddof1": 0.07670558035457169,
+      "minimum_f1_delta": 0.4648012699795051,
+      "maximum_f1_delta": 0.6650998230983067,
+      "seeds_positive": 5,
+      "seeds_negative": 0,
+      "seeds_unchanged": 0
+    },
+    {
+      "protocol": "scenario_heldout",
+      "fault_class": "thermal_abnormality",
+      "seed_count": 5,
+      "mean_f1_delta": 0.07093502260363388,
+      "sample_std_ddof1": 0.05402432555331133,
+      "minimum_f1_delta": -0.0018420983879461894,
+      "maximum_f1_delta": 0.1252984888780796,
+      "seeds_positive": 4,
+      "seeds_negative": 1,
+      "seeds_unchanged": 0
+    },
+    {
+      "protocol": "engine_heldout",
+      "fault_class": "combustion_irregularity",
+      "seed_count": 5,
+      "mean_f1_delta": 0.06482528801057076,
+      "sample_std_ddof1": 0.025823880561883727,
+      "minimum_f1_delta": 0.027527486717501937,
+      "maximum_f1_delta": 0.09402440671162893,
+      "seeds_positive": 5,
+      "seeds_negative": 0,
+      "seeds_unchanged": 0
+    },
+    {
+      "protocol": "engine_heldout",
+      "fault_class": "efficiency_degradation",
+      "seed_count": 5,
+      "mean_f1_delta": 0.012547423417349077,
+      "sample_std_ddof1": 0.0647893231088511,
+      "minimum_f1_delta": -0.09830809890402387,
+      "maximum_f1_delta": 0.06764614170601774,
+      "seeds_positive": 4,
+      "seeds_negative": 1,
+      "seeds_unchanged": 0
+    },
+    {
+      "protocol": "engine_heldout",
+      "fault_class": "normal",
+      "seed_count": 5,
+      "mean_f1_delta": 0.04142181555576394,
+      "sample_std_ddof1": 0.03584941343693292,
+      "minimum_f1_delta": -0.0020299797327666957,
+      "maximum_f1_delta": 0.08103217834574365,
+      "seeds_positive": 4,
+      "seeds_negative": 1,
+      "seeds_unchanged": 0
+    },
+    {
+      "protocol": "engine_heldout",
+      "fault_class": "sensor_bias",
+      "seed_count": 5,
+      "mean_f1_delta": -0.005240149331992139,
+      "sample_std_ddof1": 0.050850937929974444,
+      "minimum_f1_delta": -0.06425275647171619,
+      "maximum_f1_delta": 0.05228882877778934,
+      "seeds_positive": 2,
+      "seeds_negative": 3,
+      "seeds_unchanged": 0
+    },
+    {
+      "protocol": "engine_heldout",
+      "fault_class": "sensor_drift",
+      "seed_count": 5,
+      "mean_f1_delta": 0.03683093110119443,
+      "sample_std_ddof1": 0.04709541223501333,
+      "minimum_f1_delta": -0.007957945559183381,
+      "maximum_f1_delta": 0.09519840601572645,
+      "seeds_positive": 4,
+      "seeds_negative": 1,
+      "seeds_unchanged": 0
+    },
+    {
+      "protocol": "engine_heldout",
+      "fault_class": "sensor_dropout",
+      "seed_count": 5,
+      "mean_f1_delta": 0.31813638695404883,
+      "sample_std_ddof1": 0.12463311372488625,
+      "minimum_f1_delta": 0.13015390300251206,
+      "maximum_f1_delta": 0.4404718960011757,
+      "seeds_positive": 5,
+      "seeds_negative": 0,
+      "seeds_unchanged": 0
+    },
+    {
+      "protocol": "engine_heldout",
+      "fault_class": "sensor_stuck",
+      "seed_count": 5,
+      "mean_f1_delta": 0.5435510016567825,
+      "sample_std_ddof1": 0.08826920983790142,
+      "minimum_f1_delta": 0.4546572728254738,
+      "maximum_f1_delta": 0.6676073590900333,
+      "seeds_positive": 5,
+      "seeds_negative": 0,
+      "seeds_unchanged": 0
+    },
+    {
+      "protocol": "engine_heldout",
+      "fault_class": "thermal_abnormality",
+      "seed_count": 5,
+      "mean_f1_delta": 0.030132150486668653,
+      "sample_std_ddof1": 0.04275176010035319,
+      "minimum_f1_delta": -0.041968076562097945,
+      "maximum_f1_delta": 0.06945653140514368,
+      "seeds_positive": 4,
+      "seeds_negative": 1,
+      "seeds_unchanged": 0
+    }
+  ],
+  "raw_sha256_by_seed": {
+    "314159": "4e16d69b1e1efb4a4d5fc0715a43201e4d4b24dc357f9e76655cb13c860ba372",
+    "8675309": "d936fe53115862eb5e7a9c5896d48ad76b43695085916855e69b6b4674803497",
+    "20261011": "7c2f62d20415021210d9878e4e43cc4141163d60a26db58d2ad1eff8341e69b8",
+    "1357911": "4d9647a3645c52d930b57e480cf62cf4f24455a99d09a8ce31542def604eddc0",
+    "42424243": "ba9d664b284312ab46f2e34d2fd284ff798cb940c8106c2577403b399b168a3f"
+  },
+  "split_sha256_by_seed": {
+    "314159": {
+      "splits/engine_test_engines.csv": "59efd61d9218b2bbd92d0902a0b50380816794ccca9aee40b846c2149931291a",
+      "splits/engine_test_scenarios.csv": "9d6932917e56723af718ed38b3f3df03c9a35dd7c5ee1fb3065d1d7a5fc0de9d",
+      "splits/engine_train_engines.csv": "968b006bd29fb7eb0150c96ad4997f213ee83ab4067485fd36a56e925c2785a2",
+      "splits/engine_train_scenarios.csv": "731c7c1354ef5c31d33e967b9b4fcca7d04a37b20572279a5769d425691d87b5",
+      "splits/engine_validation_engines.csv": "df4385015b7c29846ee2060bfca8de039ac20b577d00fb62edf5ef3808fff1ad",
+      "splits/engine_validation_scenarios.csv": "8cfe80ff8a649fa9002dd0dc4783405511af4862de63c1d70cebdfaaf0814f5e",
+      "splits/scenario_test_scenarios.csv": "e3a36a582197ac6790205269ce47dffb557afa1ff273647bff0c0366668c2d50",
+      "splits/scenario_train_scenarios.csv": "0da697d7b45405bc8f083962b6dd078faf156ec5fabd7d93373eaaa71dfcbf55",
+      "splits/scenario_validation_scenarios.csv": "972a352d4bfbb9f1db22a36e1fbee1cabfb8610d5dea366ad9c1001aa6bcad3d"
+    },
+    "8675309": {
+      "splits/engine_test_engines.csv": "543c1314634adf72bbdde79a51cfabf6991a1fe2fa0b8b5d7343074f56d5f835",
+      "splits/engine_test_scenarios.csv": "e12b0d15421944cec9578bb88be573828d81d2adbf138a5d9850cd910ae40e3f",
+      "splits/engine_train_engines.csv": "0ff042de8dd4bd71534c422f2c1e9f0e0bac900613484010ae30603a4e1a68ca",
+      "splits/engine_train_scenarios.csv": "49ba9c308be4abea8d1ab10e1a2f9239cd8c56abf791f42d29e45c2e5dce7fdf",
+      "splits/engine_validation_engines.csv": "7f4703513fd1ef41e9caac2b2a3bbf67184215a787b7817b69556e47ecb4fcec",
+      "splits/engine_validation_scenarios.csv": "f7a696cbf33549f715c3aa61cc5dd5dcb294a43551c60ca4c11f8b58321660c3",
+      "splits/scenario_test_scenarios.csv": "9b3fb113f14fa0fc3069e9a034180a0d1206eca7391903526114f29738799791",
+      "splits/scenario_train_scenarios.csv": "328b7d434177b0638b7ae4ab34d8e93e0b6773582e580e693a3fd9510eb06749",
+      "splits/scenario_validation_scenarios.csv": "491ebab2a52dd3334f7218596db6aec97b8ac390efbf4493c3afdc4f9c1a0d12"
+    },
+    "20261011": {
+      "splits/engine_test_engines.csv": "8b5071ee4d69e3121615a5d9c732ad33756ebfedd4a1492684aae16b640cc2b6",
+      "splits/engine_test_scenarios.csv": "29a6e80b8762ad0839ad08df9f64fcfcc72acb9a16084c0728243302512d6ab7",
+      "splits/engine_train_engines.csv": "45e64cd107be0f9623e831601fb12f2b9b42ac72a0d6331b4af89c5203dbc34b",
+      "splits/engine_train_scenarios.csv": "601560a5fe040594f78e9623c901b28816fbdd84317636faaa910d486bc1844a",
+      "splits/engine_validation_engines.csv": "29a56042a5616c9447aa2428839d6e9b6a4c999bdf0d9efbaf5faf0d0aec23d9",
+      "splits/engine_validation_scenarios.csv": "40281fd06ec3d21753d7265237e38befb5fe39f460abd189a48a1302c0355d35",
+      "splits/scenario_test_scenarios.csv": "85b58047953ba6894e8ca19bf22b929b9936224aa09b6924423a733ee845ac65",
+      "splits/scenario_train_scenarios.csv": "2fe763ca4b81fda92fc989062d5b9a6146e63f5e6ed58bf59e13f29a50fa76c2",
+      "splits/scenario_validation_scenarios.csv": "e8d3b30b13524c793435dc67ee88dd019c9f94550f1d17204c4a636119d2d251"
+    },
+    "1357911": {
+      "splits/engine_test_engines.csv": "8a4f2527047b0b02fe5410c0ca5a3b9c6142faa7220a3f231680ae363720d13a",
+      "splits/engine_test_scenarios.csv": "8c3e009bf841ffa3843b9fcd6421d9d4c1b151509ccf0b3ea0d7917bde44c244",
+      "splits/engine_train_engines.csv": "bcbdfdff7d6823bf4c8728f0fb6aaf9a46a27c615e08867daee7c69ec06ac118",
+      "splits/engine_train_scenarios.csv": "7bd1cb5f8c2970aeb96a01f312c02605666e787a54ebaa71a6ff3cba0b7f8a79",
+      "splits/engine_validation_engines.csv": "56f515caaba45f2a6b3f29b23c632a298f10e9e4442fd76232a19287768a396a",
+      "splits/engine_validation_scenarios.csv": "ed3cdd527921a2598c34507b8d57cdf66973dc05bf40b8412c289557e2a0c0d9",
+      "splits/scenario_test_scenarios.csv": "5b4d1552074899ac3b72df26dbfadb9dae58f961cd5129e4d56a208dfa25b4dd",
+      "splits/scenario_train_scenarios.csv": "21618707b1fb26604eaf4b97b7a6015b2b2ca1593652ba0e943bf366109decca",
+      "splits/scenario_validation_scenarios.csv": "f0b5113eb51c99de4448b488e26f07f08fa908ea4ee734ea649f5766c5696858"
+    },
+    "42424243": {
+      "splits/engine_test_engines.csv": "6560d4266a0e2be8e9ccfe3341afc3d0f233050b7ef5a0408944527ead110595",
+      "splits/engine_test_scenarios.csv": "b0259a864402eb5688edf63baf692d87637c32d574a0cb5823462c77063ed2cf",
+      "splits/engine_train_engines.csv": "919a34f4a2b396370a71aea37ae2572b5b3a753ce8833494a7c22a4a979f7e9d",
+      "splits/engine_train_scenarios.csv": "9ce5a9a614fd244939cadc65ee0a59bab4bca7251806f4cfa1b9376c18528cb1",
+      "splits/engine_validation_engines.csv": "3336e595741644b005b4039a153fa133e304350e283a6f30a05f78f6c08822ee",
+      "splits/engine_validation_scenarios.csv": "0c771b1fe1cbdbd4faced9d5f1f0947129b07e5b24dee484ea90d004bc6a4cef",
+      "splits/scenario_test_scenarios.csv": "af864c7812d91cab7c3722139d25cf7a698416953837e268e494090bbaa0a3c4",
+      "splits/scenario_train_scenarios.csv": "c6f325fc70908d36ef61cce00f72ef4ffc6a32bb03dbe7dee414e0190da9289a",
+      "splits/scenario_validation_scenarios.csv": "310a7fff9cbeaaeb8fa2017627597e82af0855d087d9cb5cc6b19a438c3021e2"
+    }
+  },
+  "source_result_references": {
+    "314159": {
+      "results_file": "Engine/v0.2/reports/diagnostics_v0.2/phase_3b/temporal_ablation_results.json",
+      "results_sha256": "d5ff89ffbe0bcc1b665703b4202b8d3d6903a0b64007e43679bf2c17a4b037b8",
+      "reported_software": {
+        "python": "3.11.0",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "numpy": "2.3.3",
+        "pandas": "3.0.1",
+        "scikit_learn": "1.7.2",
+        "joblib": "1.5.2"
+      }
+    },
+    "8675309": {
+      "results_file": "Engine/v0.2/reports/diagnostics_v0.2/phase_3c_seed_8675309/phase3c_seed_results.json",
+      "results_sha256": "9df304dad804bbba9ccbbdb4f640d85520cac6230c9ab422b924ba7a40af9d29",
+      "reported_software": {
+        "python": "3.11.0",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "numpy": "2.3.3",
+        "pandas": "3.0.1",
+        "scikit_learn": "1.7.2",
+        "joblib": "1.5.2"
+      }
+    },
+    "20261011": {
+      "results_file": "Engine/v0.2/reports/diagnostics_v0.2/phase_3d/seeds/seed_20261011/phase3d_seed_results.json",
+      "results_sha256": "3700304199ff09d79d6522af41c81c5c17b50d0c21412d4d463bee1779dbdd24",
+      "execution_evidence_file": "Engine/v0.2/reports/diagnostics_v0.2/phase_3d/seeds/seed_20261011/execution_evidence.json"
+    },
+    "1357911": {
+      "results_file": "Engine/v0.2/reports/diagnostics_v0.2/phase_3d/seeds/seed_1357911/phase3d_seed_results.json",
+      "results_sha256": "f9a7f5a20c9201ef260c859f8f0841db2ea6c778bff7de47eb67a10484094597",
+      "execution_evidence_file": "Engine/v0.2/reports/diagnostics_v0.2/phase_3d/seeds/seed_1357911/execution_evidence.json"
+    },
+    "42424243": {
+      "results_file": "Engine/v0.2/reports/diagnostics_v0.2/phase_3d/seeds/seed_42424243/phase3d_seed_results.json",
+      "results_sha256": "48bb01ea4c2681d9951ef347bdf64a571c4dfcb3e3c6438339803b6eee2f7440",
+      "execution_evidence_file": "Engine/v0.2/reports/diagnostics_v0.2/phase_3d/seeds/seed_42424243/execution_evidence.json"
+    }
+  },
+  "integrity": {
+    "raw_data_hashes_unique": true,
+    "all_nine_split_file_hashes_distinct_for_every_seed": true,
+    "new_seed_configs_differ_only_in_seed": true,
+    "new_seed_validation": {
+      "20261011": "18/18 PASS",
+      "1357911": "18/18 PASS",
+      "42424243": "18/18 PASS"
+    },
+    "new_seed_tests": {
+      "20261011": "10/10 PASS",
+      "1357911": "10/10 PASS",
+      "42424243": "10/10 PASS"
+    },
+    "preexisting_artifacts_preserved": "verified by SHA-256 against Phase 3A/3B/3C recorded hashes",
+    "new_seed_runtime_versions": "Python 3.11.0; pinned direct dependencies verified; complete pip freeze in pip_freeze.txt"
+  }
+}

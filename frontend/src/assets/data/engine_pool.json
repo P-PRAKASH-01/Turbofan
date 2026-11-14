@@ -1,0 +1,272 @@
+[
+  {
+    "engine_id": "0b650165a452bd7e",
+    "engine_split": "test",
+    "displacement_m3": 0.0010057886198664,
+    "idle_rpm": 761.622729058492,
+    "rated_rpm": 5001.42002350713,
+    "volumetric_efficiency": 0.79296768630448,
+    "healthy_thermal_efficiency": 0.235296282929551
+  },
+  {
+    "engine_id": "0dde13928d2db667",
+    "engine_split": "validation",
+    "displacement_m3": 0.000877564474778,
+    "idle_rpm": 894.534547363041,
+    "rated_rpm": 4444.574406028,
+    "volumetric_efficiency": 0.841075279430614,
+    "healthy_thermal_efficiency": 0.239970424807095
+  },
+  {
+    "engine_id": "0f2fa11c3144164e",
+    "engine_split": "train",
+    "displacement_m3": 0.0009823393190418,
+    "idle_rpm": 965.853591557513,
+    "rated_rpm": 4203.06149370425,
+    "volumetric_efficiency": 0.760130571403282,
+    "healthy_thermal_efficiency": 0.252339038849032
+  },
+  {
+    "engine_id": "1153e1f3895ff56e",
+    "engine_split": "test",
+    "displacement_m3": 0.00105358685315,
+    "idle_rpm": 764.523950590234,
+    "rated_rpm": 5162.26676214735,
+    "volumetric_efficiency": 0.76484267357014,
+    "healthy_thermal_efficiency": 0.231373493338969
+  },
+  {
+    "engine_id": "19e40e666bc2e43d",
+    "engine_split": "train",
+    "displacement_m3": 0.0007273380153483,
+    "idle_rpm": 995.923690442806,
+    "rated_rpm": 4281.3170160269,
+    "volumetric_efficiency": 0.799504567769942,
+    "healthy_thermal_efficiency": 0.243237960353586
+  },
+  {
+    "engine_id": "36d8ed38d43d7605",
+    "engine_split": "train",
+    "displacement_m3": 0.0011112213007871,
+    "idle_rpm": 905.611132132888,
+    "rated_rpm": 5011.09297346615,
+    "volumetric_efficiency": 0.781140475868802,
+    "healthy_thermal_efficiency": 0.275960929767948
+  },
+  {
+    "engine_id": "566a7f4dd11efef9",
+    "engine_split": "train",
+    "displacement_m3": 0.001099204964442,
+    "idle_rpm": 785.564027082383,
+    "rated_rpm": 4200.46253969993,
+    "volumetric_efficiency": 0.763494956145617,
+    "healthy_thermal_efficiency": 0.224075350426704
+  },
+  {
+    "engine_id": "569512318cb9a638",
+    "engine_split": "validation",
+    "displacement_m3": 0.0008005459137,
+    "idle_rpm": 854.7526014845,
+    "rated_rpm": 4532.63683513494,
+    "volumetric_efficiency": 0.752317942664392,
+    "healthy_thermal_efficiency": 0.234922535203539
+  },
+  {
+    "engine_id": "62328d0d766583d4",
+    "engine_split": "train",
+    "displacement_m3": 0.0010878229398629,
+    "idle_rpm": 760.890932758937,
+    "rated_rpm": 5040.6360461043,
+    "volumetric_efficiency": 0.80402379129789,
+    "healthy_thermal_efficiency": 0.272088361837755
+  },
+  {
+    "engine_id": "6d646243463f4dcb",
+    "engine_split": "train",
+    "displacement_m3": 0.0009206617463443,
+    "idle_rpm": 800.033528968061,
+    "rated_rpm": 4911.8675878542,
+    "volumetric_efficiency": 0.768827732649171,
+    "healthy_thermal_efficiency": 0.224301249596487
+  },
+  {
+    "engine_id": "6d74be412276efb5",
+    "engine_split": "train",
+    "displacement_m3": 0.0011103399119334,
+    "idle_rpm": 904.664729646394,
+    "rated_rpm": 4900.45772110659,
+    "volumetric_efficiency": 0.811042530347912,
+    "healthy_thermal_efficiency": 0.251886135873526
+  },
+  {
+    "engine_id": "7f6aa8786883d83e",
+    "engine_split": "train",
+    "displacement_m3": 0.0006050352461901,
+    "idle_rpm": 885.498492878063,
+    "rated_rpm": 4977.25263119101,
+    "volumetric_efficiency": 0.820100820102407,
+    "healthy_thermal_efficiency": 0.241421561653642
+  },
+  {
+    "engine_id": "883cbe3ca3ce4ccc",
+    "engine_split": "validation",
+    "displacement_m3": 0.0006281789273565,
+    "idle_rpm": 853.209361716829,
+    "rated_rpm": 4580.74662434305,
+    "volumetric_efficiency": 0.773139407528962,
+    "healthy_thermal_efficiency": 0.279481138748476
+  },
+  {
+    "engine_id": "97992747f54e1303",
+    "engine_split": "validation",
+    "displacement_m3": 0.0009105615724949,
+    "idle_rpm": 970.987818809014,
+    "rated_rpm": 4684.50296943505,
+    "volumetric_efficiency": 0.718004841876633,
+    "healthy_thermal_efficiency": 0.229681719830045
+  },
+  {
+    "engine_id": "9afe9c8bde58ab52",
+    "engine_split": "validation",
+    "displacement_m3": 0.0010830239967495,
+    "idle_rpm": 840.824300635883,
+    "rated_rpm": 4964.28495521276,
+    "volumetric_efficiency": 0.81686200166992,
+    "healthy_thermal_efficiency": 0.249501563252566
+  },
+  {
+    "engine_id": "9f2729c3976ee883",
+    "engine_split": "train",
+    "displacement_m3": 0.0006641195148369,
+    "idle_rpm": 772.050258399696,
+    "rated_rpm": 5188.9540784624,
+    "volumetric_efficiency": 0.767633770714096,
+    "healthy_thermal_efficiency": 0.278099956754214
+  },
+  {
+    "engine_id": "a4c4a87695d44953",
+    "engine_split": "validation",
+    "displacement_m3": 0.0010282394766499,
+    "idle_rpm": 774.333530075546,
+    "rated_rpm": 4771.61450685704,
+    "volumetric_efficiency": 0.814491278323753,
+    "healthy_thermal_efficiency": 0.226657420104301
+  },
+  {
+    "engine_id": "ab57a75494f16c82",
+    "engine_split": "train",
+    "displacement_m3": 0.0011362293106608,
+    "idle_rpm": 929.453947154328,
+    "rated_rpm": 4874.84827609179,
+    "volumetric_efficiency": 0.792956648056266,
+    "healthy_thermal_efficiency": 0.242337303880141
+  },
+  {
+    "engine_id": "ae2a40d5c7f6be34",
+    "engine_split": "test",
+    "displacement_m3": 0.0006259352810776,
+    "idle_rpm": 804.616978908104,
+    "rated_rpm": 4825.76646864643,
+    "volumetric_efficiency": 0.770965913746518,
+    "healthy_thermal_efficiency": 0.256122067231166
+  },
+  {
+    "engine_id": "bcdee114e06501f6",
+    "engine_split": "test",
+    "displacement_m3": 0.0009648580638286,
+    "idle_rpm": 994.059536598594,
+    "rated_rpm": 5091.06750999268,
+    "volumetric_efficiency": 0.838647522674639,
+    "healthy_thermal_efficiency": 0.22158188634973
+  },
+  {
+    "engine_id": "c1d0022b1e05445f",
+    "engine_split": "train",
+    "displacement_m3": 0.0008556566250408,
+    "idle_rpm": 917.786908069163,
+    "rated_rpm": 4332.20080104863,
+    "volumetric_efficiency": 0.74519744045611,
+    "healthy_thermal_efficiency": 0.248614304460083
+  },
+  {
+    "engine_id": "c4ccb7d8ab4e9505",
+    "engine_split": "train",
+    "displacement_m3": 0.000794231593185,
+    "idle_rpm": 836.978888600581,
+    "rated_rpm": 4295.22365458447,
+    "volumetric_efficiency": 0.840826318407935,
+    "healthy_thermal_efficiency": 0.249661022173189
+  },
+  {
+    "engine_id": "c953498c253640ab",
+    "engine_split": "train",
+    "displacement_m3": 0.0010586965176579,
+    "idle_rpm": 750.256567982685,
+    "rated_rpm": 4796.3261939669,
+    "volumetric_efficiency": 0.852734661285152,
+    "healthy_thermal_efficiency": 0.227636647163432
+  },
+  {
+    "engine_id": "dd261a43bfc51a07",
+    "engine_split": "test",
+    "displacement_m3": 0.0007766932213707,
+    "idle_rpm": 948.159477911339,
+    "rated_rpm": 4243.20155325994,
+    "volumetric_efficiency": 0.84987177282224,
+    "healthy_thermal_efficiency": 0.249434815017898
+  },
+  {
+    "engine_id": "eee2e3b38893f8e6",
+    "engine_split": "train",
+    "displacement_m3": 0.0007674001261675,
+    "idle_rpm": 774.092397367357,
+    "rated_rpm": 5087.41181604469,
+    "volumetric_efficiency": 0.835493330766965,
+    "healthy_thermal_efficiency": 0.265209593572069
+  },
+  {
+    "engine_id": "f169ef1f18516af7",
+    "engine_split": "test",
+    "displacement_m3": 0.0011801067937395,
+    "idle_rpm": 889.03228578384,
+    "rated_rpm": 4761.00751763175,
+    "volumetric_efficiency": 0.742403409355051,
+    "healthy_thermal_efficiency": 0.278742576205027
+  },
+  {
+    "engine_id": "f2673933872863f2",
+    "engine_split": "train",
+    "displacement_m3": 0.0008783341199238,
+    "idle_rpm": 867.416801490904,
+    "rated_rpm": 4824.07350951089,
+    "volumetric_efficiency": 0.727819989282232,
+    "healthy_thermal_efficiency": 0.264616128723838
+  },
+  {
+    "engine_id": "f92f09dbdb9f586c",
+    "engine_split": "train",
+    "displacement_m3": 0.0009864817093722,
+    "idle_rpm": 900.603191311421,
+    "rated_rpm": 4562.36258436507,
+    "volumetric_efficiency": 0.801907538624783,
+    "healthy_thermal_efficiency": 0.269838488120232
+  },
+  {
+    "engine_id": "fc8e95f23a73cdc2",
+    "engine_split": "train",
+    "displacement_m3": 0.0007992033754968,
+    "idle_rpm": 767.229250196827,
+    "rated_rpm": 4707.1012683879,
+    "volumetric_efficiency": 0.811858743068135,
+    "healthy_thermal_efficiency": 0.252255339716492
+  },
+  {
+    "engine_id": "feb3394815d31895",
+    "engine_split": "train",
+    "displacement_m3": 0.0007970667094311,
+    "idle_rpm": 891.746126412918,
+    "rated_rpm": 4660.30864481857,
+    "volumetric_efficiency": 0.737972021311705,
+    "healthy_thermal_efficiency": 0.255507092697293
+  }
+]

@@ -1,0 +1,9 @@
+,pred_combustion_irregularity,pred_efficiency_degradation,pred_normal,pred_sensor_bias,pred_sensor_drift,pred_sensor_dropout,pred_sensor_stuck,pred_thermal_abnormality
+true_combustion_irregularity,883,6,112,35,33,115,59,77
+true_efficiency_degradation,154,844,277,32,2,62,63,6
+true_normal,72,3,640,127,125,157,103,93
+true_sensor_bias,26,0,151,397,380,246,0,0
+true_sensor_drift,90,2,354,308,339,89,128,10
+true_sensor_dropout,23,42,521,20,12,425,127,30
+true_sensor_stuck,3,1,379,5,247,191,373,1
+true_thermal_abnormality,83,45,206,43,35,99,21,908

@@ -1,0 +1,15 @@
+split_protocol,hypothesis_id,statement,target_threshold,measured_value,sample_count,outcome,evidence
+scenario_heldout,H1,Mean EHI on healthy test windows >= 95.0,95.0,93.24,1299,FAIL,Measured mean EHI is 93.24 across all nominal flight windows.
+scenario_heldout,H2,Fifth-percentile EHI on healthy test windows >= 90.0,90.0,60.68,1299,FAIL,5th percentile EHI is 60.68; 95% of healthy samples stay above this score.
+scenario_heldout,H3,Mean EHI on fault scenarios before onset >= 95.0,95.0,96.79,3436,PASS,"Pre-onset mean EHI is 96.79, verifying pre-onset inactive health."
+scenario_heldout,H4,Post-onset physical EHI ordering: severe < moderate < mild,severe < moderate < mild,"mild=97.0, mod=95.2, sev=94.9",2602,PASS,"Severity scaling: mild=97.03, moderate=95.22, severe=94.86."
+scenario_heldout,H5,Mean EHI under sensor-fault scenarios >= 88.0,88.0,94.62,2968,PASS,"Mean EHI under sensor faults is 94.62, showing sensor isolation."
+scenario_heldout,H6,Mean SDQI under sensor-fault scenarios <= 75.0,75.0,93.89,3034,FAIL,Mean SDQI under active sensor faults is 93.89.
+scenario_heldout,H7,"Absolute Pearson correlation |r(EHI, throttle)| on healthy windows < 0.15",0.15,0.5918,1299,FAIL,"Measured correlation is -0.5918, demonstrating operating-point decoupling."
+engine_heldout,H1,Mean EHI on healthy test windows >= 95.0,95.0,98.41,2862,PASS,Measured mean EHI is 98.41 across all nominal flight windows.
+engine_heldout,H2,Fifth-percentile EHI on healthy test windows >= 90.0,90.0,91.15,2862,PASS,5th percentile EHI is 91.15; 95% of healthy samples stay above this score.
+engine_heldout,H3,Mean EHI on fault scenarios before onset >= 95.0,95.0,98.24,7524,PASS,"Pre-onset mean EHI is 98.24, verifying pre-onset inactive health."
+engine_heldout,H4,Post-onset physical EHI ordering: severe < moderate < mild,severe < moderate < mild,"mild=98.4, mod=94.8, sev=97.4",5217,FAIL,"Severity scaling: mild=98.39, moderate=94.82, severe=97.39."
+engine_heldout,H5,Mean EHI under sensor-fault scenarios >= 88.0,88.0,97.95,7060,PASS,"Mean EHI under sensor faults is 97.95, showing sensor isolation."
+engine_heldout,H6,Mean SDQI under sensor-fault scenarios <= 75.0,75.0,94.77,7319,FAIL,Mean SDQI under active sensor faults is 94.77.
+engine_heldout,H7,"Absolute Pearson correlation |r(EHI, throttle)| on healthy windows < 0.15",0.15,0.489,2862,FAIL,"Measured correlation is -0.4890, demonstrating operating-point decoupling."

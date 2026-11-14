@@ -1,0 +1,32 @@
+{
+  "dataset": "NASA C-MAPSS turbofan engine data",
+  "hardware_context": "MALE UAV piston engine digital twin prototype",
+  "engine_count": 709,
+  "mean_max_cycle": 226.17630465444287,
+  "mean_health_drop": 0.13498527257324094,
+  "mean_final_health_index": 0.05699573332274219,
+  "baseline_cycles": 10,
+  "residual_features": [
+    "sensor_1_abs_residual",
+    "sensor_2_abs_residual",
+    "sensor_3_abs_residual",
+    "sensor_4_abs_residual",
+    "sensor_5_abs_residual",
+    "sensor_6_abs_residual",
+    "sensor_7_abs_residual",
+    "sensor_8_abs_residual",
+    "sensor_9_abs_residual",
+    "sensor_10_abs_residual",
+    "sensor_11_abs_residual",
+    "sensor_12_abs_residual",
+    "sensor_13_abs_residual",
+    "sensor_14_abs_residual",
+    "sensor_15_abs_residual",
+    "sensor_16_abs_residual",
+    "sensor_17_abs_residual",
+    "sensor_18_abs_residual",
+    "sensor_19_abs_residual",
+    "sensor_20_abs_residual",
+    "sensor_21_abs_residual"
+  ]
+}

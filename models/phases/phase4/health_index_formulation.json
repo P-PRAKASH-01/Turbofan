@@ -1,0 +1,189 @@
+{
+  "specification": "ENGINE-TWIN v0.2 Phase 4A Health Index and Sensor Data Quality Formulation",
+  "version": "0.2.0-phase4a",
+  "timestamp_iso": "2026-10-13T20:50:00Z",
+  "scope": "Generic synthetic aero-piston-engine digital twin simulator; provisional research parameters, not certified flight limits.",
+  "channel_inventory": {
+    "total_channels": 10,
+    "channels": [
+      {
+        "channel_id": "rpm",
+        "measured_column": "rpm_meas",
+        "units": "RPM",
+        "nominal_sensor_noise_std": 6.0,
+        "physical_subsystem": "mechanical",
+        "coupled_group": "mechanical_power",
+        "ehi_weight": 0.12,
+        "sdqi_weight": 0.10,
+        "nominal_tolerance_sigma": 2.0,
+        "degradation_scale_beta": 1.5,
+        "plausible_range": [600.0, 5500.0],
+        "stuck_variance_threshold": 1.8,
+        "stuck_consecutive_identical_samples": 5
+      },
+      {
+        "channel_id": "manifold_pressure",
+        "measured_column": "manifold_pressure_pa_meas",
+        "units": "Pa",
+        "nominal_sensor_noise_std": 80.0,
+        "physical_subsystem": "induction",
+        "coupled_group": "airflow_induction",
+        "ehi_weight": 0.10,
+        "sdqi_weight": 0.10,
+        "nominal_tolerance_sigma": 2.0,
+        "degradation_scale_beta": 1.5,
+        "plausible_range": [20000.0, 110000.0],
+        "stuck_variance_threshold": 320.0,
+        "stuck_consecutive_identical_samples": 5
+      },
+      {
+        "channel_id": "cht",
+        "measured_column": "cht_c_meas",
+        "units": "deg_C",
+        "nominal_sensor_noise_std": 0.5,
+        "physical_subsystem": "thermal",
+        "coupled_group": "thermal_dissipation",
+        "ehi_weight": 0.15,
+        "sdqi_weight": 0.12,
+        "nominal_tolerance_sigma": 2.0,
+        "degradation_scale_beta": 1.5,
+        "plausible_range": [20.0, 260.0],
+        "stuck_variance_threshold": 0.0125,
+        "stuck_consecutive_identical_samples": 5
+      },
+      {
+        "channel_id": "egt",
+        "measured_column": "egt_c_meas",
+        "units": "deg_C",
+        "nominal_sensor_noise_std": 1.0,
+        "physical_subsystem": "combustion_thermal",
+        "coupled_group": "thermal_dissipation",
+        "ehi_weight": 0.15,
+        "sdqi_weight": 0.12,
+        "nominal_tolerance_sigma": 2.0,
+        "degradation_scale_beta": 1.5,
+        "plausible_range": [100.0, 950.0],
+        "stuck_variance_threshold": 0.05,
+        "stuck_consecutive_identical_samples": 5
+      },
+      {
+        "channel_id": "oil_temp",
+        "measured_column": "oil_temp_c_meas",
+        "units": "deg_C",
+        "nominal_sensor_noise_std": 0.4,
+        "physical_subsystem": "lubrication_thermal",
+        "coupled_group": "thermal_dissipation",
+        "ehi_weight": 0.10,
+        "sdqi_weight": 0.10,
+        "nominal_tolerance_sigma": 2.0,
+        "degradation_scale_beta": 1.5,
+        "plausible_range": [20.0, 150.0],
+        "stuck_variance_threshold": 0.008,
+        "stuck_consecutive_identical_samples": 5
+      },
+      {
+        "channel_id": "oil_pressure",
+        "measured_column": "oil_pressure_kpa_meas",
+        "units": "kPa",
+        "nominal_sensor_noise_std": 0.8,
+        "physical_subsystem": "lubrication_hydraulic",
+        "coupled_group": "lubrication_hydraulic",
+        "ehi_weight": 0.10,
+        "sdqi_weight": 0.10,
+        "nominal_tolerance_sigma": 2.0,
+        "degradation_scale_beta": 1.5,
+        "plausible_range": [100.0, 700.0],
+        "stuck_variance_threshold": 0.032,
+        "stuck_consecutive_identical_samples": 5
+      },
+      {
+        "channel_id": "fuel_flow",
+        "measured_column": "fuel_flow_kg_s_meas",
+        "units": "kg_s",
+        "nominal_sensor_noise_std": 0.00002,
+        "physical_subsystem": "fuel_metering",
+        "coupled_group": "airflow_induction",
+        "ehi_weight": 0.10,
+        "sdqi_weight": 0.10,
+        "nominal_tolerance_sigma": 2.0,
+        "degradation_scale_beta": 1.5,
+        "plausible_range": [0.0005, 0.025],
+        "stuck_variance_threshold": 2e-11,
+        "stuck_consecutive_identical_samples": 5
+      },
+      {
+        "channel_id": "power",
+        "measured_column": "power_kw_meas",
+        "units": "kW",
+        "nominal_sensor_noise_std": 0.08,
+        "physical_subsystem": "mechanical_work",
+        "coupled_group": "mechanical_power",
+        "ehi_weight": 0.06,
+        "sdqi_weight": 0.08,
+        "nominal_tolerance_sigma": 2.0,
+        "degradation_scale_beta": 1.5,
+        "plausible_range": [5.0, 150.0],
+        "stuck_variance_threshold": 0.00032,
+        "stuck_consecutive_identical_samples": 5
+      },
+      {
+        "channel_id": "torque",
+        "measured_column": "torque_nm_meas",
+        "units": "Nm",
+        "nominal_sensor_noise_std": 0.15,
+        "physical_subsystem": "mechanical_torque",
+        "coupled_group": "mechanical_power",
+        "ehi_weight": 0.06,
+        "sdqi_weight": 0.08,
+        "nominal_tolerance_sigma": 2.0,
+        "degradation_scale_beta": 1.5,
+        "plausible_range": [20.0, 350.0],
+        "stuck_variance_threshold": 0.001125,
+        "stuck_consecutive_identical_samples": 5
+      },
+      {
+        "channel_id": "vibration",
+        "measured_column": "vibration_rms_g_meas",
+        "units": "g_RMS",
+        "nominal_sensor_noise_std": 0.02,
+        "physical_subsystem": "structural_dynamics",
+        "coupled_group": "structural_dynamics",
+        "ehi_weight": 0.06,
+        "sdqi_weight": 0.10,
+        "nominal_tolerance_sigma": 2.0,
+        "degradation_scale_beta": 1.5,
+        "plausible_range": [0.05, 3.5],
+        "stuck_variance_threshold": 0.00002,
+        "stuck_consecutive_identical_samples": 5
+      }
+    ]
+  },
+  "analytical_redundancy_groups": {
+    "thermal_dissipation": ["cht", "egt", "oil_temp"],
+    "mechanical_power": ["rpm", "torque", "power"],
+    "airflow_induction": ["manifold_pressure", "fuel_flow"],
+    "lubrication_hydraulic": ["oil_pressure"],
+    "structural_dynamics": ["vibration"]
+  },
+  "telemetry_coverage_rules": {
+    "minimum_valid_weight_fraction": 0.60,
+    "minimum_valid_channel_count": 6,
+    "mandatory_channels_for_ehi_validity": ["rpm"],
+    "insufficient_telemetry_action": {
+      "ehi_valid": false,
+      "status_flag": "INSUFFICIENT_TELEMETRY_COVERAGE",
+      "reported_value": null
+    }
+  },
+  "score_mapping_and_smoothing": {
+    "temporal_smoothing_alpha": 0.85,
+    "isolated_anomaly_threshold_sigma": 4.0,
+    "coupled_quiet_threshold_sigma": 2.0,
+    "provisional_condition_bands": {
+      "band_1_nominal": {"min": 90.0, "max": 100.0, "description": "Nominal Simulator Condition"},
+      "band_2_advisory": {"min": 75.0, "max": 89.99, "description": "Mild Simulator Deviation Advisory"},
+      "band_3_caution": {"min": 50.0, "max": 74.99, "description": "Moderate Simulator Degradation Caution"},
+      "band_4_warning": {"min": 0.0, "max": 49.99, "description": "Severe Simulator Anomaly Warning"}
+    }
+  }
+}

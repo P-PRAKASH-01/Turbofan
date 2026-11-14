@@ -1,0 +1,47 @@
+{
+  "dataset_name": "ENGINE-TWIN generic aero piston-engine synthetic research dataset",
+  "version": "0.1.0",
+  "created_utc": "2026-10-10T15:54:29.176057+00:00",
+  "random_seed": 26054,
+  "rows": 28800,
+  "scenarios": 240,
+  "points_per_scenario": 120,
+  "sample_interval_s": 1.0,
+  "synthetic_only": true,
+  "reference_engine": null,
+  "DRDO_data": false,
+  "intended_use": [
+    "pipeline prototyping",
+    "schema validation",
+    "fault-classification baseline experiments",
+    "dashboard prototyping"
+  ],
+  "not_for": [
+    "flight use",
+    "maintenance decisions",
+    "safety-critical decisions",
+    "claiming real-engine accuracy",
+    "manufacturer limit setting"
+  ],
+  "fault_classes": [
+    "normal",
+    "combustion_irregularity",
+    "thermal_abnormality",
+    "efficiency_degradation",
+    "sensor_bias",
+    "sensor_drift",
+    "sensor_stuck",
+    "sensor_dropout"
+  ],
+  "fault_labels_are_simulated": true,
+  "health_index_is_validated": false,
+  "rul_available": false,
+  "known_limitations": [
+    "No target engine identified or calibrated.",
+    "Generic surrogate equations are illustrative, not a validated thermodynamic engine model.",
+    "Synthetic fault signatures are designed by the generator and may be easier to classify than real faults.",
+    "Some parameter relationships are simplified and may be physically unrealistic outside this narrow research prototype.",
+    "Ambient pressure is an approximate standard-atmosphere baseline with temperature adjustment.",
+    "Sensor channels and units are provisional; verify against selected engine instrumentation."
+  ]
+}

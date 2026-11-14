@@ -1,0 +1,98 @@
+{
+  "dataset_name": "ENGINE-TWIN generic aero-piston-engine synthetic prototype",
+  "version": "0.2.0",
+  "synthetic_only": true,
+  "reference_engine": null,
+  "manufacturer_or_drdo_data": false,
+  "generator_seed": 314159,
+  "rng": "numpy PCG64 via numpy.default_rng; per-scenario RNG seeded in scenario manifest",
+  "configuration_sha256": "e5eac80862e330a9c49eda2199b6aa948eb2ddf0069ea4dc04df9d3e4475c0cb",
+  "generator_sha256": "c30a247efcd462efa5f9e4b7efe8d470f24fe8d8ab33852b5ea7a1fc65ffde9d",
+  "row_count": 115200,
+  "scenario_count": 960,
+  "engine_count": 30,
+  "engine_parameters_are_synthetic_ranges": {
+    "displacement_m3": [
+      0.0006,
+      0.0012
+    ],
+    "idle_rpm": [
+      750.0,
+      1000.0
+    ],
+    "rated_rpm": [
+      4200.0,
+      5200.0
+    ],
+    "volumetric_efficiency": [
+      0.7,
+      0.86
+    ],
+    "healthy_thermal_efficiency": [
+      0.22,
+      0.28
+    ]
+  },
+  "samples_per_scenario": 120,
+  "sample_interval_s": 1.0,
+  "fault_classes": [
+    "normal",
+    "combustion_irregularity",
+    "thermal_abnormality",
+    "efficiency_degradation",
+    "sensor_bias",
+    "sensor_drift",
+    "sensor_stuck",
+    "sensor_dropout"
+  ],
+  "fault_semantics": {
+    "physical_degradation_classes": [
+      "combustion_irregularity",
+      "efficiency_degradation",
+      "thermal_abnormality"
+    ],
+    "sensor_integrity_classes": [
+      "sensor_bias",
+      "sensor_drift",
+      "sensor_dropout",
+      "sensor_stuck"
+    ],
+    "sensor_faults_do_not_modify_latent_engine_state": true,
+    "fault_active": "1 from onset sample inclusive through scenario end; 0 for normal"
+  },
+  "health_index_target": null,
+  "rul_hours": null,
+  "intended_use": [
+    "synthetic pipeline prototyping",
+    "fault detection and classification workflow demonstrations"
+  ],
+  "not_for": [
+    "flight use",
+    "maintenance decisions",
+    "safety-critical decisions",
+    "real-engine accuracy claims",
+    "manufacturer operating limits"
+  ],
+  "known_limitations": [
+    "No specific engine is identified; all numerical engine parameters are generic assumptions.",
+    "The model is a simplified quasi-steady surrogate, not a validated MVEM or thermodynamic engine model.",
+    "Synthetic classifier results only measure performance on this simulator.",
+    "No health-index or RUL target is claimed.",
+    "Oil pressure is explicitly represented in kPa as a generic proxy; no target-engine value is asserted."
+  ],
+  "files_sha256": {
+    "config/dataset_config.json": "e5eac80862e330a9c49eda2199b6aa948eb2ddf0069ea4dc04df9d3e4475c0cb",
+    "data/raw/engine_twin_v0.2_raw.csv": "4e16d69b1e1efb4a4d5fc0715a43201e4d4b24dc357f9e76655cb13c860ba372",
+    "metadata/scenario_manifest.csv": "993e705aa8b3835ec2b0f0e3704b311cfb3ae062cc153b57f4de64055f8956d0",
+    "metadata/engine_manifest.csv": "5826ccff6eee096056e82fca9fe82fba950be5be11ccba5e7b2c63b829dcecd6",
+    "splits/engine_test_engines.csv": "59efd61d9218b2bbd92d0902a0b50380816794ccca9aee40b846c2149931291a",
+    "splits/engine_test_scenarios.csv": "9d6932917e56723af718ed38b3f3df03c9a35dd7c5ee1fb3065d1d7a5fc0de9d",
+    "splits/engine_train_engines.csv": "968b006bd29fb7eb0150c96ad4997f213ee83ab4067485fd36a56e925c2785a2",
+    "splits/engine_train_scenarios.csv": "731c7c1354ef5c31d33e967b9b4fcca7d04a37b20572279a5769d425691d87b5",
+    "splits/engine_validation_engines.csv": "df4385015b7c29846ee2060bfca8de039ac20b577d00fb62edf5ef3808fff1ad",
+    "splits/engine_validation_scenarios.csv": "8cfe80ff8a649fa9002dd0dc4783405511af4862de63c1d70cebdfaaf0814f5e",
+    "splits/scenario_test_scenarios.csv": "e3a36a582197ac6790205269ce47dffb557afa1ff273647bff0c0366668c2d50",
+    "splits/scenario_train_scenarios.csv": "0da697d7b45405bc8f083962b6dd078faf156ec5fabd7d93373eaaa71dfcbf55",
+    "splits/scenario_validation_scenarios.csv": "972a352d4bfbb9f1db22a36e1fbee1cabfb8610d5dea366ad9c1001aa6bcad3d"
+  }
+}

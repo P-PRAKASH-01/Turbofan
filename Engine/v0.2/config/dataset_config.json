@@ -1,0 +1,171 @@
+{
+  "dataset_name": "ENGINE-TWIN generic aero-piston-engine synthetic prototype",
+  "version": "0.2.0",
+  "seed": 314159,
+  "sample_interval_s": 1.0,
+  "duration_s": 120,
+  "fault_onset_min_s": 20,
+  "fault_onset_max_s": 70,
+  "phases": [
+    "ground_run",
+    "climb",
+    "cruise",
+    "descent"
+  ],
+  "fault_classes": [
+    "normal",
+    "combustion_irregularity",
+    "thermal_abnormality",
+    "efficiency_degradation",
+    "sensor_bias",
+    "sensor_drift",
+    "sensor_stuck",
+    "sensor_dropout"
+  ],
+  "severity_levels": {
+    "mild": 1,
+    "moderate": 2,
+    "severe": 3
+  },
+  "severity_selection": "Uniform random selection from mild, moderate, and severe for each non-normal scenario.",
+  "engine_counts_by_split": {
+    "train": 18,
+    "validation": 6,
+    "test": 6
+  },
+  "scenario_split_fractions": {
+    "train": 0.70,
+    "validation": 0.15,
+    "scenario_test": 0.15
+  },
+  "altitude_range_m": [
+    0.0,
+    5000.0
+  ],
+  "ambient_temperature_offset_range_c": [
+    -10.0,
+    10.0
+  ],
+  "throttle_range_pct": [
+    25.0,
+    95.0
+  ],
+  "sensor_dropout_probability_per_sample": 0.25,
+  "temporal_profile_assumptions": {
+    "altitude_sinusoid_amplitude_m": 8.0,
+    "altitude_sinusoid_period_s": 90.0,
+    "altitude_noise_standard_deviation_m": 1.0,
+    "ambient_temperature_sinusoid_amplitude_c": 0.3,
+    "ambient_temperature_sinusoid_period_s": 80.0,
+    "ambient_temperature_noise_standard_deviation_c": 0.15,
+    "throttle_sinusoid_amplitude_pct": 2.0,
+    "throttle_sinusoid_period_s": 45.0,
+    "throttle_noise_standard_deviation_pct": 0.6,
+    "throttle_minimum_pct": 20.0,
+    "throttle_maximum_pct": 98.0
+  },
+  "surrogate_equation_parameters": {
+    "rpm_throttle_exponent": 0.5,
+    "rpm_density_exponent": 0.05,
+    "rpm_density_factor_minimum": 0.95,
+    "rpm_density_factor_maximum": 1.02,
+    "combustion_efficiency_loss_at_full_severity_fraction": 0.10,
+    "combustion_rpm_loss_at_full_severity_fraction": 0.015,
+    "combustion_ripple_period_samples": 13.0,
+    "combustion_ripple_base_fraction": 0.65,
+    "combustion_ripple_amplitude_fraction": 0.35,
+    "efficiency_loss_at_full_severity_fraction": 0.15,
+    "efficiency_rpm_loss_at_full_severity_fraction": 0.012,
+    "efficiency_fuel_compensation_at_full_severity_fraction": 0.04,
+    "thermal_cht_rise_at_full_severity_c": 25.0,
+    "thermal_egt_rise_at_full_severity_c": 75.0,
+    "thermal_initial_rise_above_ambient_c": 25.0,
+    "oil_temperature_time_constant_s": 60.0,
+    "oil_temperature_offset_c": 45.0,
+    "oil_temperature_throttle_gain_c_per_pct": 0.22,
+    "oil_temperature_cht_coupling": 0.10,
+    "healthy_vibration_offset_g": 0.25,
+    "healthy_vibration_throttle_gain_g_per_pct": 0.004,
+    "combustion_vibration_rise_at_full_severity_g": 0.20
+  },
+  "sensor_fault_bias_magnitudes_by_severity_level": {
+    "rpm": 35.0,
+    "manifold_pressure": 1200.0,
+    "cht": 6.0,
+    "egt": 15.0,
+    "oil_temp": 4.0,
+    "oil_pressure": 18.0,
+    "fuel_flow": 0.00025,
+    "power": 0.8,
+    "vibration": 0.08
+  },
+  "sensor_targets": [
+    "rpm",
+    "manifold_pressure",
+    "cht",
+    "egt",
+    "oil_temp",
+    "oil_pressure",
+    "fuel_flow",
+    "power",
+    "vibration"
+  ],
+  "generic_engine_parameter_ranges": {
+    "displacement_m3": [
+      0.0006,
+      0.0012
+    ],
+    "idle_rpm": [
+      750.0,
+      1000.0
+    ],
+    "rated_rpm": [
+      4200.0,
+      5200.0
+    ],
+    "volumetric_efficiency": [
+      0.70,
+      0.86
+    ],
+    "healthy_thermal_efficiency": [
+      0.22,
+      0.28
+    ]
+  },
+  "assumption_constants": {
+    "dry_air_gas_constant_j_kg_k": 287.05,
+    "standard_gravity_m_s2": 9.80665,
+    "sea_level_pressure_pa": 101325.0,
+    "sea_level_temperature_k": 288.15,
+    "tropospheric_lapse_rate_k_m": 0.0065,
+    "gasoline_lower_heating_value_j_kg": 43000000.0,
+    "air_fuel_mass_ratio": 14.7,
+    "manifold_pressure_closed_throttle_fraction": 0.28,
+    "manifold_pressure_throttle_gain": 0.70,
+    "healthy_cht_offset_c": 75.0,
+    "healthy_cht_throttle_gain_c": 0.72,
+    "healthy_egt_offset_c": 170.0,
+    "healthy_egt_throttle_gain_c": 3.4,
+    "thermal_time_constant_s": 25.0,
+    "oil_pressure_idle_kpa": 180.0,
+    "oil_pressure_rpm_gain_kpa": 90.0,
+    "oil_pressure_hot_oil_loss_kpa_per_c": 0.25,
+    "oil_pressure_hot_reference_temp_c": 90.0
+  },
+  "sensor_noise_standard_deviation": {
+    "rpm": 6.0,
+    "manifold_pressure": 80.0,
+    "cht": 0.5,
+    "egt": 1.0,
+    "oil_temp": 0.4,
+    "oil_pressure": 0.8,
+    "fuel_flow": 0.00002,
+    "power": 0.08,
+    "torque": 0.15,
+    "vibration": 0.02
+  },
+  "not_engine_specification": true,
+  "reference_engine": null,
+  "manufacturer_or_drdo_data": false,
+  "rul_hours": null
+}

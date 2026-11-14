@@ -1,0 +1,68 @@
+{
+  "dataset": "NASA C-MAPSS FD001-FD004",
+  "task": "Remaining useful life regression",
+  "engine_count_train": 709,
+  "engine_count_test": 707,
+  "train_cycle_count": 160359,
+  "validation_engine_fraction_per_subset": 0.2,
+  "baseline_cycles": 10,
+  "feature_count": 113,
+  "validation_metrics": {
+    "dummy_mean": {
+      "rmse": 80.87749042243614,
+      "mae": 65.0435562133789,
+      "r2": -0.004029512405395508,
+      "nasa_score": 3859449643008.0
+    },
+    "extra_trees": {
+      "rmse": 46.372775324889915,
+      "mae": 32.60961180821146,
+      "r2": 0.6699214241404823,
+      "nasa_score": 975262707.5618039
+    },
+    "hist_gradient_boosting": {
+      "rmse": 45.408196462968036,
+      "mae": 32.44220641920132,
+      "r2": 0.6835102380795217,
+      "nasa_score": 1041868118.0094204
+    }
+  },
+  "selected_model": "hist_gradient_boosting",
+  "official_test_metrics": {
+    "rmse": 31.680507315577195,
+    "mae": 23.0319960677419,
+    "r2": 0.6152203033192958,
+    "nasa_score": 1749411.6541308218
+  },
+  "official_test_metrics_by_dataset": {
+    "FD001": {
+      "rmse": 22.477180947131206,
+      "mae": 16.615978240966797,
+      "r2": 0.707433819770813,
+      "nasa_score": 2177.045166015625
+    },
+    "FD002": {
+      "rmse": 28.86064815139726,
+      "mae": 21.41986083984375,
+      "r2": 0.7120015621185303,
+      "nasa_score": 26054.48828125
+    },
+    "FD003": {
+      "rmse": 30.17197412270098,
+      "mae": 20.525928497314453,
+      "r2": 0.4687504172325134,
+      "nasa_score": 1160080.375
+    },
+    "FD004": {
+      "rmse": 37.69015751668879,
+      "mae": 28.313255310058594,
+      "r2": 0.5221585631370544,
+      "nasa_score": 561099.8125
+    }
+  },
+  "limitations": [
+    "C-MAPSS is turbofan benchmark data, not aero piston-engine telemetry.",
+    "The provided labels support RUL regression, not fault classification.",
+    "The health index remains an unsupervised Phase 1 indicator, not a labeled health target."
+  ]
+}

@@ -1,0 +1,53 @@
+column,dtype,unit,kind,source_and_caveat
+scenario_id,str,opaque identifier,identifier,Metadata/label only; excluded from predictors.
+engine_id,str,opaque identifier,identifier,Metadata/label only; excluded from predictors.
+timestamp_utc,str,ISO 8601 UTC,time metadata,Explicitly synthetic generic-engine value; not manufacturer data.
+time_s,int64,s,time metadata,Explicitly synthetic generic-engine value; not manufacturer data.
+operating_phase,str,category,operating context,Explicitly synthetic generic-engine value; not manufacturer data.
+engine_split,str,category,split metadata,Explicitly synthetic generic-engine value; not manufacturer data.
+scenario_split,str,category,split metadata,Explicitly synthetic generic-engine value; not manufacturer data.
+altitude_m,float64,m,operating input or derived environment,Explicitly synthetic generic-engine value; not manufacturer data.
+ambient_temp_c,float64,degC,operating input or derived environment,Explicitly synthetic generic-engine value; not manufacturer data.
+ambient_pressure_pa,float64,Pa,operating input or derived environment,Explicitly synthetic generic-engine value; not manufacturer data.
+air_density_kg_m3,float64,kg/m^3,operating input or derived environment,Explicitly synthetic generic-engine value; not manufacturer data.
+throttle_pct,float64,%,operating input or derived environment,Explicitly synthetic generic-engine value; not manufacturer data.
+state_rpm,float64,rev/min,simulated latent physical-state surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+state_manifold_pressure_pa,float64,Pa,simulated latent physical-state surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+state_air_flow_kg_s,float64,kg/s,simulated latent physical-state surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+state_fuel_flow_kg_s,float64,kg/s,simulated latent physical-state surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+state_power_kw,float64,kW,simulated latent physical-state surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+state_torque_nm,float64,N m,simulated latent physical-state surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+state_cht_c,float64,degC,simulated latent physical-state surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+state_egt_c,float64,degC,simulated latent physical-state surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+state_oil_temp_c,float64,degC,simulated latent physical-state surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+state_oil_pressure_kpa,float64,kPa,simulated latent physical-state surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+state_vibration_rms_g,float64,g RMS,simulated latent physical-state surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+healthy_ref_rpm,float64,rev/min,derived healthy reference surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+healthy_ref_manifold_pressure_pa,float64,Pa,derived healthy reference surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+healthy_ref_fuel_flow_kg_s,float64,kg/s,derived healthy reference surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+healthy_ref_power_kw,float64,kW,derived healthy reference surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+healthy_ref_torque_nm,float64,N m,derived healthy reference surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+healthy_ref_cht_c,float64,degC,derived healthy reference surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+healthy_ref_egt_c,float64,degC,derived healthy reference surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+healthy_ref_oil_temp_c,float64,degC,derived healthy reference surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+healthy_ref_oil_pressure_kpa,float64,kPa,derived healthy reference surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+healthy_ref_vibration_rms_g,float64,g RMS,derived healthy reference surrogate,Explicitly synthetic generic-engine value; not manufacturer data.
+rpm_meas,float64,rev/min,simulated sensor measurement,Explicitly synthetic generic-engine value; not manufacturer data.
+manifold_pressure_pa_meas,float64,Pa,simulated sensor measurement,Explicitly synthetic generic-engine value; not manufacturer data.
+cht_c_meas,float64,degC,simulated sensor measurement,Explicitly synthetic generic-engine value; not manufacturer data.
+egt_c_meas,float64,degC,simulated sensor measurement,Explicitly synthetic generic-engine value; not manufacturer data.
+oil_temp_c_meas,float64,degC,simulated sensor measurement,Explicitly synthetic generic-engine value; not manufacturer data.
+oil_pressure_kpa_meas,float64,kPa,simulated sensor measurement,Explicitly synthetic generic-engine value; not manufacturer data.
+fuel_flow_kg_s_meas,float64,kg/s,simulated sensor measurement,Explicitly synthetic generic-engine value; not manufacturer data.
+power_kw_meas,float64,kW,simulated sensor measurement,Explicitly synthetic generic-engine value; not manufacturer data.
+torque_nm_meas,float64,N m,simulated sensor measurement,Explicitly synthetic generic-engine value; not manufacturer data.
+vibration_rms_g_meas,float64,g RMS,simulated sensor measurement,Explicitly synthetic generic-engine value; not manufacturer data.
+measurement_missing_reason,str,category,measurement quality metadata,Explicitly synthetic generic-engine value; not manufacturer data.
+fault_type,str,category,ground-truth label,Metadata/label only; excluded from predictors.
+fault_severity,str,category,ground-truth label,Metadata/label only; excluded from predictors.
+fault_active,int64,0/1,ground-truth label,Metadata/label only; excluded from predictors.
+fault_onset_s,float64,s,ground-truth label,Metadata/label only; excluded from predictors.
+fault_duration_s,float64,s,ground-truth label,Metadata/label only; excluded from predictors.
+sensor_fault_target,str,channel name,ground-truth label,Metadata/label only; excluded from predictors.
+rul_hours,float64,h (unpopulated),unpopulated target,Explicitly synthetic generic-engine value; not manufacturer data.
+data_origin,str,category,provenance metadata,Explicitly synthetic generic-engine value; not manufacturer data.

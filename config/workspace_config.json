@@ -1,0 +1,22 @@
+{
+  "system_name": "DIGITAL-TWIN",
+  "version": "0.2.0",
+  "description": "AI-Enabled Digital Twin System for Health Monitoring, Fault Prediction, and Mission Reliability of Aero Engines",
+  "active_subsystems": {
+    "engine_twin": {
+      "name": "ENGINE-TWIN",
+      "version": "0.2.0",
+      "root_dir": "Engine/v0.2",
+      "status": "active_phase_4c_audited"
+    },
+    "turbofan_baseline": {
+      "name": "TURBOFAN-RUL-BASELINE",
+      "dataset": "NASA C-MAPSS FD001-FD004",
+      "status": "legacy_phase_1_2"
+    }
+  },
+  "service_ports": {
+    "backend_api": 8000,
+    "frontend_ui": 5173
+  }
+}

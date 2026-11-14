@@ -1,0 +1,37 @@
+split_protocol,evaluation_category,sample_count,ehi_valid_count,ehi_mean,ehi_std,ehi_p5,ehi_median,ehi_p95,sdqi_mean,sdqi_std,sdqi_median,coverage_mean,insufficient_coverage_rate,band_1_nominal_rate,band_2_advisory_rate,band_3_caution_rate,band_4_warning_rate
+scenario_heldout,Healthy Flights (All),1320,1299,93.24,10.87,60.68,97.78,99.99,93.52,8.92,98.91,0.936,0.0159,0.8129,0.0826,0.0886,0.0
+scenario_heldout,Pre-Onset Fault Flights (Healthy Period),3484,3436,96.79,5.65,82.84,99.27,99.99,92.38,7.97,94.33,0.917,0.0138,0.8826,0.0918,0.0118,0.0
+scenario_heldout,Physical Faults - Active Window,2602,2602,95.56,6.28,86.41,98.0,100.0,93.83,8.44,99.22,0.948,0.0,0.8836,0.0892,0.0273,0.0
+scenario_heldout,Physical Faults - Mild Severity,703,703,97.03,3.93,86.76,98.48,100.0,97.39,6.78,100.0,0.978,0.0,0.8905,0.1095,0.0,0.0
+scenario_heldout,Physical Faults - Moderate Severity,808,808,95.22,8.07,69.7,98.4,100.0,91.93,8.23,92.05,0.932,0.0,0.922,0.0012,0.0767,0.0
+scenario_heldout,Physical Faults - Severe Severity,1091,1091,94.86,5.84,86.29,95.73,99.99,92.95,8.86,99.1,0.941,0.0,0.8506,0.1412,0.0082,0.0
+scenario_heldout,Sensor Faults - Active Window,3034,2968,94.62,8.19,77.64,99.37,99.99,93.89,6.86,96.44,0.937,0.0218,0.7475,0.1918,0.0389,0.0
+scenario_heldout,Sensor Bias - Active Window,718,718,94.9,5.68,86.54,99.35,99.99,95.06,7.37,99.96,0.957,0.0,0.6616,0.3384,0.0,0.0
+scenario_heldout,Sensor Drift - Active Window,799,799,88.82,11.88,60.0,92.28,99.94,96.82,3.63,98.93,0.97,0.0,0.5745,0.2778,0.1477,0.0
+scenario_heldout,Sensor Stuck - Active Window,770,704,97.34,3.89,89.32,99.56,100.0,87.93,6.91,90.0,0.865,0.0857,0.8481,0.0662,0.0,0.0
+scenario_heldout,Sensor Dropout - Active Window,747,747,98.0,3.98,86.29,99.73,100.0,95.76,5.03,97.77,0.958,0.0,0.9116,0.0884,0.0,0.0
+scenario_heldout,Combustion Irregularity - Active,819,819,91.09,6.91,69.71,92.22,98.14,92.18,9.14,96.5,0.935,0.0,0.8168,0.1074,0.0757,0.0
+scenario_heldout,Thermal Abnormality - Active,929,929,96.98,5.27,79.25,99.02,99.99,97.82,5.06,100.0,0.981,0.0,0.9429,0.0474,0.0097,0.0
+scenario_heldout,Efficiency Degradation - Active,854,854,98.29,3.93,87.44,99.89,100.0,91.07,9.03,92.0,0.925,0.0,0.8829,0.1171,0.0,0.0
+scenario_heldout,Phase Ground Run - Healthy,360,349,84.1,16.85,59.38,92.13,99.98,90.57,12.91,99.75,0.912,0.0306,0.6389,0.0056,0.325,0.0
+scenario_heldout,Phase Climb - Healthy,240,240,97.56,0.93,95.48,97.69,98.82,98.38,3.22,99.84,0.982,0.0,1.0,0.0,0.0,0.0
+scenario_heldout,Phase Cruise - Healthy,360,350,93.65,5.08,86.67,93.36,99.99,90.84,7.64,90.63,0.903,0.0278,0.675,0.2972,0.0,0.0
+scenario_heldout,Phase Descent - Healthy,360,360,98.82,0.92,97.17,98.69,100.0,95.9,4.8,99.31,0.962,0.0,1.0,0.0,0.0,0.0
+engine_heldout,Healthy Flights (All),2880,2862,98.41,3.1,91.15,99.75,100.0,96.0,7.12,99.89,0.96,0.0063,0.95,0.0437,0.0,0.0
+engine_heldout,Pre-Onset Fault Flights (Healthy Period),7624,7524,98.24,3.16,89.95,99.57,99.99,93.93,7.72,97.04,0.934,0.0131,0.9363,0.0506,0.0,0.0
+engine_heldout,Physical Faults - Active Window,5217,5217,97.07,3.97,89.48,98.88,100.0,95.9,7.05,100.0,0.966,0.0,0.9461,0.0539,0.0,0.0
+engine_heldout,Physical Faults - Mild Severity,2233,2233,98.39,2.08,94.31,99.02,100.0,95.05,8.56,100.0,0.959,0.0,0.9942,0.0058,0.0,0.0
+engine_heldout,Physical Faults - Moderate Severity,1530,1530,94.82,5.31,82.77,94.43,100.0,96.71,5.13,100.0,0.973,0.0,0.8654,0.1346,0.0,0.0
+engine_heldout,Physical Faults - Severe Severity,1454,1454,97.39,3.51,91.93,99.7,99.99,96.35,6.02,99.98,0.971,0.0,0.9574,0.0426,0.0,0.0
+engine_heldout,Sensor Faults - Active Window,7319,7060,97.95,3.49,89.39,99.68,100.0,94.77,5.93,97.15,0.949,0.0354,0.8964,0.0682,0.0,0.0
+engine_heldout,Sensor Bias - Active Window,1867,1867,97.12,3.87,88.96,99.25,100.0,96.43,6.59,100.0,0.967,0.0,0.8886,0.1114,0.0,0.0
+engine_heldout,Sensor Drift - Active Window,1854,1854,97.79,3.31,89.39,99.47,99.99,96.16,6.45,100.0,0.967,0.0,0.9277,0.0723,0.0,0.0
+engine_heldout,Sensor Stuck - Active Window,1863,1623,97.94,4.0,88.79,99.87,100.0,89.81,3.65,90.0,0.893,0.1288,0.7976,0.0735,0.0,0.0
+engine_heldout,Sensor Dropout - Active Window,1735,1716,99.03,2.2,93.32,99.85,100.0,96.84,2.72,97.56,0.968,0.011,0.9775,0.0115,0.0,0.0
+engine_heldout,Combustion Irregularity - Active,1687,1687,95.17,2.34,92.24,94.28,98.51,94.86,6.13,96.3,0.959,0.0,0.9751,0.0249,0.0,0.0
+engine_heldout,Thermal Abnormality - Active,1837,1837,98.33,4.27,90.43,99.91,100.0,96.24,7.96,100.0,0.968,0.0,0.9521,0.0479,0.0,0.0
+engine_heldout,Efficiency Degradation - Active,1693,1693,97.59,4.22,85.99,99.74,100.0,96.56,6.75,100.0,0.972,0.0,0.9108,0.0892,0.0,0.0
+engine_heldout,Phase Ground Run - Healthy,720,708,99.18,1.11,96.65,99.75,100.0,93.1,10.79,99.53,0.935,0.0167,0.9833,0.0,0.0,0.0
+engine_heldout,Phase Climb - Healthy,720,716,98.78,1.35,96.37,99.2,100.0,96.8,5.74,99.98,0.968,0.0056,0.9944,0.0,0.0,0.0
+engine_heldout,Phase Cruise - Healthy,720,720,98.24,3.14,91.24,99.78,99.99,98.46,3.48,99.95,0.982,0.0,0.9861,0.0139,0.0,0.0
+engine_heldout,Phase Descent - Healthy,720,718,97.44,4.86,86.5,99.82,100.0,95.66,5.1,99.29,0.956,0.0028,0.8361,0.1611,0.0,0.0

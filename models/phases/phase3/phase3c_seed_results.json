@@ -1,0 +1,864 @@
+{
+  "dataset": "ENGINE-TWIN v0.2 synthetic assumption-driven simulator. Results do not estimate real-engine accuracy.",
+  "seed": 8675309,
+  "reference_seed": 314159,
+  "software": {
+    "python": "3.11.0",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "numpy": "2.3.3",
+    "pandas": "3.0.1",
+    "scikit_learn": "1.7.2",
+    "joblib": "1.5.2"
+  },
+  "experiment": "A=29 Phase 3A predictors; B=the same 29 predictors plus 40 past-only temporal predictors (10 channels x difference, prior-five-sample standard deviation, and validity flags).",
+  "classifier_selection": "Same Phase 3B settings: Dummy prior and RandomForestClassifier with n_estimators=80,max_depth=18,max_features=sqrt,min_samples_leaf=4,class_weight=balanced_subsample,random_state=271828,n_jobs=-1; choose validation macro-F1, refit on train+validation, evaluate test once. Median imputation add_indicator is fit within each training pipeline.",
+  "feature_controls": {
+    "A_feature_count": 29,
+    "B_feature_count": 69,
+    "ids_in_features": false,
+    "target_derived_features": false,
+    "latent_or_healthy_reference_features": false,
+    "future_observation_features": false,
+    "temporal_windows_within_scenario": true,
+    "temporal_formula": "difference x[t]-x[t-1]; population std over x[t-5:t], excluding current sample; window=5 samples at 1 second interval",
+    "missing_warmup": "same as Phase 3B; invalid temporal values NaN plus validity flags; no cross-scenario fill"
+  },
+  "split_audit": {
+    "scenario_split_scenario_counts": {
+      "train": 402,
+      "validation": 87,
+      "scenario_test": 87
+    },
+    "engine_split_engine_counts": {
+      "train": 18,
+      "validation": 6,
+      "test": 6
+    },
+    "scenario_pairwise_intersections": {
+      "train_validation": 0,
+      "train_scenario_test": 0,
+      "validation_scenario_test": 0
+    },
+    "engine_pairwise_intersections": {
+      "train_validation": 0,
+      "train_test": 0,
+      "validation_test": 0
+    },
+    "manifest_membership_verified": true,
+    "new_seed_split_hashes": {
+      "splits/engine_test_engines.csv": "543c1314634adf72bbdde79a51cfabf6991a1fe2fa0b8b5d7343074f56d5f835",
+      "splits/engine_test_scenarios.csv": "e12b0d15421944cec9578bb88be573828d81d2adbf138a5d9850cd910ae40e3f",
+      "splits/engine_train_engines.csv": "0ff042de8dd4bd71534c422f2c1e9f0e0bac900613484010ae30603a4e1a68ca",
+      "splits/engine_train_scenarios.csv": "49ba9c308be4abea8d1ab10e1a2f9239cd8c56abf791f42d29e45c2e5dce7fdf",
+      "splits/engine_validation_engines.csv": "7f4703513fd1ef41e9caac2b2a3bbf67184215a787b7817b69556e47ecb4fcec",
+      "splits/engine_validation_scenarios.csv": "f7a696cbf33549f715c3aa61cc5dd5dcb294a43551c60ca4c11f8b58321660c3",
+      "splits/scenario_test_scenarios.csv": "9b3fb113f14fa0fc3069e9a034180a0d1206eca7391903526114f29738799791",
+      "splits/scenario_train_scenarios.csv": "328b7d434177b0638b7ae4ab34d8e93e0b6773582e580e693a3fd9510eb06749",
+      "splits/scenario_validation_scenarios.csv": "491ebab2a52dd3334f7218596db6aec97b8ac390efbf4493c3afdc4f9c1a0d12"
+    }
+  },
+  "chronology_audit": {
+    "scenarios": 960,
+    "samples_per_scenario": 120,
+    "time_s_0_to_119": true,
+    "one_second_timestamps_verified": true,
+    "scenario_groups_sorted_before_temporal_features": true
+  },
+  "phase3b_reference_comparison": {
+    "scenario_heldout": {
+      "seed314159_macro_f1_delta": 0.15181810298570975,
+      "seed8675309_macro_f1_delta": 0.14061386662324632,
+      "seed314159_sensor_group_f1_delta": -0.03139141736587836,
+      "seed8675309_sensor_group_f1_delta": -0.00039820307445581626,
+      "class_f1_deltas_seed314159": {
+        "combustion_irregularity": 0.02110177404295055,
+        "efficiency_degradation": 0.05784967769070058,
+        "normal": 0.010816978548607942,
+        "sensor_bias": -0.017333340041931294,
+        "sensor_drift": 0.015659603037594005,
+        "sensor_dropout": 0.3662337262813333,
+        "sensor_stuck": 0.6349179154483431,
+        "thermal_abnormality": 0.1252984888780796
+      },
+      "class_f1_deltas_seed8675309": {
+        "combustion_irregularity": 0.048871073880152105,
+        "efficiency_degradation": 0.1508884993294528,
+        "normal": -0.07647983788760901,
+        "sensor_bias": 0.012466021157563678,
+        "sensor_drift": 0.010312135881607898,
+        "sensor_dropout": 0.28036120303594164,
+        "sensor_stuck": 0.5805697764578011,
+        "thermal_abnormality": 0.1179220611310598
+      }
+    },
+    "engine_heldout": {
+      "seed314159_macro_f1_delta": 0.0863481604274981,
+      "seed8675309_macro_f1_delta": 0.1259595026749864,
+      "seed314159_sensor_group_f1_delta": -0.021515255894138052,
+      "seed8675309_sensor_group_f1_delta": 0.028077997297474844,
+      "class_f1_deltas_seed314159": {
+        "combustion_irregularity": 0.027527486717501937,
+        "efficiency_degradation": -0.09830809890402387,
+        "normal": -0.0020299797327666957,
+        "sensor_bias": -0.06425275647171619,
+        "sensor_drift": 0.003214815777784985,
+        "sensor_dropout": 0.3876467083849191,
+        "sensor_stuck": 0.47895518421038324,
+        "thermal_abnormality": -0.041968076562097945
+      },
+      "class_f1_deltas_seed8675309": {
+        "combustion_irregularity": 0.08328339602032714,
+        "efficiency_degradation": 0.043352361016479324,
+        "normal": 0.08103217834574365,
+        "sensor_bias": 0.05228882877778934,
+        "sensor_drift": -0.007957945559183381,
+        "sensor_dropout": 0.25708147971289075,
+        "sensor_stuck": 0.4546572728254738,
+        "thermal_abnormality": 0.0439384502603708
+      }
+    }
+  },
+  "experiments": {
+    "scenario_heldout__A_phase3a_29_features": {
+      "accuracy": 0.2231800766283525,
+      "macro_f1": 0.22793698447441219,
+      "per_class": {
+        "combustion_irregularity": {
+          "precision": 0.691333982473223,
+          "recall": 0.5378787878787878,
+          "f1": 0.6050276949296974,
+          "support": 1320,
+          "largest_confusion_class": "efficiency_degradation",
+          "largest_confusion_count": 223
+        },
+        "efficiency_degradation": {
+          "precision": 0.093111279333838,
+          "recall": 0.09318181818181819,
+          "f1": 0.09314653540325635,
+          "support": 1320,
+          "largest_confusion_class": "thermal_abnormality",
+          "largest_confusion_count": 253
+        },
+        "normal": {
+          "precision": 0.22872827081427263,
+          "recall": 0.1893939393939394,
+          "f1": 0.20721094073767096,
+          "support": 1320,
+          "largest_confusion_class": "sensor_drift",
+          "largest_confusion_count": 342
+        },
+        "sensor_bias": {
+          "precision": 0.12573344509639564,
+          "recall": 0.10416666666666667,
+          "f1": 0.1139384732244588,
+          "support": 1440,
+          "largest_confusion_class": "thermal_abnormality",
+          "largest_confusion_count": 348
+        },
+        "sensor_drift": {
+          "precision": 0.1561771561771562,
+          "recall": 0.13958333333333334,
+          "f1": 0.1474147414741474,
+          "support": 1440,
+          "largest_confusion_class": "sensor_stuck",
+          "largest_confusion_count": 448
+        },
+        "sensor_dropout": {
+          "precision": 0.25914315569487983,
+          "recall": 0.18787878787878787,
+          "f1": 0.2178304787000439,
+          "support": 1320,
+          "largest_confusion_class": "sensor_bias",
+          "largest_confusion_count": 358
+        },
+        "sensor_stuck": {
+          "precision": 0.09375,
+          "recall": 0.184375,
+          "f1": 0.12429775280898876,
+          "support": 960,
+          "largest_confusion_class": "efficiency_degradation",
+          "largest_confusion_count": 241
+        },
+        "thermal_abnormality": {
+          "precision": 0.28136200716845877,
+          "recall": 0.3568181818181818,
+          "f1": 0.31462925851703405,
+          "support": 1320,
+          "largest_confusion_class": "sensor_stuck",
+          "largest_confusion_count": 265
+        }
+      },
+      "confusion_matrix": [
+        [
+          710,
+          223,
+          79,
+          54,
+          122,
+          42,
+          21,
+          69
+        ],
+        [
+          65,
+          123,
+          169,
+          163,
+          113,
+          193,
+          241,
+          253
+        ],
+        [
+          59,
+          97,
+          250,
+          221,
+          342,
+          2,
+          334,
+          15
+        ],
+        [
+          145,
+          114,
+          61,
+          150,
+          217,
+          60,
+          345,
+          348
+        ],
+        [
+          37,
+          203,
+          182,
+          90,
+          201,
+          21,
+          448,
+          258
+        ],
+        [
+          7,
+          204,
+          234,
+          358,
+          72,
+          248,
+          57,
+          140
+        ],
+        [
+          0,
+          241,
+          118,
+          67,
+          97,
+          140,
+          177,
+          120
+        ],
+        [
+          4,
+          116,
+          0,
+          90,
+          123,
+          251,
+          265,
+          471
+        ]
+      ],
+      "selected_model": "random_forest",
+      "validation_macro_f1_by_candidate": {
+        "majority_dummy": 0.030303030303030304,
+        "random_forest": 0.14349775990048838
+      },
+      "test_rows": 10440,
+      "test_scenarios": 87,
+      "test_engines": 18,
+      "confusion_matrix_labels": [
+        "combustion_irregularity",
+        "efficiency_degradation",
+        "normal",
+        "sensor_bias",
+        "sensor_drift",
+        "sensor_dropout",
+        "sensor_stuck",
+        "thermal_abnormality"
+      ],
+      "sensor_fault_group_detection": {
+        "tp": 2748,
+        "fp": 2577,
+        "fn": 2412,
+        "tn": 2703,
+        "precision": 0.516056338028169,
+        "recall": 0.5325581395348837,
+        "f1": 0.5241773962804006
+      }
+    },
+    "scenario_heldout__B_temporal_69_features": {
+      "accuracy": 0.3306513409961686,
+      "macro_f1": 0.3685508510976585,
+      "per_class": {
+        "combustion_irregularity": {
+          "precision": 0.8213058419243986,
+          "recall": 0.5431818181818182,
+          "f1": 0.6538987688098495,
+          "support": 1320,
+          "largest_confusion_class": "efficiency_degradation",
+          "largest_confusion_count": 141
+        },
+        "efficiency_degradation": {
+          "precision": 0.20291310899045706,
+          "recall": 0.30606060606060603,
+          "f1": 0.24403503473270916,
+          "support": 1320,
+          "largest_confusion_class": "normal",
+          "largest_confusion_count": 327
+        },
+        "normal": {
+          "precision": 0.11058700209643606,
+          "recall": 0.15984848484848485,
+          "f1": 0.13073110285006195,
+          "support": 1320,
+          "largest_confusion_class": "sensor_drift",
+          "largest_confusion_count": 675
+        },
+        "sensor_bias": {
+          "precision": 0.1939655172413793,
+          "recall": 0.09375,
+          "f1": 0.12640449438202248,
+          "support": 1440,
+          "largest_confusion_class": "sensor_drift",
+          "largest_confusion_count": 426
+        },
+        "sensor_drift": {
+          "precision": 0.13539074166251866,
+          "recall": 0.18888888888888888,
+          "f1": 0.1577268773557553,
+          "support": 1440,
+          "largest_confusion_class": "normal",
+          "largest_confusion_count": 544
+        },
+        "sensor_dropout": {
+          "precision": 0.6177130044843049,
+          "recall": 0.4174242424242424,
+          "f1": 0.49819168173598555,
+          "support": 1320,
+          "largest_confusion_class": "normal",
+          "largest_confusion_count": 229
+        },
+        "sensor_stuck": {
+          "precision": 0.8627450980392157,
+          "recall": 0.5958333333333333,
+          "f1": 0.7048675292667899,
+          "support": 960,
+          "largest_confusion_class": "normal",
+          "largest_confusion_count": 134
+        },
+        "thermal_abnormality": {
+          "precision": 0.4190340909090909,
+          "recall": 0.44696969696969696,
+          "f1": 0.43255131964809385,
+          "support": 1320,
+          "largest_confusion_class": "sensor_drift",
+          "largest_confusion_count": 239
+        }
+      },
+      "confusion_matrix": [
+        [
+          717,
+          141,
+          115,
+          76,
+          128,
+          37,
+          0,
+          106
+        ],
+        [
+          17,
+          404,
+          327,
+          13,
+          152,
+          106,
+          80,
+          221
+        ],
+        [
+          25,
+          235,
+          211,
+          70,
+          675,
+          3,
+          1,
+          100
+        ],
+        [
+          98,
+          268,
+          253,
+          135,
+          426,
+          7,
+          2,
+          251
+        ],
+        [
+          6,
+          488,
+          544,
+          61,
+          272,
+          35,
+          7,
+          27
+        ],
+        [
+          3,
+          178,
+          229,
+          204,
+          88,
+          551,
+          0,
+          67
+        ],
+        [
+          0,
+          101,
+          134,
+          77,
+          29,
+          1,
+          572,
+          46
+        ],
+        [
+          7,
+          176,
+          95,
+          60,
+          239,
+          152,
+          1,
+          590
+        ]
+      ],
+      "selected_model": "random_forest",
+      "validation_macro_f1_by_candidate": {
+        "majority_dummy": 0.030303030303030304,
+        "random_forest": 0.23898164432456456
+      },
+      "test_rows": 10440,
+      "test_scenarios": 87,
+      "test_engines": 18,
+      "confusion_matrix_labels": [
+        "combustion_irregularity",
+        "efficiency_degradation",
+        "normal",
+        "sensor_bias",
+        "sensor_drift",
+        "sensor_dropout",
+        "sensor_stuck",
+        "thermal_abnormality"
+      ],
+      "sensor_fault_group_detection": {
+        "tp": 2467,
+        "fp": 1793,
+        "fn": 2693,
+        "tn": 3487,
+        "precision": 0.5791079812206573,
+        "recall": 0.47810077519379846,
+        "f1": 0.5237791932059448
+      }
+    },
+    "engine_heldout__A_phase3a_29_features": {
+      "accuracy": 0.19466145833333334,
+      "macro_f1": 0.19449563704863831,
+      "per_class": {
+        "combustion_irregularity": {
+          "precision": 0.3588530889742832,
+          "recall": 0.4215277777777778,
+          "f1": 0.387673638831231,
+          "support": 2880,
+          "largest_confusion_class": "normal",
+          "largest_confusion_count": 626
+        },
+        "efficiency_degradation": {
+          "precision": 0.10520694259012016,
+          "recall": 0.13680555555555557,
+          "f1": 0.11894339622641509,
+          "support": 2880,
+          "largest_confusion_class": "combustion_irregularity",
+          "largest_confusion_count": 688
+        },
+        "normal": {
+          "precision": 0.09988156336360048,
+          "recall": 0.08784722222222222,
+          "f1": 0.0934786624792167,
+          "support": 2880,
+          "largest_confusion_class": "sensor_stuck",
+          "largest_confusion_count": 509
+        },
+        "sensor_bias": {
+          "precision": 0.17496635262449528,
+          "recall": 0.13541666666666666,
+          "f1": 0.15267175572519084,
+          "support": 2880,
+          "largest_confusion_class": "efficiency_degradation",
+          "largest_confusion_count": 747
+        },
+        "sensor_drift": {
+          "precision": 0.06282335550628233,
+          "recall": 0.059027777777777776,
+          "f1": 0.060866451843895455,
+          "support": 2880,
+          "largest_confusion_class": "sensor_dropout",
+          "largest_confusion_count": 594
+        },
+        "sensor_dropout": {
+          "precision": 0.15092647937836223,
+          "recall": 0.1753472222222222,
+          "f1": 0.16222293607452618,
+          "support": 2880,
+          "largest_confusion_class": "sensor_drift",
+          "largest_confusion_count": 586
+        },
+        "sensor_stuck": {
+          "precision": 0.24110258199581297,
+          "recall": 0.23993055555555556,
+          "f1": 0.24051514096762966,
+          "support": 2880,
+          "largest_confusion_class": "sensor_dropout",
+          "largest_confusion_count": 681
+        },
+        "thermal_abnormality": {
+          "precision": 0.3888888888888889,
+          "recall": 0.3013888888888889,
+          "f1": 0.3395931142410016,
+          "support": 2880,
+          "largest_confusion_class": "efficiency_degradation",
+          "largest_confusion_count": 480
+        }
+      },
+      "confusion_matrix": [
+        [
+          1214,
+          355,
+          626,
+          134,
+          238,
+          124,
+          134,
+          55
+        ],
+        [
+          688,
+          394,
+          411,
+          213,
+          348,
+          294,
+          353,
+          179
+        ],
+        [
+          130,
+          470,
+          253,
+          481,
+          219,
+          507,
+          509,
+          311
+        ],
+        [
+          288,
+          747,
+          115,
+          390,
+          562,
+          225,
+          215,
+          338
+        ],
+        [
+          374,
+          506,
+          332,
+          488,
+          170,
+          594,
+          258,
+          158
+        ],
+        [
+          270,
+          351,
+          306,
+          107,
+          586,
+          505,
+          496,
+          259
+        ],
+        [
+          296,
+          442,
+          354,
+          68,
+          284,
+          681,
+          691,
+          64
+        ],
+        [
+          123,
+          480,
+          136,
+          348,
+          299,
+          416,
+          210,
+          868
+        ]
+      ],
+      "selected_model": "random_forest",
+      "validation_macro_f1_by_candidate": {
+        "majority_dummy": 0.027777777777777776,
+        "random_forest": 0.20321640686142595
+      },
+      "test_rows": 23040,
+      "test_scenarios": 192,
+      "test_engines": 6,
+      "confusion_matrix_labels": [
+        "combustion_irregularity",
+        "efficiency_degradation",
+        "normal",
+        "sensor_bias",
+        "sensor_drift",
+        "sensor_dropout",
+        "sensor_stuck",
+        "thermal_abnormality"
+      ],
+      "sensor_fault_group_detection": {
+        "tp": 6320,
+        "fp": 4827,
+        "fn": 5200,
+        "tn": 6693,
+        "precision": 0.5669686911276577,
+        "recall": 0.5486111111111112,
+        "f1": 0.5576388582520845
+      }
+    },
+    "engine_heldout__B_temporal_69_features": {
+      "accuracy": 0.3021701388888889,
+      "macro_f1": 0.3204551397236247,
+      "per_class": {
+        "combustion_irregularity": {
+          "precision": 0.5021627998427055,
+          "recall": 0.44340277777777776,
+          "f1": 0.47095703485155815,
+          "support": 2880,
+          "largest_confusion_class": "efficiency_degradation",
+          "largest_confusion_count": 518
+        },
+        "efficiency_degradation": {
+          "precision": 0.13422666363842833,
+          "recall": 0.20520833333333333,
+          "f1": 0.1622957572428944,
+          "support": 2880,
+          "largest_confusion_class": "sensor_drift",
+          "largest_confusion_count": 706
+        },
+        "normal": {
+          "precision": 0.17722878625134264,
+          "recall": 0.171875,
+          "f1": 0.17451084082496035,
+          "support": 2880,
+          "largest_confusion_class": "efficiency_degradation",
+          "largest_confusion_count": 769
+        },
+        "sensor_bias": {
+          "precision": 0.22964239551917276,
+          "recall": 0.18506944444444445,
+          "f1": 0.2049605845029802,
+          "support": 2880,
+          "largest_confusion_class": "sensor_drift",
+          "largest_confusion_count": 775
+        },
+        "sensor_drift": {
+          "precision": 0.04568399798081777,
+          "recall": 0.06284722222222222,
+          "f1": 0.052908506284712074,
+          "support": 2880,
+          "largest_confusion_class": "efficiency_degradation",
+          "largest_confusion_count": 748
+        },
+        "sensor_dropout": {
+          "precision": 0.4794459338695264,
+          "recall": 0.37256944444444445,
+          "f1": 0.41930441578741695,
+          "support": 2880,
+          "largest_confusion_class": "sensor_drift",
+          "largest_confusion_count": 613
+        },
+        "sensor_stuck": {
+          "precision": 0.8036446469248292,
+          "recall": 0.6125,
+          "f1": 0.6951724137931035,
+          "support": 2880,
+          "largest_confusion_class": "sensor_drift",
+          "largest_confusion_count": 309
+        },
+        "thermal_abnormality": {
+          "precision": 0.4054158607350097,
+          "recall": 0.3638888888888889,
+          "f1": 0.3835315645013724,
+          "support": 2880,
+          "largest_confusion_class": "sensor_drift",
+          "largest_confusion_count": 550
+        }
+      },
+      "confusion_matrix": [
+        [
+          1277,
+          518,
+          454,
+          186,
+          258,
+          68,
+          6,
+          113
+        ],
+        [
+          341,
+          591,
+          432,
+          302,
+          706,
+          138,
+          83,
+          287
+        ],
+        [
+          57,
+          769,
+          495,
+          443,
+          570,
+          172,
+          115,
+          259
+        ],
+        [
+          230,
+          710,
+          107,
+          533,
+          775,
+          111,
+          15,
+          399
+        ],
+        [
+          418,
+          748,
+          632,
+          333,
+          181,
+          331,
+          92,
+          145
+        ],
+        [
+          125,
+          314,
+          285,
+          136,
+          613,
+          1073,
+          54,
+          280
+        ],
+        [
+          65,
+          264,
+          232,
+          70,
+          309,
+          122,
+          1764,
+          54
+        ],
+        [
+          30,
+          489,
+          156,
+          318,
+          550,
+          223,
+          66,
+          1048
+        ]
+      ],
+      "selected_model": "random_forest",
+      "validation_macro_f1_by_candidate": {
+        "majority_dummy": 0.027777777777777776,
+        "random_forest": 0.3211222827055389
+      },
+      "test_rows": 23040,
+      "test_scenarios": 192,
+      "test_engines": 6,
+      "confusion_matrix_labels": [
+        "combustion_irregularity",
+        "efficiency_degradation",
+        "normal",
+        "sensor_bias",
+        "sensor_drift",
+        "sensor_dropout",
+        "sensor_stuck",
+        "thermal_abnormality"
+      ],
+      "sensor_fault_group_detection": {
+        "tp": 6512,
+        "fp": 4204,
+        "fn": 5008,
+        "tn": 7316,
+        "precision": 0.6076894363568496,
+        "recall": 0.5652777777777778,
+        "f1": 0.5857168555495593
+      }
+    }
+  },
+  "source_input_sha256": {
+    "config/dataset_config.json": "b0cc39b5e587b8f0d75b0c1d68c5483dc962a5d23ef86fe1b91e15fdf888e4c4",
+    "src/generate_dataset.py": "c30a247efcd462efa5f9e4b7efe8d470f24fe8d8ab33852b5ea7a1fc65ffde9d",
+    "src/build_features.py": "b92e8f3930f26c2563c8b6172cf9791bc21112cc92b799889a6e8c1e8f813d83",
+    "src/train_baselines.py": "c969f2c1607512c84d5f6afe8c0e9616fc8e0596a7fe716c64e9e85453b5cd50",
+    "src/validate_dataset.py": "6adb9a6cf6ddf432cd1289baa4ba2b5767928cb36930c0b448c154c724d8a002",
+    "metadata/dataset_card.json": "001f37a506be4ee2bde66691c482a60f1248b61bab91cdd6913c1796ff3c5bc8",
+    "metadata/scenario_manifest.csv": "2f4d17895fb1050b2e97059ffcfc9832e9d1f087a74089e2225436ce2741f6f1",
+    "metadata/engine_manifest.csv": "51dd1663747316b5e77706f2ba05448736be2eca2bcab5c8ae86de52101c02bd",
+    "data/raw/engine_twin_v0.2_raw.csv": "d936fe53115862eb5e7a9c5896d48ad76b43695085916855e69b6b4674803497",
+    "data/processed/features.csv": "c3b59287864f60e221e49bf43114af4288b6895811295ce7b4def8f4426ee13f",
+    "data/processed/labels.csv": "76938ee7a62ae95a62f8089525f18d7de61d3d0af1a3e2d2c86a6e258651a6c5",
+    "data/processed/feature_lineage.csv": "2c427dced66a0b67b673898db957652b6d65128bc0f918716d2516a23229df09",
+    "reports/diagnostics_v0.2/phase_3b/feature_definitions.json": "af15a894316c380c38702b20c48eff7b7168c747e2362dddb157c0141dd30e5f",
+    "reports/diagnostics_v0.2/phase_3b/temporal_ablation_results.json": "d5ff89ffbe0bcc1b665703b4202b8d3d6903a0b64007e43679bf2c17a4b037b8",
+    "splits/engine_test_engines.csv": "543c1314634adf72bbdde79a51cfabf6991a1fe2fa0b8b5d7343074f56d5f835",
+    "splits/engine_test_scenarios.csv": "e12b0d15421944cec9578bb88be573828d81d2adbf138a5d9850cd910ae40e3f",
+    "splits/engine_train_engines.csv": "0ff042de8dd4bd71534c422f2c1e9f0e0bac900613484010ae30603a4e1a68ca",
+    "splits/engine_train_scenarios.csv": "49ba9c308be4abea8d1ab10e1a2f9239cd8c56abf791f42d29e45c2e5dce7fdf",
+    "splits/engine_validation_engines.csv": "7f4703513fd1ef41e9caac2b2a3bbf67184215a787b7817b69556e47ecb4fcec",
+    "splits/engine_validation_scenarios.csv": "f7a696cbf33549f715c3aa61cc5dd5dcb294a43551c60ca4c11f8b58321660c3",
+    "splits/scenario_test_scenarios.csv": "9b3fb113f14fa0fc3069e9a034180a0d1206eca7391903526114f29738799791",
+    "splits/scenario_train_scenarios.csv": "328b7d434177b0638b7ae4ab34d8e93e0b6773582e580e693a3fd9510eb06749",
+    "splits/scenario_validation_scenarios.csv": "491ebab2a52dd3334f7218596db6aec97b8ac390efbf4493c3afdc4f9c1a0d12"
+  }
+}

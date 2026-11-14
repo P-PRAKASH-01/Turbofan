@@ -1,0 +1,38 @@
+parameter,unit,value_or_range,category,source_status,description
+seed,dimensionless,314159,randomness,project-selected seed,Base seed for NumPy PCG64; scenario sub-seeds are recorded in the scenario manifest.
+sample_interval_s,s,1.0,simulation clock,project-selected,Uniform sample interval.
+duration_s,s,120,simulation clock,project-selected,Duration of each synthetic scenario.
+altitude_range_m,m,"0.0;5000.0",environment,assumption,Uniform scenario nominal altitude range; not a target-aircraft envelope.
+ambient_temperature_offset_range_c,degC,"-10.0;10.0",environment,assumption,Offset from a standard-atmosphere lapse-rate profile.
+throttle_range_pct,%, "25.0;95.0",control,assumption,Uniform scenario nominal throttle range; not an engine calibration map.
+displacement_m3,m^3,"0.0006;0.0012",engine parameter,assumption,Independent generic per-engine range; not sourced from a reference engine.
+idle_rpm,rev/min,"750.0;1000.0",engine parameter,assumption,Independent generic per-engine range; not an engine rating.
+rated_rpm,rev/min,"4200.0;5200.0",engine parameter,assumption,Generic upper speed parameter used in a throttle-to-speed surrogate.
+volumetric_efficiency,dimensionless,"0.70;0.86",engine parameter,assumption,Generic intake filling parameter; no engine calibration.
+healthy_thermal_efficiency,dimensionless,"0.22;0.28",engine parameter,assumption,Generic fuel-to-shaft efficiency for illustrative power calculation.
+dry_air_gas_constant_j_kg_k,J/(kg K),287.05,atmosphere,standard physical constant,Used in ideal gas density relation.
+standard_gravity_m_s2,m/s^2,9.80665,atmosphere,standard physical constant,Used in standard troposphere pressure relation.
+sea_level_pressure_pa,Pa,101325.0,atmosphere,standard-atmosphere reference,Reference value for simplified pressure-altitude equation.
+sea_level_temperature_k,K,288.15,atmosphere,standard-atmosphere reference,Reference value for simplified lapse-rate equation.
+tropospheric_lapse_rate_k_m,K/m,0.0065,atmosphere,standard-atmosphere assumption,Constant lapse rate used from sea level through sampled altitudes.
+gasoline_lower_heating_value_j_kg,J/kg,43000000.0,fuel,illustrative generic assumption,Gasoline-like fuel energy assumption; not a selected fuel specification.
+air_fuel_mass_ratio,dimensionless,14.7,fuel,illustrative generic assumption,Fixed air-to-fuel mass ratio; not a calibrated mixture/control model.
+manifold_pressure_closed_throttle_fraction,dimensionless,0.28,intake surrogate,assumption,Manifold pressure fraction at zero normalized throttle.
+manifold_pressure_throttle_gain,dimensionless,0.70,intake surrogate,assumption,Linear throttle contribution to manifold pressure fraction.
+rpm_throttle_exponent,dimensionless,0.5,speed surrogate,assumption,Exponent in the generic throttle-to-RPM relation.
+rpm_density_exponent,dimensionless,0.05,speed surrogate,assumption,Small density correction exponent; not a validated engine map.
+healthy_cht_offset_c,degC,75.0,thermal surrogate,assumption,Added to ambient temperature before the thermal lag.
+healthy_cht_throttle_gain_c_per_pct,degC/% throttle,0.72,thermal surrogate,assumption,CHT target rise per throttle percentage point.
+healthy_egt_offset_c,degC,170.0,thermal surrogate,assumption,Added to ambient temperature before the thermal lag.
+healthy_egt_throttle_gain_c_per_pct,degC/% throttle,3.4,thermal surrogate,assumption,EGT target rise per throttle percentage point.
+thermal_time_constant_s,s,25.0,thermal surrogate,assumption,First-order CHT/EGT lag constant.
+thermal_cht_rise_at_full_severity_c,degC,25.0,fault injection,assumption,CHT target offset at severity fraction 1 for thermal abnormality.
+thermal_egt_rise_at_full_severity_c,degC,75.0,fault injection,assumption,EGT target offset at severity fraction 1 for thermal abnormality.
+oil_pressure_idle_kpa,kPa,180.0,lubrication surrogate,assumption,Generic pressure intercept; not an engine limit or specification.
+oil_pressure_rpm_gain_kpa,kPa,90.0,lubrication surrogate,assumption,Generic RPM-dependent pressure contribution.
+oil_pressure_hot_oil_loss_kpa_per_c,kPa/degC,0.25,lubrication surrogate,assumption,Generic pressure reduction above the configured reference oil temperature.
+sensor_dropout_probability_per_sample,probability,0.25,sensor fault,project-selected assumption,Independent samplewise dropout probability after fault onset for the targeted channel.
+healthy_vibration_offset_g,g RMS,0.25,vibration surrogate,assumption,Illustrative baseline vibration feature; no sensor location or bandwidth calibration.
+combustion_vibration_rise_at_full_severity_g,g RMS,0.20,fault injection,assumption,Additional vibration proxy at full severity after combustion fault activation.
+sensor_noise_standard_deviation,channel-specific units,see dataset_config.json,sensor simulation,project-selected assumption,Independent zero-mean Gaussian noise standard deviation by observed channel.
+sensor_fault_bias_magnitudes_by_severity_level,channel-specific units,see dataset_config.json,sensor fault,project-selected assumption,Constant offset per ordinal severity level for bias; drift ramps to this offset; not calibrated.

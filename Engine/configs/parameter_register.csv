@@ -1,0 +1,21 @@
+parameter,unit,kind,status,notes
+altitude_m,m,environment,assumption-driven mission sampling,Generic 0-5000 m synthetic sampling; not target aircraft envelope.
+ambient_temp_c,degC,environment,assumption-driven,Synthetic hot/cold sampling; not environmental certification envelope.
+ambient_pressure_pa,Pa,derived_environment,derived from approximate standard-atmosphere baseline and temperature adjustment,Approximate; validate against an approved atmosphere implementation before engineering use.
+air_density_kg_m3,kg/m^3,derived_environment,derived,Ideal gas relation using simulated ambient pressure and temperature.
+throttle_pct,%,input,assumption-driven,"Generic control input, not a specified engine control map."
+rpm,rev/min,sensor_simulation,assumption-driven surrogate,Not an engine rating or operating limit.
+manifold_pressure_pa,Pa,sensor_simulation,assumption-driven surrogate,Generic intake pressure proxy; not calibrated.
+cht_c,degC,sensor_simulation,assumption-driven surrogate,Cylinder head temperature proxy; not a limit specification.
+egt_c,degC,sensor_simulation,assumption-driven surrogate,Exhaust gas temperature proxy; not a limit specification.
+oil_temp_c,degC,sensor_simulation,assumption-driven surrogate,Oil temperature proxy; not a limit specification.
+oil_pressure_kpa,kPa,sensor_simulation,assumption-driven surrogate,Oil pressure proxy; not a limit specification.
+fuel_flow_kg_s,kg/s,sensor_simulation,assumption-driven surrogate,Synthetic flow proxy; not calibrated.
+power_kw,kW,derived/simulated,assumption-driven surrogate,Synthetic power output; not a rated engine power.
+torque_nm,N m,derived/simulated,assumption-driven surrogate,Consistent approximate torque calculation from synthetic power and RPM.
+vibration_rms_g,g RMS,sensor_simulation,assumption-driven surrogate,Synthetic vibration feature; sensor location/bandwidth not specified.
+*_residual,parameter-specific,derived_feature,observed minus healthy surrogate reference,"Reference is a simple synthetic surrogate, not a validated physics model."
+fault_type,category,ground_truth_label,assigned by scenario generator,"Labels reflect injected synthetic fault, not real diagnostic truth."
+fault_severity,category,ground_truth_label,assigned by scenario generator,Ordinal severity used for scenario construction only.
+health_index_synthetic,0-100,synthetic_target,illustrative label,Rule-based synthetic target; not a validated engine health index.
+rul_hours,h,target,not populated,RUL omitted because no validated degradation-to-end-of-life definition exists.

@@ -1,0 +1,60 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        cockpit: {
+          base:        '#0b101b',
+          surface:     '#111827',
+          card:        '#162032',
+          cardHover:   '#1e2c44',
+          border:      '#243248',
+          borderLight: '#33435c',
+          cyan:        '#38bdf8', // refined sky blue
+          emerald:     '#10b981',
+          amber:       '#f59e0b',
+          orange:      '#f97316',
+          blue:        '#3b82f6',
+          purple:      '#8b5cf6',
+          red:         '#f43f5e',
+        },
+        // Telemetry Glass design system tokens
+        'surface-container-highest': '#283244',
+        'surface-container-high':    '#1f2838',
+        'surface-container':         '#162032',
+        'surface-container-low':     '#111827',
+        'surface-container-lowest':  '#0b101b',
+        'surface-variant':           '#283244',
+        'surface-bright':            '#2e3a4e',
+        'surface-dim':               '#0e1422',
+        'surface':                   '#0e1422',
+        'on-surface':                '#e2e8f0',
+        'on-surface-variant':        '#94a3b8',
+        'outline':                   '#64748b',
+        'outline-variant':           '#334155',
+        'primary':                   '#38bdf8',
+        'primary-container':         '#0284c7',
+        'on-primary':                '#ffffff',
+        'secondary':                 '#34d399',
+        'secondary-container':       '#059669',
+        'on-secondary':              '#ffffff',
+        'tertiary':                  '#fbbf24',
+        'tertiary-container':        '#d97706',
+        'on-tertiary':               '#ffffff',
+        'error':                     '#f87171',
+        'error-container':           '#b91c1c',
+      },
+      fontFamily: {
+        mono:  ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+        sans:  ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [],
+}
